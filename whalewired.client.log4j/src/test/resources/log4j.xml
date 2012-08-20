@@ -7,7 +7,7 @@
   	<param name="whalewired_es" value="localhost"/>
   	<param name="whalewired_es_port" value="9200"/>
   	<param name="log_account" value="DEV_WL"/>
-  	<param name="log_application" value="clfr.nine.dk"/>
+  	<param name="log_application" value="cla.nine.dk"/>
   	<param name="log_host" value="DEV_WL"/>
   	<param name="max_threads" value="1"/>
   </appender>

@@ -2,7 +2,7 @@
 environments {
     production {
         grails.serverURL = "http://172.17.33.54/whalewired"
-		esCluster = "traen_whalewired_cluster"
+		esCluster = "whalewired_cluster"
     }
 }
 

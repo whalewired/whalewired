@@ -25,7 +25,8 @@ import groovy.json.JsonBuilder;
 
 class ElasticSearchAdminService {
 	
-	static final ES_CLUSTER = ConfigurationHolder.config.esCluster;
+	def grailsApplication;
+	
 	static final ES_TYPE = "logevent";
 	static final ES_TYPE_MAPPING;
 	
@@ -66,11 +67,11 @@ class ElasticSearchAdminService {
 	def getEsClient() {
 		Client esClient = ServletContextHolder.getServletContext().getAttribute("whalewired.es.client");
 		if (esClient == null) {
-			Node node = nodeBuilder().clusterName(ES_CLUSTER).client(true).node();
+			Node node = nodeBuilder().clusterName(grailsApplication.config.esCluster).client(true).node();
 			esClient = node.client();
 			ServletContextHolder.getServletContext().setAttribute("whalewired.es.node", node);
 			ServletContextHolder.getServletContext().setAttribute("whalewired.es.client", esClient);
-			log.debug("Established node and client for: "+ES_CLUSTER);
+			log.debug("Established node and client for: "+grailsApplication.config.esCluster);
 		}
 		return esClient;
 	}

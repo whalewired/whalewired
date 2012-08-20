@@ -1,4 +1,4 @@
-grails.config.locations = ["file:" + System.getProperty("wwConfigPath")];
+//grails.config.locations = ["file:" + System.getProperty("wwConfigPath")];
 
 grails.project.groupId = whalewired // change this to alter the default package name and Maven publishing destination
 grails.mime.file.extensions = true // enables the parsing of file extensions from URLs into the request format
@@ -53,11 +53,11 @@ grails.exceptionresolver.params.exclude = ['password']
 environments {
     development {
         grails.serverURL = "http://localhost:8090/${appName}"
-		esCluster = "traen_whalewired_cluster"
+		esCluster = "whalewired_cluster"
     }
     test {
         grails.serverURL = "http://localhost:8090/${appName}"
-		esCluster = "traen_whalewired_cluster"
+		esCluster = "whalewired_cluster"
     }
 }
 

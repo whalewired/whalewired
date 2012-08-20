@@ -24,7 +24,7 @@ class BootStrap {
 		
 		log.info("Whalewired init starting... ");
 		createRolesAndUsersInMemory();
-		elasticSearchAdminService.getDefaultIndex(); // To get it up and running
+		elasticSearchAdminService.getIndices(); // To get it up and running
 		log.info("Whalewired init finished... ");
     }
 	

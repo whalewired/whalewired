@@ -35,22 +35,22 @@ class LogEventController {
 	}
 
 	def list = {					
-		if (currentApplication == null) {
-			def cookie = g.cookie(name: "ww_preferred_app");
-			currentApplication = cookie;
-		} else {
-			def cookie = new Cookie("ww_preferred_app", currentApplication);
-			cookie.setMaxAge(Integer.MAX_VALUE);
-			response.addCookie(cookie);
-		}		
-		if (currentLogLevel == null) {
-			def cookie = g.cookie(name: "ww_preferred_level");
-			currentLogLevel = cookie;
-		} else {
-			def cookie = new Cookie("ww_preferred_level", currentLogLevel);
-			cookie.setMaxAge(Integer.MAX_VALUE);
-			response.addCookie(cookie);
-		}
+//		if (currentApplication == null) {
+//			def cookie = g.cookie(name: "ww_preferred_app");
+//			currentApplication = cookie;
+//		} else {
+//			def cookie = new Cookie("ww_preferred_app", currentApplication);
+//			cookie.setMaxAge(Integer.MAX_VALUE);
+//			response.addCookie(cookie);
+//		}		
+//		if (currentLogLevel == null) {
+//			def cookie = g.cookie(name: "ww_preferred_level");
+//			currentLogLevel = cookie;
+//		} else {
+//			def cookie = new Cookie("ww_preferred_level", currentLogLevel);
+//			cookie.setMaxAge(Integer.MAX_VALUE);
+//			response.addCookie(cookie);
+//		}
 
 	}
 
