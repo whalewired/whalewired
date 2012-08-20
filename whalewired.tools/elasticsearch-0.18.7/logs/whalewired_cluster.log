@@ -1,0 +1,102 @@
+[2012-08-20 15:48:55,376][INFO ][node                     ] [Elfqueen] {0.18.7}[3284]: initializing ...
+[2012-08-20 15:48:55,376][INFO ][plugins                  ] [Elfqueen] loaded [], sites []
+[2012-08-20 15:48:57,057][INFO ][node                     ] [Elfqueen] {0.18.7}[3284]: initialized
+[2012-08-20 15:48:57,057][INFO ][node                     ] [Elfqueen] {0.18.7}[3284]: starting ...
+[2012-08-20 15:48:57,237][INFO ][transport                ] [Elfqueen] bound_address {inet[/0:0:0:0:0:0:0:0:9300]}, publish_address {inet[/192.168.110.155:9300]}
+[2012-08-20 15:49:00,278][INFO ][cluster.service          ] [Elfqueen] new_master [Elfqueen][4WLaUmfQTVaRDRsG-0CjUQ][inet[/192.168.110.155:9300]], reason: zen-disco-join (elected_as_master)
+[2012-08-20 15:49:00,311][INFO ][discovery                ] [Elfqueen] whalewired_cluster/4WLaUmfQTVaRDRsG-0CjUQ
+[2012-08-20 15:49:00,325][INFO ][gateway                  ] [Elfqueen] recovered [0] indices into cluster_state
+[2012-08-20 15:49:00,430][INFO ][http                     ] [Elfqueen] bound_address {inet[/0:0:0:0:0:0:0:0:9200]}, publish_address {inet[/192.168.110.155:9200]}
+[2012-08-20 15:49:00,431][INFO ][node                     ] [Elfqueen] {0.18.7}[3284]: started
+[2012-08-20 15:54:25,264][INFO ][node                     ] [Random] {0.18.7}[3800]: initializing ...
+[2012-08-20 15:54:25,269][INFO ][plugins                  ] [Random] loaded [], sites []
+[2012-08-20 15:54:26,850][INFO ][node                     ] [Random] {0.18.7}[3800]: initialized
+[2012-08-20 15:54:26,850][INFO ][node                     ] [Random] {0.18.7}[3800]: starting ...
+[2012-08-20 15:54:27,025][INFO ][transport                ] [Random] bound_address {inet[/0:0:0:0:0:0:0:0:9300]}, publish_address {inet[/192.168.110.155:9300]}
+[2012-08-20 15:54:30,064][INFO ][cluster.service          ] [Random] new_master [Random][e22XsTkyTzGJrzBOiEPMmA][inet[/192.168.110.155:9300]], reason: zen-disco-join (elected_as_master)
+[2012-08-20 15:54:30,099][INFO ][discovery                ] [Random] whalewired_cluster/e22XsTkyTzGJrzBOiEPMmA
+[2012-08-20 15:54:30,122][INFO ][gateway                  ] [Random] recovered [0] indices into cluster_state
+[2012-08-20 15:54:30,229][INFO ][http                     ] [Random] bound_address {inet[/0:0:0:0:0:0:0:0:9200]}, publish_address {inet[/192.168.110.155:9200]}
+[2012-08-20 15:54:30,230][INFO ][node                     ] [Random] {0.18.7}[3800]: started
+[2012-08-20 16:03:29,156][INFO ][cluster.metadata         ] [Random] [clfr.nine.dk] creating index, cause [auto(index api)], shards [5]/[1], mappings []
+[2012-08-20 16:03:29,561][INFO ][cluster.metadata         ] [Random] [clfr.nine.dk] update_mapping [logevent] (dynamic)
+[2012-08-20 16:10:13,042][INFO ][node                     ] [Madrox, James] {0.18.7}[3936]: initializing ...
+[2012-08-20 16:10:13,046][INFO ][plugins                  ] [Madrox, James] loaded [], sites []
+[2012-08-20 16:10:14,670][INFO ][node                     ] [Madrox, James] {0.18.7}[3936]: initialized
+[2012-08-20 16:10:14,670][INFO ][node                     ] [Madrox, James] {0.18.7}[3936]: starting ...
+[2012-08-20 16:10:14,849][INFO ][transport                ] [Madrox, James] bound_address {inet[/0:0:0:0:0:0:0:0:9300]}, publish_address {inet[/192.168.110.155:9300]}
+[2012-08-20 16:10:18,099][INFO ][cluster.service          ] [Madrox, James] new_master [Madrox, James][8bMoEKZESqycE840IJCs9w][inet[/192.168.110.155:9300]], reason: zen-disco-join (elected_as_master)
+[2012-08-20 16:10:18,131][INFO ][discovery                ] [Madrox, James] whalewired_cluster/8bMoEKZESqycE840IJCs9w
+[2012-08-20 16:10:18,302][INFO ][http                     ] [Madrox, James] bound_address {inet[/0:0:0:0:0:0:0:0:9200]}, publish_address {inet[/192.168.110.155:9200]}
+[2012-08-20 16:10:18,302][INFO ][node                     ] [Madrox, James] {0.18.7}[3936]: started
+[2012-08-20 16:10:18,645][INFO ][gateway                  ] [Madrox, James] recovered [1] indices into cluster_state
+[2012-08-20 16:18:50,139][INFO ][node                     ] [Ocean] {0.18.7}[2560]: initializing ...
+[2012-08-20 16:18:50,139][INFO ][plugins                  ] [Ocean] loaded [], sites []
+[2012-08-20 16:18:51,704][INFO ][node                     ] [Ocean] {0.18.7}[2560]: initialized
+[2012-08-20 16:18:51,704][INFO ][node                     ] [Ocean] {0.18.7}[2560]: starting ...
+[2012-08-20 16:18:51,876][INFO ][transport                ] [Ocean] bound_address {inet[/0:0:0:0:0:0:0:0:9300]}, publish_address {inet[/192.168.110.155:9300]}
+[2012-08-20 16:18:54,929][INFO ][cluster.service          ] [Ocean] new_master [Ocean][tVvhT0ynRI6RJw_JIrq9MA][inet[/192.168.110.155:9300]], reason: zen-disco-join (elected_as_master)
+[2012-08-20 16:18:54,966][INFO ][discovery                ] [Ocean] whalewired_cluster/tVvhT0ynRI6RJw_JIrq9MA
+[2012-08-20 16:18:55,147][INFO ][http                     ] [Ocean] bound_address {inet[/0:0:0:0:0:0:0:0:9200]}, publish_address {inet[/192.168.110.155:9200]}
+[2012-08-20 16:18:55,147][INFO ][node                     ] [Ocean] {0.18.7}[2560]: started
+[2012-08-20 16:18:55,435][INFO ][gateway                  ] [Ocean] recovered [1] indices into cluster_state
+[2012-08-20 16:28:38,223][INFO ][node                     ] [Ocean] {0.18.7}[2560]: stopping ...
+[2012-08-20 16:28:38,257][INFO ][node                     ] [Ocean] {0.18.7}[2560]: stopped
+[2012-08-20 16:28:38,257][INFO ][node                     ] [Ocean] {0.18.7}[2560]: closing ...
+[2012-08-20 16:28:38,264][INFO ][node                     ] [Ocean] {0.18.7}[2560]: closed
+[2012-08-20 16:30:16,618][INFO ][node                     ] [Flygirl] {0.18.7}[4920]: initializing ...
+[2012-08-20 16:30:16,623][INFO ][plugins                  ] [Flygirl] loaded [], sites []
+[2012-08-20 16:30:18,200][INFO ][node                     ] [Flygirl] {0.18.7}[4920]: initialized
+[2012-08-20 16:30:18,201][INFO ][node                     ] [Flygirl] {0.18.7}[4920]: starting ...
+[2012-08-20 16:30:18,376][INFO ][transport                ] [Flygirl] bound_address {inet[/0:0:0:0:0:0:0:0:9300]}, publish_address {inet[/192.168.110.155:9300]}
+[2012-08-20 16:30:21,412][INFO ][cluster.service          ] [Flygirl] new_master [Flygirl][EEDbb6OJT82oyTqG89K0fA][inet[/192.168.110.155:9300]], reason: zen-disco-join (elected_as_master)
+[2012-08-20 16:30:21,432][INFO ][discovery                ] [Flygirl] whalewired_cluster/EEDbb6OJT82oyTqG89K0fA
+[2012-08-20 16:30:21,620][INFO ][http                     ] [Flygirl] bound_address {inet[/0:0:0:0:0:0:0:0:9200]}, publish_address {inet[/192.168.110.155:9200]}
+[2012-08-20 16:30:21,620][INFO ][node                     ] [Flygirl] {0.18.7}[4920]: started
+[2012-08-20 16:30:21,935][INFO ][gateway                  ] [Flygirl] recovered [1] indices into cluster_state
+[2012-08-20 16:39:53,603][INFO ][node                     ] [Flygirl] {0.18.7}[4920]: stopping ...
+[2012-08-20 16:39:53,640][INFO ][node                     ] [Flygirl] {0.18.7}[4920]: stopped
+[2012-08-20 16:39:53,641][INFO ][node                     ] [Flygirl] {0.18.7}[4920]: closing ...
+[2012-08-20 16:39:53,649][INFO ][node                     ] [Flygirl] {0.18.7}[4920]: closed
+[2012-08-20 16:40:03,523][INFO ][node                     ] [Hag] {0.18.7}[5544]: initializing ...
+[2012-08-20 16:40:03,528][INFO ][plugins                  ] [Hag] loaded [], sites []
+[2012-08-20 16:40:05,125][INFO ][node                     ] [Hag] {0.18.7}[5544]: initialized
+[2012-08-20 16:40:05,125][INFO ][node                     ] [Hag] {0.18.7}[5544]: starting ...
+[2012-08-20 16:40:05,298][INFO ][transport                ] [Hag] bound_address {inet[/0:0:0:0:0:0:0:0:9300]}, publish_address {inet[/192.168.110.155:9300]}
+[2012-08-20 16:40:08,544][INFO ][cluster.service          ] [Hag] new_master [Hag][IYoRo62XTTGwrQYKurv04A][inet[/192.168.110.155:9300]], reason: zen-disco-join (elected_as_master)
+[2012-08-20 16:40:08,585][INFO ][discovery                ] [Hag] whalewired_cluster/IYoRo62XTTGwrQYKurv04A
+[2012-08-20 16:40:08,755][INFO ][http                     ] [Hag] bound_address {inet[/0:0:0:0:0:0:0:0:9200]}, publish_address {inet[/192.168.110.155:9200]}
+[2012-08-20 16:40:08,756][INFO ][node                     ] [Hag] {0.18.7}[5544]: started
+[2012-08-20 16:40:09,038][INFO ][gateway                  ] [Hag] recovered [1] indices into cluster_state
+[2012-08-20 16:40:42,274][INFO ][cluster.service          ] [Hag] added {[Blackheath][2RxLHqC3Qri0dYQ2HcX1-Q][inet[/192.168.110.155:9301]]{client=true, data=false},}, reason: zen-disco-receive(join from node[[Blackheath][2RxLHqC3Qri0dYQ2HcX1-Q][inet[/192.168.110.155:9301]]{client=true, data=false}])
+[2012-08-20 16:42:26,433][INFO ][cluster.service          ] [Hag] removed {[Blackheath][2RxLHqC3Qri0dYQ2HcX1-Q][inet[/192.168.110.155:9301]]{client=true, data=false},}, reason: zen-disco-node_failed([Blackheath][2RxLHqC3Qri0dYQ2HcX1-Q][inet[/192.168.110.155:9301]]{client=true, data=false}), reason transport disconnected (with verified connect)
+[2012-08-20 17:05:47,164][INFO ][node                     ] [Mister Buda] {0.18.7}[2400]: initializing ...
+[2012-08-20 17:05:47,169][INFO ][plugins                  ] [Mister Buda] loaded [], sites []
+[2012-08-20 17:05:48,753][INFO ][node                     ] [Mister Buda] {0.18.7}[2400]: initialized
+[2012-08-20 17:05:48,754][INFO ][node                     ] [Mister Buda] {0.18.7}[2400]: starting ...
+[2012-08-20 17:05:48,931][INFO ][transport                ] [Mister Buda] bound_address {inet[/0:0:0:0:0:0:0:0:9300]}, publish_address {inet[/192.168.110.155:9300]}
+[2012-08-20 17:05:52,179][INFO ][cluster.service          ] [Mister Buda] new_master [Mister Buda][g8ynEdcXRumKeB919cE-ow][inet[/192.168.110.155:9300]], reason: zen-disco-join (elected_as_master)
+[2012-08-20 17:05:52,200][INFO ][discovery                ] [Mister Buda] whalewired_cluster/g8ynEdcXRumKeB919cE-ow
+[2012-08-20 17:05:52,384][INFO ][http                     ] [Mister Buda] bound_address {inet[/0:0:0:0:0:0:0:0:9200]}, publish_address {inet[/192.168.110.155:9200]}
+[2012-08-20 17:05:52,384][INFO ][node                     ] [Mister Buda] {0.18.7}[2400]: started
+[2012-08-20 17:05:52,709][INFO ][gateway                  ] [Mister Buda] recovered [1] indices into cluster_state
+[2012-08-20 17:07:57,782][INFO ][cluster.service          ] [Mister Buda] added {[Modred the Mystic][ZxmfsqbDTwygivS58Fd8tg][inet[/192.168.110.155:9301]]{client=true, data=false},}, reason: zen-disco-receive(join from node[[Modred the Mystic][ZxmfsqbDTwygivS58Fd8tg][inet[/192.168.110.155:9301]]{client=true, data=false}])
+[2012-08-20 17:10:54,491][INFO ][cluster.metadata         ] [Mister Buda] [cla.nine.dk] creating index, cause [api], shards [5]/[1], mappings []
+[2012-08-20 17:10:54,635][INFO ][cluster.metadata         ] [Mister Buda] [cla.nine.dk] create_mapping [logevent]
+[2012-08-20 17:11:00,579][INFO ][cluster.metadata         ] [Mister Buda] [clfr.nine.dk] deleting index
+[2012-08-20 17:11:35,346][INFO ][cluster.metadata         ] [Mister Buda] [cla.nine.dk] update_mapping [logevent] (dynamic)
+[2012-08-20 17:13:46,169][INFO ][cluster.service          ] [Mister Buda] removed {[Modred the Mystic][ZxmfsqbDTwygivS58Fd8tg][inet[/192.168.110.155:9301]]{client=true, data=false},}, reason: zen-disco-node_failed([Modred the Mystic][ZxmfsqbDTwygivS58Fd8tg][inet[/192.168.110.155:9301]]{client=true, data=false}), reason transport disconnected (with verified connect)
+[2012-08-20 17:14:19,612][INFO ][cluster.service          ] [Mister Buda] added {[Will o' the Wisp][t72Rbu1fSgGjpFIAIuSe7w][inet[/192.168.110.155:9301]]{client=true, data=false},}, reason: zen-disco-receive(join from node[[Will o' the Wisp][t72Rbu1fSgGjpFIAIuSe7w][inet[/192.168.110.155:9301]]{client=true, data=false}])
+[2012-08-20 17:16:51,886][INFO ][cluster.service          ] [Mister Buda] removed {[Will o' the Wisp][t72Rbu1fSgGjpFIAIuSe7w][inet[/192.168.110.155:9301]]{client=true, data=false},}, reason: zen-disco-node_failed([Will o' the Wisp][t72Rbu1fSgGjpFIAIuSe7w][inet[/192.168.110.155:9301]]{client=true, data=false}), reason transport disconnected (with verified connect)
+[2012-08-20 17:16:51,887][WARN ][netty.channel.socket.nio.NioClientSocketPipelineSink] Unexpected exception in the selector loop.
+java.nio.channels.CancelledKeyException
+	at sun.nio.ch.SelectionKeyImpl.ensureValid(SelectionKeyImpl.java:73)
+	at sun.nio.ch.SelectionKeyImpl.readyOps(SelectionKeyImpl.java:87)
+	at java.nio.channels.SelectionKey.isConnectable(SelectionKey.java:336)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientSocketPipelineSink$Boss.processSelectedKeys(NioClientSocketPipelineSink.java:369)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientSocketPipelineSink$Boss.run(NioClientSocketPipelineSink.java:292)
+	at org.elasticsearch.common.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108)
+	at org.elasticsearch.common.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:44)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1110)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:603)
+	at java.lang.Thread.run(Thread.java:722)
