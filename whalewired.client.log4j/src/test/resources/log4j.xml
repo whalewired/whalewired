@@ -4,10 +4,10 @@
 <log4j:configuration>
 
   <appender name="WhaleWiredAppender" class="com.whalewired.client.log4j.WhaleWiredAppender">
-  	<param name="whalewired_es" value="172.17.33.54"/>
+  	<param name="whalewired_es" value="localhost"/>
   	<param name="whalewired_es_port" value="9200"/>
   	<param name="log_account" value="DEV_WL"/>
-  	<param name="log_application" value="clfr.udv.optagelse.dk"/>
+  	<param name="log_application" value="clfr.nine.dk"/>
   	<param name="log_host" value="DEV_WL"/>
   	<param name="max_threads" value="1"/>
   </appender>
