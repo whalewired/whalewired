@@ -8,8 +8,8 @@ We needed a simple solution to a complex problem - getting realtime understading
 The code is currently maintained and contributed to by 
 [Christian Landbo Frederiksen](http://twitter.com/christianlandbo ) 
 [Michael Ryberg Hartmann](http://twitter.com/michartmann) 
-[Piotr Skawinski] 
-[Thomas Lefèvre]
+[Piotr Skawinski](http://twitter.com/) 
+[Thomas Lefevre](http://twitter.com/) 
 
 
 To get started, checkout .... coming soon.....
