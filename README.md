@@ -5,6 +5,13 @@ WhaleWired is a realtime, simple and powerfull tool to concatenate, index and ma
 The idea was coined by [Christian Landbo Frederiksen](http://twitter.com/christianlandbo ) at [Michael Ryberg Hartmann](http://twitter.com/michartmann) at Traen [traen.com] after tirelessly pounding through tons of log4j logs during our projects. 
 We needed a simple solution to a complex problem - getting realtime understading of the applications logs from multiple producion servers in a intelligent way 
 
+The code is currently maintained and contributed to by 
+[Christian Landbo Frederiksen](http://twitter.com/christianlandbo ) 
+[Michael Ryberg Hartmann](http://twitter.com/michartmann) 
+[Piotr Skawinski] 
+[Thomas Lefèvre]
+
+
 To get started, checkout .... coming soon.....
 
 
