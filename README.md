@@ -81,7 +81,7 @@ Authors
 
 **Michael Ryberg Hartmann**
 
-+ http://twitter.com/mdo
++ http://twitter.com/michartmann
 + http://github.com/michartmann
 
 **Christian Landbo Frederiksen**
