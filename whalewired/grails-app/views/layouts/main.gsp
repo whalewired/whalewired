@@ -20,11 +20,13 @@
 <link rel="apple-touch-icon" sizes="114x114" href="${resource(dir: 'images', file: 'apple-touch-icon-retina.png')}">
 <link rel="stylesheet" href="${resource(dir: 'css', file: 'kendo.common.min.css')}"	type="text/css" />
 <link rel="stylesheet"	href="${resource(dir: 'css', file: 'kendo.default.min.css')}" type="text/css" />
-<link rel="stylesheet" href="${resource(dir: 'css', file: 'jquery.qtip.min.css')}"type="text/css" />
 <!-- 		<link rel="stylesheet" href="${resource(dir: 'css', file: 'mobile.css')}" type="text/css"> -->
 <g:javascript src="jquery.min.js" library="jquery" />
 <g:javascript src="application.js" />
 <g:javascript src="kendo.all.min.js" />
+
+<!-- Adding jQuery qTip plugin -->
+<link rel="stylesheet" href="${resource(dir: 'css', file: 'jquery.qtip.min.css')}"type="text/css" />
 <g:javascript src="jquery.qtip.min.js" />
 
 <!-- Loading Simplenso Bootstrap Template. See SimplensoResources.groovy -->

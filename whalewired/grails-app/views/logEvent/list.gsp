@@ -4,7 +4,6 @@
 <meta name="layout" content="main" />
 <title>Events</title>
 <script type="text/javascript">
-
 			var grid;
 			var tailWindow;
 			var tailWindowTimer;
@@ -93,9 +92,7 @@
 		            		  
        			           $(this).qtip(
             		      {
-            		         content: {
-            		            text: $(this).attr('tooltip')
-            		         },
+            		         content: $(this).attr('tooltip'),
             		         position: {
                 		         target: 'mouse',
                 		         adjust: {	
@@ -126,14 +123,14 @@
                    columns: [{field:"logTime",title:"Time",width:"47px",template:'<a href="show/#=escape(data._id)#">#=(kendo.toString(new Date(logTime),"dd-MM-yyyy HH:mm:ss"))#</a>'},
                              {field:"hostName",title:"Host", width:"30px"},
                              {field:"logLevel",title:"Level", width:"30px"},
-                             {field:"logMessage",title:"Message", width:"250px", template:'<span tooltip="#=data.logThrowableTrace ? logThrowableTrace.substring(0, 500) + \"...\" : \"\"#" style="#=data.logThrowableTrace ? \"cursor: pointer;\": \"\"#">#=logMessage#</span>'},
+                             {field:"logMessage",title:"Message", width:"250px", template:'<span tooltip="#=data.logThrowableTrace ? logThrowableTrace.substring(0, 500) + \"...\" : \" No trace \"#" style="#=data.logThrowableTrace ? \"cursor: pointer;\": \"\"#">#=logMessage#</span>'},
                              {title:"Issue", width:"15px", template:'<img src="#=data.issueId ? \"${resource(dir: 'images', file: 'jira.png')}\" : \"${resource(dir: 'images', file: 'Blank.png')}\" #" alt="Jira">'},
                              {title:"Mark", width:"15px", template:'<img align="center" valign="center" src="#=data.bookmarkId ? \"${resource(dir: 'images', file: 'bookmark.jpg')}\" : \"${resource(dir: 'images', file: 'Blank.png')}\" #" alt="Bookmark">'}]
                });				
 
 				grid = $("#eventTable").data("kendoGrid");
 				$("#eventTable").height("auto"); // IE9 fix
-
+				
 	            $("#applicationFilter").kendoDropDownList({
 	           		dataSource: {
 	                	type: "json",
