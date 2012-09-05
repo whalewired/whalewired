@@ -1,7 +1,4 @@
 package com.whalewired.services
-
-import org.springframework.context.i18n.LocaleContextHolder as LCH
-
 import static org.elasticsearch.index.query.FilterBuilders.*;
 import static org.elasticsearch.index.query.QueryBuilders.*;
 import static org.elasticsearch.node.NodeBuilder.*;
@@ -26,7 +23,6 @@ import static org.elasticsearch.groovy.node.GNodeBuilder.*
 
 class ElasticSearchService {
 
-	def messageSource
 	def elasticSearchAdminService;
 	def weekDays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
 	
