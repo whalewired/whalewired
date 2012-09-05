@@ -31,7 +31,7 @@ class LogEventController {
 	String currentLogSearch
 	
 	def index = {
-		render(view:"list", params: params);
+		redirect(action: "list", params: params)
 	}
 
 	def list = {			
