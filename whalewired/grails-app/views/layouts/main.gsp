@@ -77,8 +77,7 @@
 				
 				<div class="nav-collapse">
 					<ul class="nav">
-						<li><a class="home" href="${createLink(uri: '/')}"><i class="icon-home icon-white"></i> <g:message
-									code="default.home.label" /></a></li>
+						<li><a class="home" href="${createLink(uri: '/')}"><i class="icon-home icon-white"></i> Home</a></li>
 						<li><a class="logEvent"
 							href="${createLink(uri: '/logEvent/list')}"><i class="icon-bullhorn icon-white"></i> Events</a></li>
 						<li><a class="bookmark"

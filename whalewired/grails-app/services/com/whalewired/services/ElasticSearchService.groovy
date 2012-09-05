@@ -1,11 +1,14 @@
 package com.whalewired.services
 
+import org.springframework.context.i18n.LocaleContextHolder as LCH
+
 import static org.elasticsearch.index.query.FilterBuilders.*;
 import static org.elasticsearch.index.query.QueryBuilders.*;
 import static org.elasticsearch.node.NodeBuilder.*;
 import static com.whalewired.services.ElasticSearchAdminService.*;
 
 import org.elasticsearch.search.*;
+import org.elasticsearch.search.facet.datehistogram.DateHistogramFacetProcessor.DateFieldParser.DayOfMonth;
 import org.elasticsearch.search.sort.SortOrder
 import org.elasticsearch.action.get.GetResponse;
 import org.elasticsearch.action.search.*;
@@ -23,7 +26,9 @@ import static org.elasticsearch.groovy.node.GNodeBuilder.*
 
 class ElasticSearchService {
 
+	def messageSource
 	def elasticSearchAdminService;
+	def weekDays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
 	
 	def findLogEventOccurrencesForLastNumberOfDays(indexName, lastNumberOfDays, throwableLocation, logLocation, logThrowableType) {
 		def resultSet = new ListResultSet()		
@@ -46,7 +51,7 @@ class ElasticSearchService {
 				patternInterval.logThrowableLocation,
 				patternInterval.logLocation,
 				patternInterval.logThrowableType)
-			
+				
 			resultSet.result << entry
 		}
 		resultSet
@@ -82,9 +87,9 @@ class ElasticSearchService {
 		def totalHits = resp.getHits().getTotalHits()
 
 		// log.info("number of hits:  " + totalHits)
-
 		return new LogEventOccurrenceEntry(
-			date: fromCalendar.format("[" + datePattern) + " - " + toCalendar.format(datePattern) + "]",
+			date: weekDays[fromCalendar.get(Calendar.DAY_OF_WEEK)-1]+" ["+fromCalendar.format(datePattern) + " - " + toCalendar.format(datePattern) + "]",
+			dayOfWeek: fromCalendar.get(Calendar.DAY_OF_WEEK),
 			occurs: totalHits);
 	}
 		

@@ -73,16 +73,20 @@
 						field: "occurs",
 		            	name: "Occurrences"
 		        	}],
-		        	valueAxis: {
+		        	valueAxis: [{
 		        		labels: {
 		        			format: "{0}"
 						}
-		        	},
+		        	}],		        	
 		        	categoryAxis: {
-		        		field: "date"
+		        		field: "date",
+			        	labels: {
+							format: "{0}"
+				        }
 		        	}
 		    	});
 			}
+						
 			
 			var intervalItems = new kendo.data.DataSource({data:[ 
 			        
