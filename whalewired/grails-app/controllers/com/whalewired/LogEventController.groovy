@@ -34,7 +34,8 @@ class LogEventController {
 		render(view:"list", params: params);
 	}
 
-	def list = {					
+	def list = {			
+		
 //		if (currentApplication == null) {
 //			def cookie = g.cookie(name: "ww_preferred_app");
 //			currentApplication = cookie;
@@ -68,7 +69,7 @@ class LogEventController {
 
 		def resultSet = elasticSearchService.executeQuery(currentApplication, currentLogLevel, currentLogSearch, 
 			pageSize, skip, params.sortField, params.sortOrder);
-		
+				
 		render resultSet as JSON
 	}
 

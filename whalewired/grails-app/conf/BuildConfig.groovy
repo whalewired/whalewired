@@ -41,6 +41,11 @@ grails.project.dependency.resolution = {
     plugins {
         compile ":hibernate:$grailsVersion"
         compile ":resources:1.0"
+		
+		//For installing Bootstrap Twitter Plugin
+		/*runtime ':twitter-bootstrap:2.0.0.16'
+		runtime ':fields:1.0.1'*/
+		
         build ":tomcat:$grailsVersion"
     }
 	

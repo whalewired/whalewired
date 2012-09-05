@@ -17,7 +17,7 @@
 			    	});
 		    	}
 	    	);
-
+	    	
 			function refreshChart(interval) {
 	   			/**
 	   				Would like to configure url on the fly like:
@@ -32,6 +32,12 @@
 	   			$("#chart").data("kendoChart").refresh();
 			}
 
+			
+			$(window).resize(function() {
+				//on resizing window, then refresh chart
+				$("#chart").data("kendoChart").refresh();
+			});
+			
 			function getLastNumberOfDays() {
 				return document.getElementById('lastNumberOfDays').value;
 			}
@@ -120,12 +126,16 @@
 		<title><g:message code="default.show.label" args="[entityName]" /></title>
 </head>
 <body>
-	<div id="show-logEvent" class="content scaffold-show container"
-		role="main">
+	<div id="show-logEvent" class="content scaffold-show" role="main">
 		<div>
 			<h1>
 				<g:message code="default.show.label" args="[entityName]" />
 			</h1>
+			<g:if test="${flash.message}">
+				<div class="message" role="status">
+					${flash.message}
+				</div>
+			</g:if>
 
 			<g:if test="${!externalIssue}">
 				<button id="createIssueButton" class="k-button"
@@ -138,22 +148,17 @@
 					style="float: right; position: relative; bottom: 28px; right: 30px;">Bookmark</button>
 			</g:if>
 			
-			<g:if test="${flash.message}">
-				<div class="message" role="status">
-					${flash.message}
-				</div>
-			</g:if>
 		</div>
-		<div style="width: 100%; display: table; margin-bottom: 20px;">
+		<div style="width: 100%; display: table;">
 			<ol class="property-list logEvent"
-				style="display: inline-block; width: 59%;">
+				style="display: inline-block; width: 60%;">
 				<g:if test="${logEventInstance?.accountName}">
-					<li class="fieldcontain"><span id="accountName-label"
-						class="property-label"><g:message
-								code="logEvent.accountName.label" default="Account Name" /></span> <span
-						class="property-value" aria-labelledby="accountName-label">
-							${logEventInstance?.accountName}
-					</span></li>
+					<li class="fieldcontain">
+						<span id="accountName-label" class="property-label"><g:message
+								code="logEvent.accountName.label" default="Account Name" /></span> 
+						<span class="property-value" aria-labelledby="accountName-label">
+							${logEventInstance?.accountName}</span>
+					</li>
 				</g:if>
 
 				<g:if test="${logEventInstance?.applicationName}">
@@ -279,8 +284,8 @@
 							$('#createIssuePanel').show('slow');
 						});
 					</r:script>
-
-				<div id="createIssuePanel" class="createIssuePanel">
+					
+				<div id="createIssuePanel" class="createIssuePanel ">
 					<g:form name="createIssueForm" action="createIssue">
 						<label for="summary">Summary</label>
 						<input type="text" name="summary" disabled="disabled"
@@ -412,7 +417,7 @@
 	</div>
 
 	<!-- Chart -->
-	<div class="chart-wrapper">
+	<div class="chart-wrapper" style="padding: 20px 0px 0px 0px;">
 		<label for="lastNumberOfDays" style="margin-left: 10px">
 			Select number of last hours or days to see occurrences for the same event: </label>
 		<!-- 

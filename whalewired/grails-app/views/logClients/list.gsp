@@ -14,7 +14,7 @@
 				</div>
 			</g:if>
 			
-			<h1>Log4j</h1>
+			<h2>Log4j</h2>
 			<div id="clients" style="clear: left; float: left; margin: 10px; border-radius: 5px; height: auto; width: 98.8%; padding-left: 10px; ">
 			<g:each in="${fileResourceInstanceList}">
 				<p>

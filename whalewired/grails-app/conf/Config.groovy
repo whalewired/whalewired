@@ -53,11 +53,11 @@ grails.exceptionresolver.params.exclude = ['password']
 environments {
     development {
         grails.serverURL = "http://localhost:8090/${appName}"
-		esCluster = "whalewired_cluster"
+		esCluster = "traen_whalewired_cluster"
     }
     test {
         grails.serverURL = "http://localhost:8090/${appName}"
-		esCluster = "whalewired_cluster"
+		esCluster = "traen_whalewired_cluster"
     }
 }
 
@@ -65,3 +65,7 @@ environments {
 grails.plugins.springsecurity.userLookup.userDomainClassName = 'com.whalewired.User'
 grails.plugins.springsecurity.userLookup.authorityJoinClassName = 'com.whalewired.UserRole'
 grails.plugins.springsecurity.authority.className = 'com.whalewired.Role'
+
+//Added for Twitter Bootstrap Plugin
+grails.plugins.twitterbootstrap.fixtaglib = true
+grails.plugins.twitterbootstrap.defaultBundle = 'bundle_bootstrap'

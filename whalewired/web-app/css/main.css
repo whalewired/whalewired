@@ -1,103 +1,13 @@
 /* FONT STACK */
-body,
-input, select, textarea {
-	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-	font-size: 0.7em;
-}
 
-/* BASE LAYOUT */
-
-html {
-	background-color: #ddd;
-	background-image: -moz-linear-gradient(center top, #aaa, #ddd);
-	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #aaa), color-stop(1, #ddd));
-	background-image: linear-gradient(top, #aaa, #ddd);
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorStr = '#aaaaaa', EndColorStr = '#dddddd');
-	background-repeat: no-repeat;
-	height: 100%;
-	/* change the box model to exclude the padding from the calculation of 100% height (IE8+) */
-	-webkit-box-sizing: border-box;
-	   -moz-box-sizing: border-box;
-	        box-sizing: border-box;
-}
-
-html.no-cssgradients {
-	background-color: #aaa;
-}
-
-.ie6 html {
-	height: 100%;
-}
-
-html * {
-	margin: 0;
-}
-
-body {
-	background: #ffffff;
-	color: #333333;
-	margin: 0 auto;
-	max-width: 1200px;
-	overflow-x: hidden; /* prevents box-shadow causing a horizontal scrollbar in firefox when viewport < 960px wide */
-	   -moz-box-shadow: 0 0 0.3em #255b17;
-	-webkit-box-shadow: 0 0 0.3em #255b17;
-	        box-shadow: 0 0 0.3em #255b17;
-}
-
-#grailsLogo {
-	background-color: #abbf78;
-}
-
-/* replace with .no-boxshadow body if you have modernizr available */
-.ie6 body,
-.ie7 body,
-.ie8 body {
-	border-color: #255b17;
-	border-style: solid;
-	border-width: 0 1px;
-}
-
-.ie6 body {
-	height: 100%;
-}
-
-a:link, a:visited, a:hover {
-	color: #48802c;
-}
-
-a:hover, a:active {
-	outline: none; /* prevents outline in webkit on active links but retains it for tab focus */
-}
-
-h1 {
-	color: #48802c;
-	font-weight: normal;
-	font-size: 1.25em;
-	margin: 0.8em 0 0.3em 0;
-}
-
-ul {
-	padding: 0;
-}
-
-img {
-	border: 0;
-}
 
 /* GENERAL */
-
-#grailsLogo a {
-	display: inline-block;
-	margin: 0.6em;
-	margin-left: 1.0em;
-}
 
 .content {
 }
 
-.content h1 {
-	border-bottom: 1px solid #CCCCCC;
-	margin: 0.8em 1em 0.3em;
+.content h1, h2 {
+	margin: 0.8em 1em 0px 0px;
 	padding: 0 0.25em;
 }
 
@@ -106,20 +16,14 @@ img {
 }
 
 .footer {
-	background: #abbf78;
-	color: #000;
 	clear: both;
 	font-size: 0.8em;
 	padding: 1em;
 	min-height: 1em;
 }
 
-.footer a {
-	color: #255b17;
-}
-
 .spinner {
-	background: url(../images/spinner.gif) 50% 50% no-repeat transparent;
+	background: url(../images/spinner.gi	f) 50% 50% no-repeat transparent;
 	height: 16px;
 	width: 16px;
     padding: 0.5em;
@@ -131,64 +35,12 @@ img {
 
 /* NAVIGATION MENU */
 
-.nav {
-	background-color: #efefef;
-	padding: 0.5em 0.75em;
-	   -moz-box-shadow: 0 0 3px 1px #aaaaaa;
-	-webkit-box-shadow: 0 0 3px 1px #aaaaaa;
-	        box-shadow: 0 0 3px 1px #aaaaaa;
-	zoom: 1;
-}
-
-.nav ul {
-	overflow: hidden;
-	padding-left: 0;
-	zoom: 1;
-}
-
-.nav li {
-	display: block;
-	float: left;
-	list-style-type: none;
-	margin-right: 0.5em;
-	padding: 0;
-}
-
-.nav a {
-	color: #666666;
-	display: block;
-	padding: 0.25em 0.7em;
-	text-decoration: none;
-	   -moz-border-radius: 0.3em;
-	-webkit-border-radius: 0.3em;
-	        border-radius: 0.3em;
-}
-
-.nav a:active, .nav a:visited {
-	color: #666666;
-}
-
-.nav a:focus, .nav a:hover {
-	background-color: #999999;
-	color: #ffffff;
-	outline: none;
-	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
-}
-
-.no-borderradius .nav a:focus, .no-borderradius .nav a:hover {
-	background-color: transparent;
-	color: #444444;
-	text-decoration: underline;
-}
 
 a.home, a.list, a.create, a.logEvent, a.bookmark, a.applications, a.clients {
 	background-position: 0.7em center;
 	background-repeat: no-repeat;
-	text-indent: 25px;
-}
-
-a.home {
-	background-image: url(../images/skin/house.png);
+	text-indent: 10px;
+	margin: 3px 0px 0px 0px;
 }
 
 a.list {
@@ -203,8 +55,8 @@ a.create {
 
 fieldset,
 .property-list {
-	margin: 0.6em 1.25em 0 1.25em;
-	padding: 0.3em 1.8em 1.25em;
+	margin: 0.0em 1.25em 0 0em;
+	padding: 0.0em 1.8em 1.25em 0px;
 	position: relative;
 	zoom: 1;
 	border: none;
@@ -224,7 +76,7 @@ fieldset,
 .fieldcontain .property-label {
 	color: #666666;
 	text-align: right;
-	width: 15%;
+	width: 100px;
 }
 
 .fieldcontain .property-label {
@@ -233,7 +85,7 @@ fieldset,
 
 .fieldcontain .property-value {
 	display: block;
-	margin-left: 17%;
+	margin-left: 125px;
 }
 
 label {
@@ -303,6 +155,14 @@ ul.one-to-many {
 ul.one-to-many li.add {
 	list-style-type: none;
 }
+
+
+/* General styling */
+.optionPanel {
+	float: left;
+	padding: 0px 0px 0px 5px;
+}
+
 
 /* EMBEDDED PROPERTIES */
 
@@ -398,6 +258,7 @@ table {
 	border-top: 1px solid #DFDFDF;
 	border-collapse: collapse;
 	width: 100%;
+	margin: 0 0;
 }
 
 tr {
@@ -604,22 +465,6 @@ a.skip {
 	
 }
 
-a.logEvent {
-	background-image: url(../images/debug_view.png);
-}
-
-a.bookmark {
-	background-image: url(../images/bookmark.jpg);
-}
-
-a.applications {
-	background-image: url(../images/window_earth.png);
-}
-
-a.clients {
-	background-image: url(../images/clients.png);
-}
-
 .ui-tooltip-content {
     background-color: window !important;
     border-color: window !important;
@@ -645,3 +490,4 @@ a.clients {
 	display: block;
 	width: 100%;
 }
+

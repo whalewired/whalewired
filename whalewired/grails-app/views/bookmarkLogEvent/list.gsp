@@ -191,28 +191,32 @@
 			
 		<div id="list-logEvent" class="content scaffold-list" role="main">
 			<h1>Bookmarks</h1>
-			<div class="message">${flash.message}</div>
-		</div>
-		<div> 
-			<g:form url="[action:'list', controller:'bookmarkLogEvent']">
+			
+			<g:if test="${flash.message}">
+				<div class="message" role="status">
+					${flash.message}
+				</div>
+			</g:if>
+			<div> 
+				<g:form url="[action:'list', controller:'bookmarkLogEvent']" style="margin: 0px 0px 0px 0px;">
+					<div class="optionPanel" style="margin: 0px 0px 10px;">
+						<label for="applicationDropdown" style="margin-left: 10px">Application</label><br />
+						<input id="applicationDropdown" name="currentApplication" 
+							value="${currentApplication}" onchange="submit();"/>					
+					</div>							
+				</g:form>
+				<!-- 
 				<div style="float: left;">
 					<label for="applicationDropdown" style="margin-left: 30px">Application</label>
-					<input id="applicationDropdown" name="currentApplication" 
-						value="${currentApplication}" onchange="submit();"/>					
-				</div>							
-			</g:form>
-			<!-- 
-			<div style="float: left;">
-				<label for="applicationDropdown" style="margin-left: 30px">Application</label>
-				<input id="applicationDropdown" value="${currentApplication}"/>					
-			</div>
-			-->
-						
-		</div>		
+					<input id="applicationDropdown" value="${currentApplication}"/>					
+				</div>
+				-->		
+			</div>		
 				 
-		<div id="bookmarkGrid"
-			style="clear: left; float: left; margin: 5px; border-radius: 5px; height: auto; width: 98.8%;"></div>
-			
-		<div id="details"></div>																		
+			<div id="bookmarkGrid"
+				style="clear: left; float: left; margin: 5px; border-radius: 5px; height: auto; width: 98.8%;"></div>
+				
+			<div id="details"></div>																		
+		</div>
 	</body>
 </html>

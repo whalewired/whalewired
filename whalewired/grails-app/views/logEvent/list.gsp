@@ -1,9 +1,9 @@
 <!doctype html>
 <html>
-	<head>
-		<meta name="layout" content="main" />
-		<title>Events</title>
-		<script type="text/javascript">
+<head>
+<meta name="layout" content="main" />
+<title>Events</title>
+<script type="text/javascript">
 
 			var grid;
 			var tailWindow;
@@ -182,46 +182,51 @@
            });
 		</script>
 
-	</head>
-	<body>
-		<a href="#list-logEvent" class="skip" tabindex="-1"><g:message
-				code="default.link.skip.label" default="Skip to content&hellip;" /></a>
-		<div id="list-logEvent" class="content scaffold-list" role="main">
-			<h1>Events</h1>
-			<g:if test="${flash.message}">
-				<div class="message" role="status">
-					${flash.message}
-				</div>
-			</g:if>
-			<div>
-				<div style="float: left;">
-					<label for="applicationFilter" style="margin-left: 10px">Application</label>
-					<input id="applicationFilter" value="${currentApplication}"/>
-				</div>
-				<div style="float: left;">
-					<label for="logLevelFilter" style="margin-left: 10px">Level</label>
-					<input id="logLevelFilter" value="${currentLogLevel}"/>
-				</div>
-				<div style="float: left;">
-					<label for="searchFilter" style="margin-left: 10px">Query</label> 
-					<input id="searchFilter" type="text" onkeyup="triggerSearch();" value="${currentLogSearch}" />
-				</div>
+</head>
+<body>
+	<a href="#list-logEvent" class="skip" tabindex="-1"><g:message
+			code="default.link.skip.label" default="Skip to content&hellip;" /></a>
+	<div id="list-logEvent" class="content scaffold-list" role="main">
+		<h1>Events</h1>
+		<g:if test="${flash.message}">
+			<div class="message" role="status">
+				${flash.message}
 			</div>
-			<div style="float: right; margin: 0px 5px 2px;">
-				<label for="pollingInterval">Polling interval (seconds): </label> <input
-					id="pollingInterval" value="10"
-					onkeypress="if (event.keyCode == 13) $('#pollingButton').click();"
-					style="position: relative; top: 1px; text-align: right; width: 30px;" />
-				<button id="pollingButton" onclick="triggerPolling();"
-					class="k-button">Start</button>
-				<button id="tailButton" onclick="showTail();" class="k-button">Tail</button>
+		</g:if>
+		<div>
+			<div class="optionPanel">
+				<label for="applicationFilter" style="margin-left: 10px">Application</label><br />
+				<input id="applicationFilter" value="${currentApplication}" />
 			</div>
-			<div id="eventTable"
-				style="clear: left; float: left; margin: 5px; border-radius: 5px; height: auto; width: 98.8%;"></div>
-		</div >
-		<div id="detail"></div>
-		<div id="tail" style="width: 100%; word-wrap: break-word;"></div>
-		<div id="traceTeaser"></div>
-	
-	</body>
+			<div class="optionPanel">
+				<label for="logLevelFilter" style="margin-left: 10px">Level</label><br />
+				<input id="logLevelFilter" value="${currentLogLevel}" />
+			</div>
+			<div class="optionPanel">
+				<label for="searchFilter" style="margin-left: 10px">Query</label><br /> 
+				<input
+					id="searchFilter" type="text" onkeyup="triggerSearch();"
+					value="${currentLogSearch}" />
+			</div>
+		</div>
+
+
+		<div style="float: right; margin: 0px 11px 10px;">
+			<label for="pollingInterval">Polling interval (seconds): </label><br /> 
+			<input
+				id="pollingInterval" type="text" value="10"
+				onkeypress="if (event.keyCode == 13) $('#pollingButton').click();"
+				style="position: relative; top: 4px; text-align: right; width: 30px;" />
+			<button id="pollingButton" onclick="triggerPolling();"
+				class="k-button">Start</button>
+			<button id="tailButton" onclick="showTail();" class="k-button">Tail</button>
+		</div>
+		<div id="eventTable"
+			style="clear: left; float: left; margin: 5px; border-radius: 5px; height: auto; width: 98.8%;"></div>
+	</div>
+	<div id="detail"></div>
+	<div id="tail" style="width: 100%; word-wrap: break-word;"></div>
+	<div id="traceTeaser"></div>
+
+</body>
 </html>
