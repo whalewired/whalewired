@@ -57,7 +57,7 @@
                     	type: "json",
                        	transport: {
                         	read: {
-                            	url: "listJSON"
+                            	url: "/${grailsApplication.metadata.'app.name'}/logEvent/listJSON"
                            	},
                            	parameterMap: function(options) {
  			               		return {
@@ -135,7 +135,7 @@
 	           		dataSource: {
 	                	type: "json",
 	                    transport: {
-	                    	read: "../logApplication/listJSON"
+	                    	read: "/${grailsApplication.metadata.'app.name'}/logApplication/listJSON"
 	                    },
 	                    schema: {
 	                        data: function(data) {
