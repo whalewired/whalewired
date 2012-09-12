@@ -154,8 +154,10 @@ class LogEventController {
 		def logEventId = params.id							
 		def logEventInstance = elasticSearchService.getLogEvent(currentApplication, logEventId)		
 		ListResultSet resultSet = elasticSearchService.findLogEventOccurrenceEntries(
-			new PatternInterval(value: PatternInterval.Interval.valueOf(params.interval), 
-				indexName: currentApplication, 
+			new PatternInterval(
+				value: PatternInterval.Interval.valueOf(params.interval), 
+				indexName: currentApplication,
+				sampleSize: 10, 
 				logThrowableLocation: logEventInstance.logThrowableLocation,
 				logLocation: logEventInstance.logLocation,
 				logThrowableType: logEventInstance.logThrowableType))

@@ -66,11 +66,14 @@ class BookmarkLogEventController {
 		// def lastNumberOfDays = 7
 		def bookmarkLogEvent = BookmarkLogEvent.get(Long.valueOf(params.id))		
 		def resultSet = elasticSearchService.findLogEventOccurrenceEntries(
-			new PatternInterval(value: PatternInterval.Interval.LAST_12_HOURS,
+			new PatternInterval(
+				value: PatternInterval.Interval.LAST_12_HOURS,
 				indexName: bookmarkLogEvent.indexName,
 				logThrowableLocation: bookmarkLogEvent.throwableLocation,
+				sampleSize: 6,
 				logLocation: bookmarkLogEvent.logLocation,
-				logThrowableType: bookmarkLogEvent.exceptionType))
+				logThrowableType: bookmarkLogEvent.exceptionType)
+			)
 		
 		/*
 		def resultSet = elasticSearchService.findLogEventOccurrencesForLastNumberOfDays(

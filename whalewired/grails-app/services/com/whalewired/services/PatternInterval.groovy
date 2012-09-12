@@ -19,6 +19,8 @@ class PatternInterval {
 	def logLocation
 	def logThrowableType
 	def factor
+	def sampleSize
+	def private defaultSampleSize = 10
 			
 	def is1HourInterval() {
 		value.equals(Interval.LAST_1_HOUR)
@@ -67,14 +69,20 @@ class PatternInterval {
 	
 	def getFromToCalendarList() {
 		def list = []
+		
+		//If sampleSize is null then set as default to 10.
+		if(sampleSize == null){	
+			sampleSize = defaultSampleSize 
+		}
+		
+		
+		// steps are generated such that sampleSize steps occour
+		// Example sampleSize is 10
+		// 1 hour: 60 min / 10 = 6 min per step
+		
 		def factor = getFactor()
-		// steps are generated using following calculation
-		// 1h = every 5 min
-		// 3h = every 3*5 = 15 min
-		// 6h = every 6*5 = 30 min
-		// 12h = every 12*5 = 60 min = 1h
-		// ... and so on
-		((60*factor - 5*factor)..0).step(factor*5) {i ->
+		def fencePostFactor = (int) (60*factor-((int) Math.floor((60*factor)/sampleSize)))
+		(fencePostFactor..0).step( (int) (60*factor/sampleSize) ) {i ->
 			// from
 			def from = Calendar.instance
 			from.add(Calendar.MINUTE, -(i+factor*5))
@@ -86,9 +94,10 @@ class PatternInterval {
 			to[Calendar.SECOND] = 0
 			to[Calendar.MILLISECOND] = 0
 			
-			list << [from, to]			
+			list << [from, to]
 		}
 		list
-	}	
+	}
+
 
 }

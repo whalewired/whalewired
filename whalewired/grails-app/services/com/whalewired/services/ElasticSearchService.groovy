@@ -84,7 +84,7 @@ class ElasticSearchService {
 
 		// log.info("number of hits:  " + totalHits)
 		return new LogEventOccurrenceEntry(
-			date: weekDays[fromCalendar.get(Calendar.DAY_OF_WEEK)-1]+" ["+fromCalendar.format(datePattern) + " - " + toCalendar.format(datePattern) + "]",
+			date: weekDays[fromCalendar.get(Calendar.DAY_OF_WEEK)-1]+" ["+fromCalendar.format(datePattern) + "-" + toCalendar.format(datePattern) + "]",
 			dayOfWeek: fromCalendar.get(Calendar.DAY_OF_WEEK),
 			occurs: totalHits);
 	}
