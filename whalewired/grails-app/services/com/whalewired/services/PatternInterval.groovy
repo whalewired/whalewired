@@ -76,9 +76,11 @@ class PatternInterval {
 		}
 		
 		
+		//TODO - provide a better description of the logic below
+		
 		// steps are generated such that sampleSize steps occurs
 		// Example sampleSize is 10
-		// 1 hour: 60 min / 10 = 6 min per step
+		// 1 hour: 60 min / 10 = 6 min per step			
 		
 		def factor = getFactor()
 		def fencePostFactor = (int) (60*factor-((int) Math.floor((60*factor)/sampleSize)))
