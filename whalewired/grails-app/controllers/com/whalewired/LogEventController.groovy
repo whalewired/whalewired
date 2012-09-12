@@ -157,7 +157,7 @@ class LogEventController {
 			new PatternInterval(
 				value: PatternInterval.Interval.valueOf(params.interval), 
 				indexName: currentApplication,
-				sampleSize: 10, 
+				numberOfSamples: 10, 
 				logThrowableLocation: logEventInstance.logThrowableLocation,
 				logLocation: logEventInstance.logLocation,
 				logThrowableType: logEventInstance.logThrowableType))

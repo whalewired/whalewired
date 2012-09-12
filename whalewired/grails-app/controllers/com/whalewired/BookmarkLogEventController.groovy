@@ -70,7 +70,7 @@ class BookmarkLogEventController {
 				value: PatternInterval.Interval.LAST_12_HOURS,
 				indexName: bookmarkLogEvent.indexName,
 				logThrowableLocation: bookmarkLogEvent.throwableLocation,
-				sampleSize: 6,
+				numberOfSamples: 6,
 				logLocation: bookmarkLogEvent.logLocation,
 				logThrowableType: bookmarkLogEvent.exceptionType)
 			)
