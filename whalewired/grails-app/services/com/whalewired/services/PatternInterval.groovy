@@ -76,7 +76,7 @@ class PatternInterval {
 		}
 		
 		
-		// steps are generated such that sampleSize steps occour
+		// steps are generated such that sampleSize steps occurs
 		// Example sampleSize is 10
 		// 1 hour: 60 min / 10 = 6 min per step
 		
