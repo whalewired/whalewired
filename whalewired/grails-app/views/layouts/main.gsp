@@ -30,8 +30,6 @@
 <g:javascript src="jquery.qtip.min.js" />
 
 <!-- Loading Simplenso Bootstrap Template. See SimplensoResources.groovy -->
-<g:javascript src="bootstrap.js" />
-<g:javascript src="bootstrap.min.js" />
 <link rel="stylesheet" href="${resource(dir: 'css', file: 'themes/cerulean/bootstrap.min.css')}" type="text/css" />
 <link rel="stylesheet"	href="${resource(dir: 'css', file: 'simplenso.css')}" type="text/css" />
 <link rel="stylesheet" href="${resource(dir: 'css', file: 'themes/cerulean/simplenso.cerulean.css')}" type="text/css">
@@ -39,6 +37,7 @@
 
 <link rel="stylesheet" href="${resource(dir: 'css', file: 'main.css')}" type="text/css">
 
+<g:javascript src="bootstrap.min.js" />
 <g:setProvider library="jquery" />
 <g:layoutHead />
 <script type="text/javascript">

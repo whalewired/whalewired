@@ -20,6 +20,7 @@ class PatternInterval {
 	def logThrowableType
 	def factor
 	def numberOfSamples
+	def logLevel 
 	def private defaultSampleSize = 10
 			
 	def is1HourInterval() {

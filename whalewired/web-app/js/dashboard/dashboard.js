@@ -10,6 +10,10 @@ var cookieExpiration = 365;
 
 $(document).ready(function(){
 	
+	/*
+	 * Portlet code start here 
+	 */
+	
 	// Control funtion for portlet (box) buttons clicks
 	function setControls(ui) {		
 		//$('[class="box-btn"][title="toggle"]').click(function() {

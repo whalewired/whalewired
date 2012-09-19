@@ -1,6 +1,7 @@
 package com.whalewired
 
 import java.awt.ModalEventFilter.ApplicationModalEventFilter;
+import java.util.Date;
 
 import javax.servlet.http.Cookie;
 
@@ -64,7 +65,7 @@ class BookmarkLogEventController {
 	
 	def bookmarkOccurrencesAsJSON() {
 		// def lastNumberOfDays = 7
-		def bookmarkLogEvent = BookmarkLogEvent.get(Long.valueOf(params.id))		
+		def bookmarkLogEvent = BookmarkLogEvent.get(Long.valueOf(params.id))	
 		def resultSet = elasticSearchService.findLogEventOccurrenceEntries(
 			new PatternInterval(
 				value: PatternInterval.Interval.LAST_12_HOURS,

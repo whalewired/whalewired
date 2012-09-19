@@ -54,7 +54,11 @@ function createBookmarkTable(gridId, dropDownId, currentApplication, columns) {
 	    }
 	});
 	
-	
+	createApplicationDropdown(dropDownId);	
+}
+
+
+function createApplicationDropdown(dropDownId){
 	var dropdown = $("#"+dropDownId).kendoDropDownList({
 	    dataTextField: "name",
 	    dataValueField: "name",
@@ -69,33 +73,10 @@ function createBookmarkTable(gridId, dropDownId, currentApplication, columns) {
 	            }
 	        }
 	    }
-		// TODO - want 'change event' to work, so changing application 
-		// can be done without submitting the page
-		/*                	
-	    change: function() {
-	        var value = this.value();
-	        var gridDataSource = grid.data("kendoGrid").dataSource;
-	        if (value) {
-	        	gridDataSource.filter({
-	                field: "indexName", 
-	                operator: "eq", 
-	                value: value });
-	        } else {
-	        	gridDataSource.filter({});
-	        }                        
-	        
-	        for (var i=0; i<gridDataSource.total(); i++) {
-	        	var item = gridDataSource.at(i);
-	        	if (item.indexName == value) {
-	        		refreshChart(item.id);
-	            }                         	                    		
-	        }
-	        
-	    } 
-		*/               	
+         	
 	});		
-	
 }
+
 
 function showDetails(bookmarkId) {
 	tailWindow = $("#details").kendoWindow({

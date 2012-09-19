@@ -46,7 +46,8 @@ class ElasticSearchService {
 				patternInterval.indexName,
 				patternInterval.logThrowableLocation,
 				patternInterval.logLocation,
-				patternInterval.logThrowableType)
+				patternInterval.logThrowableType,
+				patternInterval.logLevel)
 				
 			resultSet.result << entry
 		}
@@ -55,11 +56,11 @@ class ElasticSearchService {
 	
 	def findLogEventOccurrenceEntry(fromCalendar, toCalendar,
 		datePattern, indexName,
-		throwableLocation, logLocation, logThrowableType) {
+		throwableLocation, logLocation, logThrowableType, logLevel) {
 		/*
 		 * query with filter
 		 */
-		QueryBuilder boolQuery = createLogEventPatternQueryBuilder(throwableLocation, logLocation, logThrowableType)
+		QueryBuilder boolQuery = createLogEventPatternQueryBuilder(throwableLocation, logLocation, logThrowableType, logLevel)
 
 		QueryBuilder filteredQuery = filteredQuery(
 				boolQuery,
@@ -67,12 +68,12 @@ class ElasticSearchService {
 				.from(fromCalendar.getTime().getTime())
 				.to(toCalendar.getTime().getTime())
 				);
-
-			/*
+			
+			
 		log.info("from: " + fromCalendar.getTime())
 		log.info("to: " + toCalendar.getTime())
 		log.info("query: " + filteredQuery.toString())
-		*/
+		
 
 		Client client = getEsClient()
 		SearchResponse resp = client.prepareSearch()
@@ -199,7 +200,7 @@ class ElasticSearchService {
 	}
 	
 	def updateLogs(indexName, logThrowableLocation, logLocation, logThrowableType, fieldsToUpdate) {		
-		BoolQueryBuilder buildQuery = createLogEventPatternQueryBuilder(logThrowableLocation, logLocation, logThrowableType)
+		BoolQueryBuilder buildQuery = createLogEventPatternQueryBuilder(logThrowableLocation, logLocation, logThrowableType, null)
 		def resultSet = buildLogEventSourceListFromBuildQuery(indexName, buildQuery)
 		def updateCounter = 0
 		log.info("resultSet.size: " + resultSet.result.size())
@@ -269,7 +270,7 @@ class ElasticSearchService {
 		return resultSet
 	}
 	
-	def createLogEventPatternQueryBuilder(logThrowableLocation, logLocation, logThrowableType) {
+	def createLogEventPatternQueryBuilder(logThrowableLocation, logLocation, logThrowableType, logLevel) {
 		BoolQueryBuilder bool = boolQuery();
 		if (logThrowableLocation != null) {
 			bool.must(new TextQueryBuilder('logThrowableLocation', 
@@ -282,6 +283,10 @@ class ElasticSearchService {
 		if (logThrowableType != null) {
 			bool.must(new TextQueryBuilder('logThrowableType',
 					logThrowableType).type(TextQueryBuilder.Type.PHRASE_PREFIX));
+		}
+		if (logLevel != null) {
+			bool.must(new TextQueryBuilder('logLevel',
+					logLevel).type(TextQueryBuilder.Type.PHRASE_PREFIX));
 		}
 		return bool
 	}
