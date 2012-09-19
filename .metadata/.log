@@ -1,0 +1,134 @@
+!SESSION 2012-09-19 08:05:28.770 -----------------------------------------------
+eclipse.buildId=3.0.0.201208091018-RELEASE-e42
+java.version=1.6.0_24
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=linux, ARCH=x86, WS=gtk, NL=en_US
+Framework arguments:  -product org.springsource.sts.ide
+Command-line arguments:  -data /media/Windows7_OS/dev_ww/workspace/whalewired -os linux -ws gtk -arch x86 -product org.springsource.sts.ide
+
+!ENTRY org.eclipse.equinox.p2.transport.ecf 2 0 2012-09-19 08:05:36.006
+!MESSAGE Connection to http://download.eclipse.org/releases/juno/p2.index failed on download.eclipse.org. Retry attempt 0 started
+!STACK 0
+java.net.UnknownHostException: download.eclipse.org
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:175)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:384)
+	at java.net.Socket.connect(Socket.java:546)
+	at org.eclipse.ecf.provider.filetransfer.events.socket.SocketEventCreateUtil.createSocket(SocketEventCreateUtil.java:43)
+	at org.eclipse.ecf.internal.provider.filetransfer.httpclient.ECFHttpClientProtocolSocketFactory.createSocket(ECFHttpClientProtocolSocketFactory.java:81)
+	at org.eclipse.ecf.internal.provider.filetransfer.httpclient.ECFHttpClientProtocolSocketFactory.createSocket(ECFHttpClientProtocolSocketFactory.java:73)
+	at org.eclipse.ecf.internal.provider.filetransfer.httpclient.ECFHttpClientProtocolSocketFactory.createSocket(ECFHttpClientProtocolSocketFactory.java:65)
+	at org.apache.commons.httpclient.HttpConnection.open(HttpConnection.java:707)
+	at org.apache.commons.httpclient.MultiThreadedHttpConnectionManager$HttpConnectionAdapter.open(MultiThreadedHttpConnectionManager.java:1361)
+	at org.apache.commons.httpclient.HttpMethodDirector.executeWithRetry(HttpMethodDirector.java:387)
+	at org.apache.commons.httpclient.HttpMethodDirector.executeMethod(HttpMethodDirector.java:171)
+	at org.apache.commons.httpclient.HttpClient.executeMethod(HttpClient.java:397)
+	at org.apache.commons.httpclient.HttpClient.executeMethod(HttpClient.java:346)
+	at org.eclipse.ecf.provider.filetransfer.httpclient.HttpClientRetrieveFileTransfer.performConnect(HttpClientRetrieveFileTransfer.java:1129)
+	at org.eclipse.ecf.provider.filetransfer.httpclient.HttpClientRetrieveFileTransfer.openStreams(HttpClientRetrieveFileTransfer.java:699)
+	at org.eclipse.ecf.provider.filetransfer.retrieve.AbstractRetrieveFileTransfer.sendRetrieveRequest(AbstractRetrieveFileTransfer.java:879)
+	at org.eclipse.ecf.provider.filetransfer.retrieve.AbstractRetrieveFileTransfer.sendRetrieveRequest(AbstractRetrieveFileTransfer.java:570)
+	at org.eclipse.ecf.provider.filetransfer.retrieve.MultiProtocolRetrieveAdapter.sendRetrieveRequest(MultiProtocolRetrieveAdapter.java:106)
+	at org.eclipse.equinox.internal.p2.transport.ecf.FileReader.sendRetrieveRequest(FileReader.java:422)
+	at org.eclipse.equinox.internal.p2.transport.ecf.FileReader.readInto(FileReader.java:355)
+	at org.eclipse.equinox.internal.p2.transport.ecf.RepositoryTransport.download(RepositoryTransport.java:101)
+	at org.eclipse.equinox.internal.p2.transport.ecf.RepositoryTransport.download(RepositoryTransport.java:156)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadIndexFile(AbstractRepositoryManager.java:721)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:640)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:96)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:92)
+	at org.eclipse.equinox.internal.p2.updatechecker.UpdateChecker.getAvailableRepositories(UpdateChecker.java:150)
+	at org.eclipse.equinox.internal.p2.updatechecker.UpdateChecker.checkForUpdates(UpdateChecker.java:128)
+	at org.eclipse.equinox.internal.p2.updatechecker.UpdateChecker$UpdateCheckThread.run(UpdateChecker.java:72)
+
+!ENTRY org.eclipse.osgi 2 1 2012-09-19 08:05:36.250
+!MESSAGE NLS unused message: CacheManager_CannotLoadNonUrlLocation in: org.eclipse.equinox.internal.p2.repository.messages
+
+!ENTRY org.eclipse.equinox.p2.transport.ecf 4 1006 2012-09-19 08:05:36.252
+!MESSAGE Unknown Host: http://download.eclipse.org/releases/juno/compositeContent.xml
+!STACK 0
+java.net.UnknownHostException: download.eclipse.org
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:175)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:384)
+	at java.net.Socket.connect(Socket.java:546)
+	at org.eclipse.ecf.provider.filetransfer.events.socket.SocketEventCreateUtil.createSocket(SocketEventCreateUtil.java:43)
+	at org.eclipse.ecf.internal.provider.filetransfer.httpclient.ECFHttpClientProtocolSocketFactory.createSocket(ECFHttpClientProtocolSocketFactory.java:81)
+	at org.eclipse.ecf.internal.provider.filetransfer.httpclient.ECFHttpClientProtocolSocketFactory.createSocket(ECFHttpClientProtocolSocketFactory.java:73)
+	at org.eclipse.ecf.internal.provider.filetransfer.httpclient.ECFHttpClientProtocolSocketFactory.createSocket(ECFHttpClientProtocolSocketFactory.java:65)
+	at org.apache.commons.httpclient.HttpConnection.open(HttpConnection.java:707)
+	at org.apache.commons.httpclient.MultiThreadedHttpConnectionManager$HttpConnectionAdapter.open(MultiThreadedHttpConnectionManager.java:1361)
+	at org.apache.commons.httpclient.HttpMethodDirector.executeWithRetry(HttpMethodDirector.java:387)
+	at org.apache.commons.httpclient.HttpMethodDirector.executeMethod(HttpMethodDirector.java:171)
+	at org.apache.commons.httpclient.HttpClient.executeMethod(HttpClient.java:397)
+	at org.apache.commons.httpclient.HttpClient.executeMethod(HttpClient.java:346)
+	at org.eclipse.ecf.provider.filetransfer.httpclient.HttpClientFileSystemBrowser.runRequest(HttpClientFileSystemBrowser.java:232)
+	at org.eclipse.ecf.provider.filetransfer.browse.AbstractFileSystemBrowser$DirectoryJob.run(AbstractFileSystemBrowser.java:69)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.equinox.p2.transport.ecf 2 0 2012-09-19 08:05:37.081
+!MESSAGE Connection to http://dist.springsource.com/release/TOOLS/update/e4.2/p2.index failed on dist.springsource.com. Retry attempt 0 started
+!STACK 0
+java.net.UnknownHostException: dist.springsource.com
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:175)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:384)
+	at java.net.Socket.connect(Socket.java:546)
+	at org.eclipse.ecf.provider.filetransfer.events.socket.SocketEventCreateUtil.createSocket(SocketEventCreateUtil.java:43)
+	at org.eclipse.ecf.internal.provider.filetransfer.httpclient.ECFHttpClientProtocolSocketFactory.createSocket(ECFHttpClientProtocolSocketFactory.java:81)
+	at org.eclipse.ecf.internal.provider.filetransfer.httpclient.ECFHttpClientProtocolSocketFactory.createSocket(ECFHttpClientProtocolSocketFactory.java:73)
+	at org.eclipse.ecf.internal.provider.filetransfer.httpclient.ECFHttpClientProtocolSocketFactory.createSocket(ECFHttpClientProtocolSocketFactory.java:65)
+	at org.apache.commons.httpclient.HttpConnection.open(HttpConnection.java:707)
+	at org.apache.commons.httpclient.MultiThreadedHttpConnectionManager$HttpConnectionAdapter.open(MultiThreadedHttpConnectionManager.java:1361)
+	at org.apache.commons.httpclient.HttpMethodDirector.executeWithRetry(HttpMethodDirector.java:387)
+	at org.apache.commons.httpclient.HttpMethodDirector.executeMethod(HttpMethodDirector.java:171)
+	at org.apache.commons.httpclient.HttpClient.executeMethod(HttpClient.java:397)
+	at org.apache.commons.httpclient.HttpClient.executeMethod(HttpClient.java:346)
+	at org.eclipse.ecf.provider.filetransfer.httpclient.HttpClientRetrieveFileTransfer.performConnect(HttpClientRetrieveFileTransfer.java:1129)
+	at org.eclipse.ecf.provider.filetransfer.httpclient.HttpClientRetrieveFileTransfer.openStreams(HttpClientRetrieveFileTransfer.java:699)
+	at org.eclipse.ecf.provider.filetransfer.retrieve.AbstractRetrieveFileTransfer.sendRetrieveRequest(AbstractRetrieveFileTransfer.java:879)
+	at org.eclipse.ecf.provider.filetransfer.retrieve.AbstractRetrieveFileTransfer.sendRetrieveRequest(AbstractRetrieveFileTransfer.java:570)
+	at org.eclipse.ecf.provider.filetransfer.retrieve.MultiProtocolRetrieveAdapter.sendRetrieveRequest(MultiProtocolRetrieveAdapter.java:106)
+	at org.eclipse.equinox.internal.p2.transport.ecf.FileReader.sendRetrieveRequest(FileReader.java:422)
+	at org.eclipse.equinox.internal.p2.transport.ecf.FileReader.readInto(FileReader.java:355)
+	at org.eclipse.equinox.internal.p2.transport.ecf.RepositoryTransport.download(RepositoryTransport.java:101)
+	at org.eclipse.equinox.internal.p2.transport.ecf.RepositoryTransport.download(RepositoryTransport.java:156)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadIndexFile(AbstractRepositoryManager.java:721)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:640)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:96)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:92)
+	at org.eclipse.equinox.internal.p2.updatechecker.UpdateChecker.getAvailableRepositories(UpdateChecker.java:150)
+	at org.eclipse.equinox.internal.p2.updatechecker.UpdateChecker.checkForUpdates(UpdateChecker.java:128)
+	at org.eclipse.equinox.internal.p2.updatechecker.UpdateChecker$UpdateCheckThread.run(UpdateChecker.java:72)
+
+!ENTRY org.eclipse.equinox.p2.transport.ecf 4 1006 2012-09-19 08:05:37.293
+!MESSAGE Unknown Host: http://dist.springsource.com/release/TOOLS/update/e4.2/compositeContent.xml
+!STACK 0
+java.net.UnknownHostException: dist.springsource.com
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:175)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:384)
+	at java.net.Socket.connect(Socket.java:546)
+	at org.eclipse.ecf.provider.filetransfer.events.socket.SocketEventCreateUtil.createSocket(SocketEventCreateUtil.java:43)
+	at org.eclipse.ecf.internal.provider.filetransfer.httpclient.ECFHttpClientProtocolSocketFactory.createSocket(ECFHttpClientProtocolSocketFactory.java:81)
+	at org.eclipse.ecf.internal.provider.filetransfer.httpclient.ECFHttpClientProtocolSocketFactory.createSocket(ECFHttpClientProtocolSocketFactory.java:73)
+	at org.eclipse.ecf.internal.provider.filetransfer.httpclient.ECFHttpClientProtocolSocketFactory.createSocket(ECFHttpClientProtocolSocketFactory.java:65)
+	at org.apache.commons.httpclient.HttpConnection.open(HttpConnection.java:707)
+	at org.apache.commons.httpclient.MultiThreadedHttpConnectionManager$HttpConnectionAdapter.open(MultiThreadedHttpConnectionManager.java:1361)
+	at org.apache.commons.httpclient.HttpMethodDirector.executeWithRetry(HttpMethodDirector.java:387)
+	at org.apache.commons.httpclient.HttpMethodDirector.executeMethod(HttpMethodDirector.java:171)
+	at org.apache.commons.httpclient.HttpClient.executeMethod(HttpClient.java:397)
+	at org.apache.commons.httpclient.HttpClient.executeMethod(HttpClient.java:346)
+	at org.eclipse.ecf.provider.filetransfer.httpclient.HttpClientFileSystemBrowser.runRequest(HttpClientFileSystemBrowser.java:232)
+	at org.eclipse.ecf.provider.filetransfer.browse.AbstractFileSystemBrowser$DirectoryJob.run(AbstractFileSystemBrowser.java:69)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.ui.browser 2 0 2012-09-19 08:05:41.024
+!MESSAGE Internal browser is not available: No more handles [Unknown Mozilla path (MOZILLA_FIVE_HOME not set)]
+
+!ENTRY org.springsource.ide.eclipse.commons.frameworks.core 0 0 2012-09-19 08:05:41.674
+!MESSAGE Result of converting legacy STS 2.x workspace preferences to 3.x
+!SUBENTRY 1 org.springsource.ide.eclipse.commons.frameworks.core 0 0 2012-09-19 08:05:41.674
+!MESSAGE Converted legacy STS plugin preferences
+!SUBENTRY 1 unknown 0 0 2012-09-19 08:05:41.674
+!MESSAGE OK
+!SUBENTRY 1 org.springsource.ide.eclipse.commons.frameworks.core 0 0 2012-09-19 08:05:41.674
+!MESSAGE Converted legacy Roo plugin state locations
+!SUBENTRY 1 org.springsource.ide.eclipse.commons.frameworks.core 0 0 2012-09-19 08:05:41.674
+!MESSAGE Converted legacy STS plugin state locations

@@ -34,7 +34,7 @@
 
       <div class="row-fluid">
       	 <!-- Portlet Set 1 -->
-         <div class="span6 column" id="col1">
+         <div class="span4 column" id="col1" style="min-width: 225px;">
          	 <!-- Portlet: Browser Usage Graph -->
              <div class="box" id="box-0">
               <h4 class="box-header round-top">Browser Usage Graph
@@ -49,7 +49,12 @@
               </div>
             </div><!--/span-->
             
-             <!-- Portlet: Page Visit Graph -->
+
+         </div>
+         
+
+      <div class="span4 column" id="col2" style="min-width: 225px;">
+                      <!-- Portlet: Page Visit Graph -->
              <div class="box" id="box-1">
               <h4 class="box-header round-top">Page Visit Graph
                  <!-- <a class="box-btn" title="close"><i class="icon-remove"></i></a> -->
@@ -64,8 +69,9 @@
             </div><!--/span-->
          </div>
          
+         
          <!-- Portlet Set 2 -->
-         <div class="span6 column" id="col2">
+         <div class="span4 column" id="col3" style="min-width: 225px;">
              <!-- Portlet: Site Activity Gauges -->
              <div class="box" id="box-2">
               <h4 class="box-header round-top">Bookmarks
