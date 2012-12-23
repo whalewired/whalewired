@@ -53,11 +53,11 @@ grails.exceptionresolver.params.exclude = ['password']
 environments {
     development {
         grails.serverURL = "http://localhost:8090/${appName}"
-		esCluster = "traen_whalewired_cluster"
+		esCluster = "whalewired_cluster"
     }
     test {
         grails.serverURL = "http://localhost:8090/${appName}"
-		esCluster = "traen_whalewired_cluster"
+		esCluster = "whalewired_cluster"
     }
 }
 
