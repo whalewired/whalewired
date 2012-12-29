@@ -41,7 +41,7 @@ grails.spring.bean.packages = []
 grails.views.javascript.library="jquery"
 jquery {
 	sources = '' // Holds the value where to store jQuery-js files /web-app/js/
-	version = '1.7.1' // The jQuery version in use
+	version = '1.8.3' // The jQuery version in use
 }
 
 grails.resources.debug=true

@@ -15,6 +15,7 @@
 				if (pollingTimer) {
 					window.clearInterval(pollingTimer);
 	            	$("#pollingButton").text("Start");
+	            	pollingTimer = null;
 				} else {
 					pollingTimer = window.setInterval(triggerFetch, $("#pollingInterval").val() * 1000);
 	              	$("#pollingButton").text("Stop");
@@ -219,7 +220,7 @@
 			<button id="tailButton" onclick="showTail();" class="k-button">Tail</button>
 		</div>
 		<div id="eventTable"
-			style="clear: left; float: left; margin: 5px; border-radius: 5px; height: auto; width: 98.8%;"></div>
+			style="clear: left; float: left; margin: 5px; border-radius: 5px; width: 98.8%;"></div>
 	</div>
 	<div id="detail"></div>
 	<div id="tail" style="width: 100%; word-wrap: break-word;"></div>
