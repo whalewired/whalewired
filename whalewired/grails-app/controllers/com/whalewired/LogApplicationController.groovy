@@ -43,7 +43,7 @@ class LogApplicationController {
 	def create = {
 		println "create:" + params
 		try {
-			elasticSearchAdminService.createIndex(params.name, params.ttl.toInteger());
+			elasticSearchAdminService.createIndex(params.name, params.ttl);
 		} catch (Exception e) {
 			println(e);
 			render(status: 422, text: 'BALAHHA')

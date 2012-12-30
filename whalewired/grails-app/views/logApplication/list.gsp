@@ -56,13 +56,7 @@
                                 	   editable: {
                                       		create: true,
                                       		update: true
-                                       },
-                                       type: "number", 
-                                       defaultValue: 7, 
-                                       validation: { 
-                                           required: true, 
-                                           min: 1
-                                   	   }
+                                       }
                                	   } 
                                }
                            }

@@ -1,26 +1,23 @@
 package com.whalewired.services
 
 import static org.elasticsearch.node.NodeBuilder.*
+import grails.plugins.springsecurity.Secured
+import groovy.json.JsonBuilder
 
-import org.codehaus.groovy.grails.commons.ConfigurationHolder
 import org.codehaus.groovy.grails.web.context.ServletContextHolder
 import org.elasticsearch.action.admin.cluster.state.ClusterStateResponse
-import org.elasticsearch.action.admin.indices.close.CloseIndexRequest;
+import org.elasticsearch.action.admin.indices.close.CloseIndexRequest
 import org.elasticsearch.action.admin.indices.create.CreateIndexRequest
 import org.elasticsearch.action.admin.indices.delete.DeleteIndexRequest
 import org.elasticsearch.action.admin.indices.mapping.put.PutMappingRequest
-import org.elasticsearch.action.admin.indices.open.OpenIndexRequest;
-import org.elasticsearch.action.admin.indices.settings.UpdateSettingsRequest;
-import org.elasticsearch.client.Client;
-import org.elasticsearch.client.Requests;
+import org.elasticsearch.action.admin.indices.open.OpenIndexRequest
+import org.elasticsearch.action.admin.indices.settings.UpdateSettingsRequest
+import org.elasticsearch.client.Client
+import org.elasticsearch.client.Requests
 import org.elasticsearch.common.settings.ImmutableSettings
 import org.elasticsearch.common.settings.Settings
 import org.elasticsearch.index.query.RangeQueryBuilder
-import org.elasticsearch.node.Node;
-import grails.plugins.springsecurity.Secured;
-
-
-import groovy.json.JsonBuilder;
+import org.elasticsearch.node.Node
 
 
 class ElasticSearchAdminService {
@@ -89,6 +86,7 @@ class ElasticSearchAdminService {
 
 	def getDefaultIndex() {
 		
+		println("getDefaultIndex")
 		// TODO make this configurable
 		return getIndices()?.keySet().asList().get(0);
 	}

@@ -95,13 +95,11 @@
             		      {
             		         content: $(this).attr('tooltip'),
             		         position: {
-                		         target: 'mouse',
-                		         adjust: {	
-                		        	 mouse: false
-                		         },
-            		            viewport: $(window), 
-            		            effect: false 
-            		         },
+            						at: 'bottom left', 
+            						my: 'bottom left',
+            						viewport: $(window), 
+            						effect: true 
+            					},
             		         show: {
             		            event: 'click',
             		            solo: true 

@@ -18,11 +18,16 @@ class DeleteOldLogsJob {
 		
 		def indices = elasticSearchAdminService.getIndices();
 		for (index in indices) {
-			def ttl = index.value.getSettings().get("index.ttl")?.toInteger()
+			
+			//println("[${index.key}] index.ttl: " + index.value.getSettings().get("index.ttl"))
+			
+			
+			
+			def ttl = index.value.getSettings().get("index.ttl")
 			if (ttl) {
 				elasticSearchAdminService.deleteLogs(index.key, ttl);
 			} else {
-			println  "[${index.key}] has no TTL definition"
+			   //println  "[${index.key}] has no TTL definition"
 			}
 		}
 	}

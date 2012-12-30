@@ -163,6 +163,19 @@ ul.one-to-many li.add {
 	padding: 0px 0px 0px 5px;
 }
 
+/* override kendo colours */
+.k-state-selected, .k-list > .k-state-selected, .k-list > .k-state-focused, .k-panelbar .k-state-selected, .k-button:active, .k-ghost-splitbar-vertical, .k-ghost-splitbar-horizontal, .k-draghandle.k-state-selected:hover {
+    background-color: #369BD7;
+    border-color: #9F9E9E;
+    color: #FFFFFF;
+}
+
+/* override qtip colours */
+.k-tooltip {
+    background-color: #FFFFFF !important;
+    border-color: #A99F9A !important;
+    color: #2E2E2E !important;
+}
 
 /* EMBEDDED PROPERTIES */
 

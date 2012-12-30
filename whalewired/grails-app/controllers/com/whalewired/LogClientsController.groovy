@@ -1,6 +1,5 @@
 package com.whalewired
 
-import org.codehaus.groovy.grails.commons.ApplicationHolder
 
 class LogClientsController {
 
