@@ -22,20 +22,23 @@ grails.project.dependency.resolution = {
         // from public Maven repositories
         mavenCentral()
         //mavenLocal()
+        mavenRepo "http://oss.sonatype.org/content/repositories/releases/"
         mavenRepo "http://snapshots.repository.codehaus.org"
         mavenRepo "http://repository.codehaus.org"
         mavenRepo "http://download.java.net/maven/2/"
         mavenRepo "http://repository.jboss.com/maven2/"
 		mavenRepo "http://repo1.maven.org/maven2/"
-        mavenRepo "http://oss.sonatype.org/content/repositories/releases/"
+		
     }
     dependencies {
-        // specify dependencies here under either 'build', 'compile', 'runtime', 'test' or 'provided' scopes eg.
-        // runtime 'mysql:mysql-connector-java:5.1.5'
-		compile 'org.elasticsearch:elasticsearch-lang-groovy:0.18.7'
-		test 'org.elasticsearch:elasticsearch-lang-groovy:0.18.7'
-		build 'org.elasticsearch:elasticsearch-lang-groovy:0.18.7'
-		runtime 'org.elasticsearch:elasticsearch-lang-groovy:0.18.7'
+		compile 'org.elasticsearch:elasticsearch-lang-groovy:1.2.0'
+		test 'org.elasticsearch:elasticsearch-lang-groovy:1.2.0'
+		build 'org.elasticsearch:elasticsearch-lang-groovy:1.2.0'
+		runtime 'org.elasticsearch:elasticsearch-lang-groovy:1.2.0'
+		compile 'com.spatial4j:spatial4j:0.3'
+		test 'com.spatial4j:spatial4j:0.3'
+		build 'com.spatial4j:spatial4j:0.3'
+		runtime 'com.spatial4j:spatial4j:0.3'
     }
 
     plugins {

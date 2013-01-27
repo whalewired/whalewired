@@ -1,5 +1,5 @@
 eclipse.preferences.version=1
-org.grails.ide.eclipse.core.org.grails.ide.eclipse.core.install.name=Grails 2.0.4
+org.grails.ide.eclipse.core.org.grails.ide.eclipse.core.install.name=Grails 2.1.1
 org.grails.ide.eclipse.core.source.attachment-elasticsearch-0.18.7.jar=C\:/dev_ww/elasticsearch-0.18.7/elasticsearch-0.18.7-sources.jar
 org.grails.ide.eclipse.core.source.attachment-grails-bootstrap-2.0.0.jar=C\:/dev_ww/grails-2.0.0/src/grails-bootstrap-2.0.0-sources.jar
 org.grails.ide.eclipse.core.source.attachment-grails-core-2.0.0.jar=C\:/dev_ww/grails-2.0.0/src/grails-core-2.0.0-sources.jar
@@ -32,4 +32,4 @@ org.grails.ide.eclipse.core.source.attachment-grails-scripts-2.0.0.jar=C\:/dev_w
 org.grails.ide.eclipse.core.source.attachment-grails-spring-2.0.0.jar=C\:/dev_ww/grails-2.0.0/src/grails-spring-2.0.0-sources.jar
 org.grails.ide.eclipse.core.source.attachment-grails-test-2.0.0.jar=C\:/dev_ww/grails-2.0.0/src/grails-test-2.0.0-sources.jar
 org.grails.ide.eclipse.core.source.attachment-grails-web-2.0.0.jar=C\:/dev_ww/grails-2.0.0/src/grails-web-2.0.0-sources.jar
-org.grails.ide.eclipse.core.use.default.install=false
+org.grails.ide.eclipse.core.use.default.install=true

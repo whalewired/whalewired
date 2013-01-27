@@ -1,7 +1,7 @@
 package com.whalewired.services
 
 import static org.elasticsearch.node.NodeBuilder.*
-import grails.plugins.springsecurity.Secured
+import org.springframework.security.access.annotation.Secured
 import groovy.json.JsonBuilder
 
 import org.codehaus.groovy.grails.web.context.ServletContextHolder

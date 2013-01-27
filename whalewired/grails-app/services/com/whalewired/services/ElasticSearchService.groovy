@@ -1,24 +1,21 @@
 package com.whalewired.services
-import static org.elasticsearch.index.query.FilterBuilders.*;
-import static org.elasticsearch.index.query.QueryBuilders.*;
-import static org.elasticsearch.node.NodeBuilder.*;
-import static com.whalewired.services.ElasticSearchAdminService.*;
-
-import org.elasticsearch.search.*;
-import org.elasticsearch.search.facet.datehistogram.DateHistogramFacetProcessor.DateFieldParser.DayOfMonth;
-import org.elasticsearch.search.sort.SortOrder
-import org.elasticsearch.action.get.GetResponse;
-import org.elasticsearch.action.search.*;
-import org.elasticsearch.client.Client;
-import org.elasticsearch.common.unit.TimeValue;
-import org.elasticsearch.index.query.BoolQueryBuilder;
-import org.elasticsearch.index.query.QueryBuilder;
-import org.elasticsearch.index.query.TextQueryBuilder
-
-import com.sun.org.apache.xalan.internal.xsltc.compiler.CurrentCall;
-
-import java.util.Calendar;
+import static com.whalewired.services.ElasticSearchAdminService.*
 import static org.elasticsearch.groovy.node.GNodeBuilder.*
+import static org.elasticsearch.index.query.FilterBuilders.*
+import static org.elasticsearch.index.query.QueryBuilders.*
+import static org.elasticsearch.node.NodeBuilder.*
+
+import org.elasticsearch.action.get.GetResponse
+import org.elasticsearch.action.search.*
+import org.elasticsearch.client.Client
+import org.elasticsearch.common.unit.TimeValue
+import org.elasticsearch.index.query.BoolQueryBuilder
+import org.elasticsearch.index.query.MatchQueryBuilder;
+import org.elasticsearch.index.query.QueryBuilder
+import org.elasticsearch.index.query.QueryBuilders
+
+import org.elasticsearch.search.*
+import org.elasticsearch.search.sort.SortOrder
 
 
 class ElasticSearchService {
@@ -131,7 +128,7 @@ class ElasticSearchService {
 	
 	public ListResultSet findBookmarkedLogEvents(indexName, bookmarkId) {
 		BoolQueryBuilder builder = boolQuery();
-		builder.must(new TextQueryBuilder('bookmarkId', bookmarkId).type(TextQueryBuilder.Type.PHRASE_PREFIX));		
+		builder.must(matchPhrasePrefixQuery('bookmarkId', bookmarkId));		
 		return buildLogEventSourceListFromBuildQuery(indexName, builder);
 	}
 		
@@ -168,7 +165,7 @@ class ElasticSearchService {
 		}
 		
 		if (logSearch) {
-			TextQueryBuilder tqb = new TextQueryBuilder("_all", logSearch).type(TextQueryBuilder.Type.PHRASE_PREFIX);
+			MatchQueryBuilder tqb = matchPhrasePrefixQuery("_all", logSearch);
 			searchRequestBuilder.setQuery(tqb);
 		}
 
@@ -271,22 +268,18 @@ class ElasticSearchService {
 	}
 	
 	def createLogEventPatternQueryBuilder(logThrowableLocation, logLocation, logThrowableType, logLevel) {
-		BoolQueryBuilder bool = boolQuery();
+		BoolQueryBuilder bool = QueryBuilders.boolQuery();
 		if (logThrowableLocation != null) {
-			bool.must(new TextQueryBuilder('logThrowableLocation', 
-				logThrowableLocation).type(TextQueryBuilder.Type.PHRASE_PREFIX));
+			bool.must(matchPhrasePrefixQuery('logThrowableLocation', logThrowableLocation));
 		}
 		if (logLocation != null) {
-			bool.must(new TextQueryBuilder('logLocation',
-					logLocation).type(TextQueryBuilder.Type.PHRASE_PREFIX));
+			bool.must(matchPhrasePrefixQuery('logLocation', logLocation));
 		}
 		if (logThrowableType != null) {
-			bool.must(new TextQueryBuilder('logThrowableType',
-					logThrowableType).type(TextQueryBuilder.Type.PHRASE_PREFIX));
+			bool.must(matchPhrasePrefixQuery('logThrowableType', logThrowableType));
 		}
 		if (logLevel != null) {
-			bool.must(new TextQueryBuilder('logLevel',
-					logLevel).type(TextQueryBuilder.Type.PHRASE_PREFIX));
+			bool.must(matchPhrasePrefixQuery('logLevel', logLevel));
 		}
 		return bool
 	}

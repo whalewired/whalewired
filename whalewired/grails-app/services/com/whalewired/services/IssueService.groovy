@@ -6,7 +6,6 @@ import org.elasticsearch.action.search.SearchResponse;
 import org.elasticsearch.action.search.SearchType
 import org.elasticsearch.common.unit.TimeValue
 import org.elasticsearch.index.query.BoolQueryBuilder;
-import org.elasticsearch.index.query.TextQueryBuilder;
 import org.elasticsearch.search.SearchHit
 
 import com.whalewired.Issue;
@@ -63,7 +62,7 @@ class IssueService {
 
 		issue.setMutedDate(new Date());
 		
-		// TODO skal vi scanne alle med issue id og markere muted på hvert event også - for at forsimple præsentationen
+		// TODO skal vi scanne alle med issue id og markere muted pï¿½ hvert event ogsï¿½ - for at forsimple prï¿½sentationen
 	}
 
 

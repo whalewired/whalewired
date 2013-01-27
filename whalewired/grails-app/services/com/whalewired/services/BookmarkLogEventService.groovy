@@ -3,7 +3,6 @@ package com.whalewired.services
 import org.elasticsearch.action.search.SearchResponse;
 import org.elasticsearch.common.unit.TimeValue;
 import org.elasticsearch.index.query.BoolQueryBuilder;
-import org.elasticsearch.index.query.TextQueryBuilder;
 import org.elasticsearch.search.SearchHit;
 
 import com.whalewired.BookmarkLogEvent;

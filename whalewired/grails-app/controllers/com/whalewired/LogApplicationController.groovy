@@ -5,7 +5,8 @@ import com.whalewired.services.ElasticSearchService;
 import com.whalewired.services.ListResultSet;
 
 import grails.converters.JSON;
-import grails.plugins.springsecurity.Secured
+import grails.plugins.springsecurity.Secured;
+
 
 
 
