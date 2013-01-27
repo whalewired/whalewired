@@ -1,0 +1,969 @@
+[2013-01-03 21:12:22,082][INFO ][node                     ] [Harrier] {0.20.2}[3752]: initializing ...
+[2013-01-03 21:12:22,082][DEBUG][node                     ] [Harrier] using home [C:\dev\git\whalewired\whalewired.tools\elasticsearch-0.20.2], config [C:\dev\git\whalewired\whalewired.tools\elasticsearch-0.20.2\config], data [[C:\dev\git\whalewired\whalewired.tools\elasticsearch-0.20.2\data]], logs [C:\dev\git\whalewired\whalewired.tools\elasticsearch-0.20.2\logs], work [C:\dev\git\whalewired\whalewired.tools\elasticsearch-0.20.2\work], plugins [C:\dev\git\whalewired\whalewired.tools\elasticsearch-0.20.2\plugins]
+[2013-01-03 21:12:22,098][INFO ][plugins                  ] [Harrier] loaded [], sites []
+[2013-01-03 21:12:22,098][DEBUG][common.compress.lzf      ] using [UnsafeChunkDecoder] decoder
+[2013-01-03 21:12:22,285][TRACE][env                      ] [Harrier] obtaining node lock on C:\dev\git\whalewired\whalewired.tools\elasticsearch-0.20.2\data\whalewired_cluster\nodes\0 ...
+[2013-01-03 21:12:22,285][DEBUG][env                      ] [Harrier] using node location [[C:\dev\git\whalewired\whalewired.tools\elasticsearch-0.20.2\data\whalewired_cluster\nodes\0]], local_node_id [0]
+[2013-01-03 21:12:22,285][TRACE][env                      ] [Harrier] node data locations details:
+ -> C:\dev\git\whalewired\whalewired.tools\elasticsearch-0.20.2\data\whalewired_cluster\nodes\0, free_space [28.9gb], usable_space [28.9gb]
+
+[2013-01-03 21:12:22,878][TRACE][monitor.sigar            ] [Harrier] sigar loaded successfully
+[2013-01-03 21:12:23,314][DEBUG][threadpool               ] [Harrier] creating thread_pool [generic], type [cached], keep_alive [30s]
+[2013-01-03 21:12:23,314][DEBUG][threadpool               ] [Harrier] creating thread_pool [index], type [cached], keep_alive [5m]
+[2013-01-03 21:12:23,314][DEBUG][threadpool               ] [Harrier] creating thread_pool [bulk], type [cached], keep_alive [5m]
+[2013-01-03 21:12:23,314][DEBUG][threadpool               ] [Harrier] creating thread_pool [get], type [cached], keep_alive [5m]
+[2013-01-03 21:12:23,314][DEBUG][threadpool               ] [Harrier] creating thread_pool [search], type [cached], keep_alive [5m]
+[2013-01-03 21:12:23,314][DEBUG][threadpool               ] [Harrier] creating thread_pool [percolate], type [cached], keep_alive [5m]
+[2013-01-03 21:12:23,314][DEBUG][threadpool               ] [Harrier] creating thread_pool [management], type [scaling], min [1], size [5], keep_alive [5m]
+[2013-01-03 21:12:23,330][DEBUG][threadpool               ] [Harrier] creating thread_pool [flush], type [scaling], min [1], size [10], keep_alive [5m]
+[2013-01-03 21:12:23,330][DEBUG][threadpool               ] [Harrier] creating thread_pool [merge], type [scaling], min [1], size [20], keep_alive [5m]
+[2013-01-03 21:12:23,330][DEBUG][threadpool               ] [Harrier] creating thread_pool [refresh], type [scaling], min [1], size [10], keep_alive [5m]
+[2013-01-03 21:12:23,330][DEBUG][threadpool               ] [Harrier] creating thread_pool [cache], type [scaling], min [1], size [4], keep_alive [5m]
+[2013-01-03 21:12:23,330][DEBUG][threadpool               ] [Harrier] creating thread_pool [snapshot], type [scaling], min [1], size [5], keep_alive [5m]
+[2013-01-03 21:12:23,346][DEBUG][transport.netty          ] [Harrier] using worker_count[16], port[9300-9400], bind_host[null], publish_host[null], compress[false], connect_timeout[30s], connections_per_node[2/6/1], receive_predictor[512kb->512kb]
+[2013-01-03 21:12:23,346][DEBUG][discovery.zen.ping.multicast] [Harrier] using group [224.2.2.4], with port [54328], ttl [3], and address [null]
+[2013-01-03 21:12:23,361][DEBUG][discovery.zen.ping.unicast] [Harrier] using initial hosts [], with concurrent_connects [10]
+[2013-01-03 21:12:23,361][DEBUG][discovery.zen            ] [Harrier] using ping.timeout [3s], master_election.filter_client [true], master_election.filter_data [false]
+[2013-01-03 21:12:23,361][DEBUG][discovery.zen.elect      ] [Harrier] using minimum_master_nodes [-1]
+[2013-01-03 21:12:23,361][DEBUG][discovery.zen.fd         ] [Harrier] [master] uses ping_interval [1s], ping_timeout [30s], ping_retries [3]
+[2013-01-03 21:12:23,361][DEBUG][discovery.zen.fd         ] [Harrier] [node  ] uses ping_interval [1s], ping_timeout [30s], ping_retries [3]
+[2013-01-03 21:12:23,377][DEBUG][monitor.jvm              ] [Harrier] enabled [true], last_gc_enabled [false], interval [1s], gc_threshold [{default=GcThreshold{name='default', warnThreshold=10000, infoThreshold=5000, debugThreshold=2000}, ParNew=GcThreshold{name='ParNew', warnThreshold=1000, infoThreshold=700, debugThreshold=400}, ConcurrentMarkSweep=GcThreshold{name='ConcurrentMarkSweep', warnThreshold=10000, infoThreshold=5000, debugThreshold=2000}}]
+[2013-01-03 21:12:23,907][DEBUG][monitor.os               ] [Harrier] Using probe [org.elasticsearch.monitor.os.SigarOsProbe@60d1964d] with refresh_interval [1s]
+[2013-01-03 21:12:23,907][DEBUG][monitor.process          ] [Harrier] Using probe [org.elasticsearch.monitor.process.SigarProcessProbe@316ae291] with refresh_interval [1s]
+[2013-01-03 21:12:23,923][DEBUG][monitor.jvm              ] [Harrier] Using refresh_interval [1s]
+[2013-01-03 21:12:23,923][DEBUG][monitor.network          ] [Harrier] Using probe [org.elasticsearch.monitor.network.SigarNetworkProbe@26ddc9d4] with refresh_interval [5s]
+[2013-01-03 21:12:24,516][DEBUG][monitor.network          ] [Harrier] net_info
+host [9C-CLA]
+lo	display_name [Software Loopback Interface 1]
+		address [/127.0.0.1] [/0:0:0:0:0:0:0:1] 
+		mtu [-1] multicast [true] ptp [false] loopback [true] up [true] virtual [false]
+net0	display_name [WAN Miniport (SSTP)]
+		address 
+		mtu [-1] multicast [true] ptp [false] loopback [false] up [false] virtual [false]
+net1	display_name [WAN Miniport (L2TP)]
+		address 
+		mtu [-1] multicast [true] ptp [false] loopback [false] up [false] virtual [false]
+net2	display_name [WAN Miniport (PPTP)]
+		address 
+		mtu [-1] multicast [true] ptp [false] loopback [false] up [false] virtual [false]
+ppp0	display_name [WAN Miniport (PPPOE)]
+		address 
+		mtu [-1] multicast [true] ptp [false] loopback [false] up [false] virtual [false]
+eth0	display_name [WAN Miniport (IPv6)]
+		address 
+		mtu [-1] multicast [true] ptp [false] loopback [false] up [false] virtual [false]
+eth1	display_name [WAN Miniport (Network Monitor)]
+		address 
+		mtu [-1] multicast [true] ptp [false] loopback [false] up [false] virtual [false]
+eth2	display_name [WAN Miniport (IP)]
+		address 
+		mtu [-1] multicast [true] ptp [false] loopback [false] up [false] virtual [false]
+ppp1	display_name [RAS Async Adapter]
+		address 
+		mtu [-1] multicast [true] ptp [false] loopback [false] up [false] virtual [false]
+net3	display_name [WAN Miniport (IKEv2)]
+		address 
+		mtu [-1] multicast [true] ptp [false] loopback [false] up [false] virtual [false]
+eth3	display_name [Bluetooth Device (Personal Area Network)]
+		address [/fe80:0:0:0:d1c9:2348:1817:68e2%11] 
+		mtu [1500] multicast [true] ptp [false] loopback [false] up [false] virtual [false]
+net4	display_name [Bluetooth Device (RFCOMM Protocol TDI)]
+		address 
+		mtu [-1] multicast [true] ptp [false] loopback [false] up [false] virtual [false]
+eth4	display_name [Realtek PCIe GBE Family Controller]
+		address [/fe80:0:0:0:2454:76cb:6d28:c13e%13] 
+		mtu [1500] multicast [true] ptp [false] loopback [false] up [false] virtual [false]
+net5	display_name [Teredo Tunneling Pseudo-Interface]
+		address [/fe80:0:0:0:e0:0:0:0%14] 
+		mtu [1280] multicast [false] ptp [true] loopback [false] up [false] virtual [false]
+net6	display_name [Realtek RTL8723AE Wireless LAN 802.11n PCI-E NIC]
+		address [/fe80:0:0:0:7864:72fa:c325:2c08%15] 
+		mtu [1500] multicast [true] ptp [false] loopback [false] up [false] virtual [false]
+eth5	display_name [WAN Miniport (Network Monitor) - Deterministic Network Enhancer Miniport]
+		address 
+		mtu [-1] multicast [true] ptp [false] loopback [false] up [false] virtual [false]
+eth6	display_name [WAN Miniport (IP) - Deterministic Network Enhancer Miniport]
+		address 
+		mtu [-1] multicast [true] ptp [false] loopback [false] up [false] virtual [false]
+eth7	display_name [Realtek PCIe GBE Family Controller - Deterministic Network Enhancer Miniport]
+		address 
+		mtu [-1] multicast [true] ptp [false] loopback [false] up [false] virtual [false]
+eth8	display_name [Realtek RTL8723AE Wireless LAN 802.11n PCI-E NIC - Deterministic Network Enhancer Miniport]
+		address 
+		mtu [-1] multicast [true] ptp [false] loopback [false] up [false] virtual [false]
+eth9	display_name [Cisco Systems VPN Adapter for 64-bit Windows]
+		address 
+		mtu [-1] multicast [true] ptp [false] loopback [false] up [false] virtual [false]
+eth10	display_name [Cisco Systems VPN Adapter for 64-bit Windows - Deterministic Network Enhancer Miniport]
+		address 
+		mtu [-1] multicast [true] ptp [false] loopback [false] up [false] virtual [false]
+net7	display_name [Microsoft Virtual WiFi Miniport Adapter]
+		address [/fe80:0:0:0:9d9d:6757:30db:b9ab%22] 
+		mtu [1500] multicast [true] ptp [false] loopback [false] up [false] virtual [false]
+eth11	display_name [Microsoft Virtual WiFi Miniport Adapter - Deterministic Network Enhancer Miniport]
+		address 
+		mtu [-1] multicast [true] ptp [false] loopback [false] up [false] virtual [false]
+eth12	display_name [Microsoft Virtual WiFi Miniport Adapter - VirtualBox Bridged Networking Driver Miniport]
+		address 
+		mtu [-1] multicast [true] ptp [false] loopback [false] up [false] virtual [false]
+eth13	display_name [Realtek RTL8723AE Wireless LAN 802.11n PCI-E NIC - VirtualBox Bridged Networking Driver Miniport]
+		address 
+		mtu [-1] multicast [true] ptp [false] loopback [false] up [false] virtual [false]
+eth14	display_name [Realtek PCIe GBE Family Controller - VirtualBox Bridged Networking Driver Miniport]
+		address 
+		mtu [-1] multicast [true] ptp [false] loopback [false] up [false] virtual [false]
+eth15	display_name [VirtualBox Host-Only Ethernet Adapter]
+		address [/192.168.56.1] [/fe80:0:0:0:102e:76b:a835:3494%27] 
+		mtu [1500] multicast [true] ptp [false] loopback [false] up [true] virtual [false]
+eth16	display_name [VirtualBox Host-Only Ethernet Adapter - Deterministic Network Enhancer Miniport]
+		address 
+		mtu [-1] multicast [true] ptp [false] loopback [false] up [false] virtual [false]
+eth17	display_name [Cisco Systems VPN Adapter for 64-bit Windows - VirtualBox Bridged Networking Driver Miniport]
+		address 
+		mtu [-1] multicast [true] ptp [false] loopback [false] up [false] virtual [false]
+eth18	display_name [Juniper Network Connect Virtual Adapter]
+		address [/fe80:0:0:0:889e:487:1309:2a24%30] 
+		mtu [1400] multicast [true] ptp [false] loopback [false] up [false] virtual [false]
+eth19	display_name [Juniper Network Connect Virtual Adapter - Deterministic Network Enhancer Miniport]
+		address 
+		mtu [-1] multicast [true] ptp [false] loopback [false] up [false] virtual [false]
+net8	display_name [Microsoft ISATAP Adapter #3]
+		address 
+		mtu [1280] multicast [false] ptp [true] loopback [false] up [false] virtual [false]
+net9	display_name [Microsoft ISATAP Adapter #5]
+		address 
+		mtu [1280] multicast [false] ptp [true] loopback [false] up [false] virtual [false]
+net10	display_name [Microsoft ISATAP Adapter #2]
+		address 
+		mtu [1280] multicast [false] ptp [true] loopback [false] up [false] virtual [false]
+net11	display_name [Microsoft ISATAP Adapter]
+		address 
+		mtu [-1] multicast [true] ptp [false] loopback [false] up [false] virtual [false]
+net12	display_name [Microsoft ISATAP Adapter #6]
+		address 
+		mtu [1280] multicast [false] ptp [true] loopback [false] up [false] virtual [false]
+net13	display_name [Realtek RTL8723AE Wireless LAN 802.11n PCI-E NIC-Virtual WiFi Filter Driver-0000]
+		address 
+		mtu [-1] multicast [true] ptp [false] loopback [false] up [false] virtual [false]
+eth20	display_name [Microsoft Virtual WiFi Miniport Adapter - VirtualBox Bridged Networking Driver Miniport-QoS Packet Scheduler-0000]
+		address 
+		mtu [-1] multicast [true] ptp [false] loopback [false] up [false] virtual [false]
+eth21	display_name [Microsoft Virtual WiFi Miniport Adapter - VirtualBox Bridged Networking Driver Miniport-WFP LightWeight Filter-0000]
+		address 
+		mtu [-1] multicast [true] ptp [false] loopback [false] up [false] virtual [false]
+eth22	display_name [WAN Miniport (IPv6)-QoS Packet Scheduler-0000]
+		address 
+		mtu [-1] multicast [true] ptp [false] loopback [false] up [false] virtual [false]
+eth23	display_name [Realtek RTL8723AE Wireless LAN 802.11n PCI-E NIC - VirtualBox Bridged Networking Driver Miniport-QoS Packet Scheduler-0000]
+		address 
+		mtu [-1] multicast [true] ptp [false] loopback [false] up [false] virtual [false]
+eth24	display_name [Realtek RTL8723AE Wireless LAN 802.11n PCI-E NIC - VirtualBox Bridged Networking Driver Miniport-WFP LightWeight Filter-0000]
+		address 
+		mtu [-1] multicast [true] ptp [false] loopback [false] up [false] virtual [false]
+eth25	display_name [Realtek PCIe GBE Family Controller - VirtualBox Bridged Networking Driver Miniport-QoS Packet Scheduler-0000]
+		address 
+		mtu [-1] multicast [true] ptp [false] loopback [false] up [false] virtual [false]
+eth26	display_name [Realtek PCIe GBE Family Controller - VirtualBox Bridged Networking Driver Miniport-WFP LightWeight Filter-0000]
+		address 
+		mtu [-1] multicast [true] ptp [false] loopback [false] up [false] virtual [false]
+net14	display_name [Realtek RTL8723AE Wireless LAN 802.11n PCI-E NIC-Native WiFi Filter Driver-0000]
+		address 
+		mtu [-1] multicast [true] ptp [false] loopback [false] up [false] virtual [false]
+eth27	display_name [WAN Miniport (IP) - Deterministic Network Enhancer Miniport-QoS Packet Scheduler-0000]
+		address 
+		mtu [-1] multicast [true] ptp [false] loopback [false] up [false] virtual [false]
+eth28	display_name [WAN Miniport (Network Monitor) - Deterministic Network Enhancer Miniport-QoS Packet Scheduler-0000]
+		address 
+		mtu [-1] multicast [true] ptp [false] loopback [false] up [false] virtual [false]
+net15	display_name [Microsoft Virtual WiFi Miniport Adapter-Native WiFi Filter Driver-0000]
+		address 
+		mtu [-1] multicast [true] ptp [false] loopback [false] up [false] virtual [false]
+eth29	display_name [VirtualBox Host-Only Ethernet Adapter - Deterministic Network Enhancer Miniport-QoS Packet Scheduler-0000]
+		address 
+		mtu [-1] multicast [true] ptp [false] loopback [false] up [false] virtual [false]
+eth30	display_name [VirtualBox Host-Only Ethernet Adapter - Deterministic Network Enhancer Miniport-WFP LightWeight Filter-0000]
+		address 
+		mtu [-1] multicast [true] ptp [false] loopback [false] up [false] virtual [false]
+net16	display_name [Microsoft ISATAP Adapter #4]
+		address 
+		mtu [1280] multicast [false] ptp [true] loopback [false] up [false] virtual [false]
+
+[2013-01-03 21:12:24,609][TRACE][monitor.network          ] [Harrier] ifconfig
+
+WAN Miniport (IPv6)
+eth0	Link encap:Ethernet HWaddr 46:30:20:52:41:53
+	inet addr:0.0.0.0  Mask:0.0.0.0
+	UP RUNNING  MTU:1500  Metric:0
+	RX packets:0 errors:0 dropped:0 overruns:-1 frame:-1
+	TX packets:0 errors:0 dropped:0 overruns:-1 carrier:-1
+	collisions:-1
+	RX bytes:0 (  0 )  TX bytes:0 (  0 )
+WAN Miniport (Network Monitor)
+eth1	Link encap:Ethernet HWaddr 46:30:20:52:41:53
+	inet addr:0.0.0.0  Mask:0.0.0.0
+	UP RUNNING  MTU:1500  Metric:0
+	RX packets:0 errors:0 dropped:0 overruns:-1 frame:-1
+	TX packets:0 errors:0 dropped:0 overruns:-1 carrier:-1
+	collisions:-1
+	RX bytes:0 (  0 )  TX bytes:0 (  0 )
+WAN Miniport (Network Monitor) - Deterministic Network Enhancer Miniport
+eth2	Link encap:Ethernet HWaddr 46:30:20:52:41:53
+	inet addr:0.0.0.0  Mask:0.0.0.0
+	UP RUNNING  MTU:1500  Metric:0
+	RX packets:0 errors:0 dropped:0 overruns:-1 frame:-1
+	TX packets:0 errors:0 dropped:0 overruns:-1 carrier:-1
+	collisions:-1
+	RX bytes:0 (  0 )  TX bytes:0 (  0 )
+Microsoft Virtual WiFi Miniport Adapter - VirtualBox Bridged Networking Driver Miniport-QoS Packet Scheduler-0000
+eth3	Link encap:Ethernet HWaddr 44:6D:57:76:17:64
+	inet addr:0.0.0.0  Mask:0.0.0.0
+	[NO FLAGS]  MTU:1500  Metric:0
+	RX packets:0 errors:0 dropped:0 overruns:-1 frame:-1
+	TX packets:0 errors:0 dropped:0 overruns:-1 carrier:-1
+	collisions:-1
+	RX bytes:0 (  0 )  TX bytes:0 (  0 )
+WAN Miniport (IP)
+eth4	Link encap:Ethernet HWaddr 46:30:20:52:41:53
+	inet addr:0.0.0.0  Mask:0.0.0.0
+	UP RUNNING  MTU:1500  Metric:0
+	RX packets:0 errors:0 dropped:0 overruns:-1 frame:-1
+	TX packets:0 errors:0 dropped:0 overruns:-1 carrier:-1
+	collisions:-1
+	RX bytes:0 (  0 )  TX bytes:0 (  0 )
+Microsoft Virtual WiFi Miniport Adapter - VirtualBox Bridged Networking Driver Miniport-WFP LightWeight Filter-0000
+eth5	Link encap:Ethernet HWaddr 44:6D:57:76:17:64
+	inet addr:0.0.0.0  Mask:0.0.0.0
+	[NO FLAGS]  MTU:1500  Metric:0
+	RX packets:0 errors:0 dropped:0 overruns:-1 frame:-1
+	TX packets:0 errors:0 dropped:0 overruns:-1 carrier:-1
+	collisions:-1
+	RX bytes:0 (  0 )  TX bytes:0 (  0 )
+Bluetooth Device (Personal Area Network)
+eth6	Link encap:Ethernet HWaddr 44:6D:57:76:37:EE
+	inet addr:0.0.0.0  Mask:0.0.0.0
+	[NO FLAGS]  MTU:1500  Metric:0
+	RX packets:0 errors:0 dropped:0 overruns:-1 frame:-1
+	TX packets:0 errors:0 dropped:0 overruns:-1 carrier:-1
+	collisions:-1
+	RX bytes:0 (  0 )  TX bytes:0 (  0 )
+Realtek PCIe GBE Family Controller
+eth7	Link encap:Ethernet HWaddr 00:90:F5:CF:D8:5E
+	inet addr:0.0.0.0  Mask:0.0.0.0
+	[NO FLAGS]  MTU:1500  Metric:0
+	RX packets:0 errors:0 dropped:0 overruns:-1 frame:-1
+	TX packets:0 errors:0 dropped:0 overruns:-1 carrier:-1
+	collisions:-1
+	RX bytes:0 (  0 )  TX bytes:0 (  0 )
+WAN Miniport (IP) - Deterministic Network Enhancer Miniport
+eth8	Link encap:Ethernet HWaddr 46:30:20:52:41:53
+	inet addr:0.0.0.0  Mask:0.0.0.0
+	UP RUNNING  MTU:1500  Metric:0
+	RX packets:0 errors:0 dropped:0 overruns:-1 frame:-1
+	TX packets:0 errors:0 dropped:0 overruns:-1 carrier:-1
+	collisions:-1
+	RX bytes:0 (  0 )  TX bytes:0 (  0 )
+WAN Miniport (IPv6)-QoS Packet Scheduler-0000
+eth9	Link encap:Ethernet HWaddr 46:30:20:52:41:53
+	inet addr:0.0.0.0  Mask:0.0.0.0
+	UP RUNNING  MTU:1500  Metric:0
+	RX packets:0 errors:0 dropped:0 overruns:-1 frame:-1
+	TX packets:0 errors:0 dropped:0 overruns:-1 carrier:-1
+	collisions:-1
+	RX bytes:0 (  0 )  TX bytes:0 (  0 )
+Realtek PCIe GBE Family Controller - Deterministic Network Enhancer Miniport
+eth10	Link encap:Ethernet HWaddr 00:90:F5:CF:D8:5E
+	inet addr:0.0.0.0  Mask:0.0.0.0
+	[NO FLAGS]  MTU:1500  Metric:0
+	RX packets:0 errors:0 dropped:0 overruns:-1 frame:-1
+	TX packets:0 errors:0 dropped:0 overruns:-1 carrier:-1
+	collisions:-1
+	RX bytes:0 (  0 )  TX bytes:0 (  0 )
+Realtek RTL8723AE Wireless LAN 802.11n PCI-E NIC - VirtualBox Bridged Networking Driver Miniport-QoS Packet Scheduler-0000
+eth11	Link encap:Ethernet HWaddr 44:6D:57:76:17:64
+	inet addr:0.0.0.0  Mask:0.0.0.0
+	[NO FLAGS]  MTU:1500  Metric:0
+	RX packets:0 errors:0 dropped:0 overruns:-1 frame:-1
+	TX packets:0 errors:0 dropped:0 overruns:-1 carrier:-1
+	collisions:-1
+	RX bytes:0 (  0 )  TX bytes:0 (  0 )
+Realtek RTL8723AE Wireless LAN 802.11n PCI-E NIC - VirtualBox Bridged Networking Driver Miniport-WFP LightWeight Filter-0000
+eth12	Link encap:Ethernet HWaddr 44:6D:57:76:17:64
+	inet addr:0.0.0.0  Mask:0.0.0.0
+	[NO FLAGS]  MTU:1500  Metric:0
+	RX packets:0 errors:0 dropped:0 overruns:-1 frame:-1
+	TX packets:0 errors:0 dropped:0 overruns:-1 carrier:-1
+	collisions:-1
+	RX bytes:0 (  0 )  TX bytes:0 (  0 )
+Realtek RTL8723AE Wireless LAN 802.11n PCI-E NIC - Deterministic Network Enhancer Miniport
+eth13	Link encap:Ethernet HWaddr 44:6D:57:76:17:64
+	inet addr:0.0.0.0  Mask:0.0.0.0
+	[NO FLAGS]  MTU:1500  Metric:0
+	RX packets:0 errors:0 dropped:0 overruns:-1 frame:-1
+	TX packets:0 errors:0 dropped:0 overruns:-1 carrier:-1
+	collisions:-1
+	RX bytes:0 (  0 )  TX bytes:0 (  0 )
+Microsoft Virtual WiFi Miniport Adapter - VirtualBox Bridged Networking Driver Miniport
+eth14	Link encap:Ethernet HWaddr 44:6D:57:76:17:64
+	inet addr:0.0.0.0  Mask:0.0.0.0
+	[NO FLAGS]  MTU:1500  Metric:0
+	RX packets:0 errors:0 dropped:0 overruns:-1 frame:-1
+	TX packets:0 errors:0 dropped:0 overruns:-1 carrier:-1
+	collisions:-1
+	RX bytes:0 (  0 )  TX bytes:0 (  0 )
+Realtek PCIe GBE Family Controller - VirtualBox Bridged Networking Driver Miniport-QoS Packet Scheduler-0000
+eth15	Link encap:Ethernet HWaddr 00:90:F5:CF:D8:5E
+	inet addr:0.0.0.0  Mask:0.0.0.0
+	[NO FLAGS]  MTU:1500  Metric:0
+	RX packets:0 errors:0 dropped:0 overruns:-1 frame:-1
+	TX packets:0 errors:0 dropped:0 overruns:-1 carrier:-1
+	collisions:-1
+	RX bytes:0 (  0 )  TX bytes:0 (  0 )
+Cisco Systems VPN Adapter for 64-bit Windows
+eth16	Link encap:Ethernet HWaddr 00:05:9A:3C:78:00
+	inet addr:0.0.0.0  Mask:0.0.0.0
+	[NO FLAGS]  MTU:0  Metric:0
+	RX packets:0 errors:0 dropped:0 overruns:-1 frame:-1
+	TX packets:0 errors:0 dropped:0 overruns:-1 carrier:-1
+	collisions:-1
+	RX bytes:0 (  0 )  TX bytes:0 (  0 )
+Cisco Systems VPN Adapter for 64-bit Windows - Deterministic Network Enhancer Miniport
+eth17	Link encap:Ethernet HWaddr 00:05:9A:3C:78:00
+	inet addr:0.0.0.0  Mask:0.0.0.0
+	[NO FLAGS]  MTU:0  Metric:0
+	RX packets:0 errors:0 dropped:0 overruns:-1 frame:-1
+	TX packets:0 errors:0 dropped:0 overruns:-1 carrier:-1
+	collisions:-1
+	RX bytes:0 (  0 )  TX bytes:0 (  0 )
+Microsoft Virtual WiFi Miniport Adapter - Deterministic Network Enhancer Miniport
+eth18	Link encap:Ethernet HWaddr 44:6D:57:76:17:64
+	inet addr:0.0.0.0  Mask:0.0.0.0
+	[NO FLAGS]  MTU:1500  Metric:0
+	RX packets:0 errors:0 dropped:0 overruns:-1 frame:-1
+	TX packets:0 errors:0 dropped:0 overruns:-1 carrier:-1
+	collisions:-1
+	RX bytes:0 (  0 )  TX bytes:0 (  0 )
+Realtek PCIe GBE Family Controller - VirtualBox Bridged Networking Driver Miniport-WFP LightWeight Filter-0000
+eth19	Link encap:Ethernet HWaddr 00:90:F5:CF:D8:5E
+	inet addr:0.0.0.0  Mask:0.0.0.0
+	[NO FLAGS]  MTU:1500  Metric:0
+	RX packets:0 errors:0 dropped:0 overruns:-1 frame:-1
+	TX packets:0 errors:0 dropped:0 overruns:-1 carrier:-1
+	collisions:-1
+	RX bytes:0 (  0 )  TX bytes:0 (  0 )
+Juniper Network Connect Virtual Adapter
+eth20	Link encap:Ethernet HWaddr 00:FF:F0:71:D7:08
+	inet addr:0.0.0.0  Mask:0.0.0.0
+	[NO FLAGS]  MTU:1400  Metric:0
+	RX packets:0 errors:0 dropped:0 overruns:-1 frame:-1
+	TX packets:0 errors:0 dropped:0 overruns:-1 carrier:-1
+	collisions:-1
+	RX bytes:0 (  0 )  TX bytes:0 (  0 )
+WAN Miniport (IP) - Deterministic Network Enhancer Miniport-QoS Packet Scheduler-0000
+eth21	Link encap:Ethernet HWaddr 46:30:20:52:41:53
+	inet addr:0.0.0.0  Mask:0.0.0.0
+	UP RUNNING  MTU:1500  Metric:0
+	RX packets:0 errors:0 dropped:0 overruns:-1 frame:-1
+	TX packets:0 errors:0 dropped:0 overruns:-1 carrier:-1
+	collisions:-1
+	RX bytes:0 (  0 )  TX bytes:0 (  0 )
+WAN Miniport (Network Monitor) - Deterministic Network Enhancer Miniport-QoS Packet Scheduler-0000
+eth22	Link encap:Ethernet HWaddr 46:30:20:52:41:53
+	inet addr:0.0.0.0  Mask:0.0.0.0
+	UP RUNNING  MTU:1500  Metric:0
+	RX packets:0 errors:0 dropped:0 overruns:-1 frame:-1
+	TX packets:0 errors:0 dropped:0 overruns:-1 carrier:-1
+	collisions:-1
+	RX bytes:0 (  0 )  TX bytes:0 (  0 )
+Juniper Network Connect Virtual Adapter - Deterministic Network Enhancer Miniport
+eth23	Link encap:Ethernet HWaddr 00:FF:F0:71:D7:08
+	inet addr:0.0.0.0  Mask:0.0.0.0
+	[NO FLAGS]  MTU:1400  Metric:0
+	RX packets:0 errors:0 dropped:0 overruns:-1 frame:-1
+	TX packets:0 errors:0 dropped:0 overruns:-1 carrier:-1
+	collisions:-1
+	RX bytes:0 (  0 )  TX bytes:0 (  0 )
+Realtek RTL8723AE Wireless LAN 802.11n PCI-E NIC - VirtualBox Bridged Networking Driver Miniport
+eth24	Link encap:Ethernet HWaddr 44:6D:57:76:17:64
+	inet addr:0.0.0.0  Mask:0.0.0.0
+	[NO FLAGS]  MTU:1500  Metric:0
+	RX packets:0 errors:0 dropped:0 overruns:-1 frame:-1
+	TX packets:0 errors:0 dropped:0 overruns:-1 carrier:-1
+	collisions:-1
+	RX bytes:0 (  0 )  TX bytes:0 (  0 )
+VirtualBox Host-Only Ethernet Adapter - Deterministic Network Enhancer Miniport-QoS Packet Scheduler-0000
+eth25	Link encap:Ethernet HWaddr 08:00:27:00:44:75
+	inet addr:0.0.0.0  Mask:0.0.0.0
+	UP RUNNING  MTU:1500  Metric:0
+	RX packets:0 errors:0 dropped:0 overruns:-1 frame:-1
+	TX packets:446 errors:0 dropped:0 overruns:-1 carrier:-1
+	collisions:-1
+	RX bytes:0 (  0 )  TX bytes:90827 ( 89K)
+VirtualBox Host-Only Ethernet Adapter - Deterministic Network Enhancer Miniport-WFP LightWeight Filter-0000
+eth26	Link encap:Ethernet HWaddr 08:00:27:00:44:75
+	inet addr:0.0.0.0  Mask:0.0.0.0
+	UP RUNNING  MTU:1500  Metric:0
+	RX packets:0 errors:0 dropped:0 overruns:-1 frame:-1
+	TX packets:446 errors:0 dropped:0 overruns:-1 carrier:-1
+	collisions:-1
+	RX bytes:0 (  0 )  TX bytes:90827 ( 89K)
+Cisco Systems VPN Adapter for 64-bit Windows - VirtualBox Bridged Networking Driver Miniport
+eth27	Link encap:Ethernet HWaddr 00:05:9A:3C:78:00
+	inet addr:0.0.0.0  Mask:0.0.0.0
+	[NO FLAGS]  MTU:0  Metric:0
+	RX packets:0 errors:0 dropped:0 overruns:-1 frame:-1
+	TX packets:0 errors:0 dropped:0 overruns:-1 carrier:-1
+	collisions:-1
+	RX bytes:0 (  0 )  TX bytes:0 (  0 )
+Realtek PCIe GBE Family Controller - VirtualBox Bridged Networking Driver Miniport
+eth28	Link encap:Ethernet HWaddr 00:90:F5:CF:D8:5E
+	inet addr:0.0.0.0  Mask:0.0.0.0
+	[NO FLAGS]  MTU:1500  Metric:0
+	RX packets:0 errors:0 dropped:0 overruns:-1 frame:-1
+	TX packets:0 errors:0 dropped:0 overruns:-1 carrier:-1
+	collisions:-1
+	RX bytes:0 (  0 )  TX bytes:0 (  0 )
+VirtualBox Host-Only Ethernet Adapter
+eth29	Link encap:Ethernet HWaddr 08:00:27:00:44:75
+	inet addr:192.168.56.1  Bcast:192.168.56.255  Mask:255.255.255.0
+	UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:0
+	RX packets:0 errors:0 dropped:0 overruns:-1 frame:-1
+	TX packets:446 errors:0 dropped:0 overruns:-1 carrier:-1
+	collisions:-1
+	RX bytes:0 (  0 )  TX bytes:90827 ( 89K)
+VirtualBox Host-Only Ethernet Adapter - Deterministic Network Enhancer Miniport
+eth30	Link encap:Ethernet HWaddr 08:00:27:00:44:75
+	inet addr:0.0.0.0  Mask:0.0.0.0
+	UP RUNNING  MTU:1500  Metric:0
+	RX packets:0 errors:0 dropped:0 overruns:-1 frame:-1
+	TX packets:446 errors:0 dropped:0 overruns:-1 carrier:-1
+	collisions:-1
+	RX bytes:0 (  0 )  TX bytes:90827 ( 89K)
+Software Loopback Interface 1
+lo0	Link encap:Local Loopback HWaddr C8:00:00:00:0A:3A
+	inet addr:127.0.0.1  Mask:255.0.0.0
+	UP LOOPBACK RUNNING  MTU:1500  Metric:0
+	RX packets:0 errors:0 dropped:0 overruns:-1 frame:-1
+	TX packets:0 errors:0 dropped:0 overruns:-1 carrier:-1
+	collisions:-1
+	RX bytes:0 (  0 )  TX bytes:0 (  0 )
+Realtek RTL8723AE Wireless LAN 802.11n PCI-E NIC
+eth31	Link encap:Ethernet HWaddr 44:6D:57:76:17:64
+	inet addr:0.0.0.0  Mask:0.0.0.0
+	[NO FLAGS]  MTU:1500  Metric:0
+	RX packets:0 errors:0 dropped:0 overruns:-1 frame:-1
+	TX packets:0 errors:0 dropped:0 overruns:-1 carrier:-1
+	collisions:-1
+	RX bytes:0 (  0 )  TX bytes:0 (  0 )
+Realtek RTL8723AE Wireless LAN 802.11n PCI-E NIC-Virtual WiFi Filter Driver-0000
+eth32	Link encap:Ethernet HWaddr 44:6D:57:76:17:64
+	inet addr:0.0.0.0  Mask:0.0.0.0
+	[NO FLAGS]  MTU:1500  Metric:0
+	RX packets:0 errors:0 dropped:0 overruns:-1 frame:-1
+	TX packets:0 errors:0 dropped:0 overruns:-1 carrier:-1
+	collisions:-1
+	RX bytes:0 (  0 )  TX bytes:0 (  0 )
+Realtek RTL8723AE Wireless LAN 802.11n PCI-E NIC-Native WiFi Filter Driver-0000
+eth33	Link encap:Ethernet HWaddr 44:6D:57:76:17:64
+	inet addr:0.0.0.0  Mask:0.0.0.0
+	[NO FLAGS]  MTU:1500  Metric:0
+	RX packets:0 errors:0 dropped:0 overruns:-1 frame:-1
+	TX packets:0 errors:0 dropped:0 overruns:-1 carrier:-1
+	collisions:-1
+	RX bytes:0 (  0 )  TX bytes:0 (  0 )
+Microsoft Virtual WiFi Miniport Adapter
+eth34	Link encap:Ethernet HWaddr 44:6D:57:76:17:64
+	inet addr:0.0.0.0  Mask:0.0.0.0
+	[NO FLAGS]  MTU:1500  Metric:0
+	RX packets:0 errors:0 dropped:0 overruns:-1 frame:-1
+	TX packets:0 errors:0 dropped:0 overruns:-1 carrier:-1
+	collisions:-1
+	RX bytes:0 (  0 )  TX bytes:0 (  0 )
+Microsoft Virtual WiFi Miniport Adapter-Native WiFi Filter Driver-0000
+eth35	Link encap:Ethernet HWaddr 44:6D:57:76:17:64
+	inet addr:0.0.0.0  Mask:0.0.0.0
+	[NO FLAGS]  MTU:1500  Metric:0
+	RX packets:0 errors:0 dropped:0 overruns:-1 frame:-1
+	TX packets:0 errors:0 dropped:0 overruns:-1 carrier:-1
+	collisions:-1
+	RX bytes:0 (  0 )  TX bytes:0 (  0 )
+
+[2013-01-03 21:12:25,686][DEBUG][monitor.fs               ] [Harrier] Using probe [org.elasticsearch.monitor.fs.SigarFsProbe@7e6c57f4] with refresh_interval [1s]
+[2013-01-03 21:12:25,857][DEBUG][indices.store            ] [Harrier] using indices.store.throttle.type [none], with index.store.throttle.max_bytes_per_sec [0b]
+[2013-01-03 21:12:25,873][DEBUG][cache.memory             ] [Harrier] using bytebuffer cache with small_buffer_size [1kb], large_buffer_size [1mb], small_cache_size [10mb], large_cache_size [500mb], direct [true]
+[2013-01-03 21:12:25,888][DEBUG][cluster.routing.allocation.decider] [Harrier] using node_concurrent_recoveries [2], node_initial_primaries_recoveries [4]
+[2013-01-03 21:12:25,904][DEBUG][cluster.routing.allocation.decider] [Harrier] using [cluster.routing.allocation.allow_rebalance] with [indices_all_active]
+[2013-01-03 21:12:25,904][DEBUG][cluster.routing.allocation.decider] [Harrier] using [cluster_concurrent_rebalance] with [2]
+[2013-01-03 21:12:25,904][DEBUG][gateway.local            ] [Harrier] using initial_shards [quorum], list_timeout [30s]
+[2013-01-03 21:12:25,966][DEBUG][indices.recovery         ] [Harrier] using max_size_per_sec[0b], concurrent_streams [3], file_chunk_size [512kb], translog_size [512kb], translog_ops [1000], and compress [true]
+[2013-01-03 21:12:25,998][DEBUG][http.netty               ] [Harrier] using max_chunk_size[8kb], max_header_size[8kb], max_initial_line_length[4kb], max_content_length[100mb], receive_predictor[512kb->512kb]
+[2013-01-03 21:12:25,998][DEBUG][indices.memory           ] [Harrier] using index_buffer_size [98.9mb], with min_shard_index_buffer_size [4mb], max_shard_index_buffer_size [512mb], shard_inactive_time [30m]
+[2013-01-03 21:12:25,998][DEBUG][indices.cache.filter     ] [Harrier] using [node] weighted filter cache with size [20%], actual_size [197.9mb], expire [null], clean_interval [1m]
+[2013-01-03 21:12:26,013][DEBUG][gateway.local.state.meta ] [Harrier] using gateway.local.auto_import_dangled [YES], with gateway.local.dangling_timeout [2h]
+[2013-01-03 21:12:26,013][TRACE][gateway.local.state.meta ] [Harrier] [upgrade]: processing [global-8]
+[2013-01-03 21:12:26,091][DEBUG][gateway.local.state.meta ] [Harrier] took 78ms to load state
+[2013-01-03 21:12:26,091][TRACE][gateway.local.state.shards] [Harrier] [find_latest_state]: processing [global-8]
+[2013-01-03 21:12:26,091][DEBUG][gateway.local.state.shards] [Harrier] took 0s to load started shards state
+[2013-01-03 21:12:26,091][DEBUG][bulk.udp                 ] [Harrier] using enabled [false], host [null], port [9700-9800], bulk_actions [1000], bulk_size [5mb], flush_interval [5s], concurrent_requests [4]
+[2013-01-03 21:12:26,091][INFO ][node                     ] [Harrier] {0.20.2}[3752]: initialized
+[2013-01-03 21:12:26,091][INFO ][node                     ] [Harrier] {0.20.2}[3752]: starting ...
+[2013-01-03 21:12:26,138][DEBUG][netty.channel.socket.nio.SelectorUtil] Using select timeout of 500
+[2013-01-03 21:12:26,138][DEBUG][netty.channel.socket.nio.SelectorUtil] Epoll-bug workaround enabled = false
+[2013-01-03 21:12:26,185][DEBUG][transport.netty          ] [Harrier] Bound to address [/0:0:0:0:0:0:0:0:9300]
+[2013-01-03 21:12:26,388][INFO ][transport                ] [Harrier] bound_address {inet[/0:0:0:0:0:0:0:0:9300]}, publish_address {inet[/192.168.56.1:9300]}
+[2013-01-03 21:12:26,809][TRACE][discovery                ] [Harrier] waiting for 30s for the initial state to be set by the discovery
+[2013-01-03 21:12:26,809][TRACE][discovery.zen.ping.multicast] [Harrier] [1] sending ping request
+[2013-01-03 21:12:28,322][TRACE][discovery.zen.ping.multicast] [Harrier] [1] sending ping request
+[2013-01-03 21:12:29,835][TRACE][discovery.zen            ] [Harrier] full ping responses: {none}
+[2013-01-03 21:12:29,835][DEBUG][discovery.zen            ] [Harrier] filtered ping responses: (filter_client[true], filter_data[false]) {none}
+[2013-01-03 21:12:29,835][DEBUG][cluster.service          ] [Harrier] processing [zen-disco-join (elected_as_master)]: execute
+[2013-01-03 21:12:29,835][TRACE][cluster.service          ] [Harrier] cluster state updated:
+version [1], source [zen-disco-join (elected_as_master)]
+nodes: 
+   [Harrier][K0Zakq2YSvuESyHmZUplOw][inet[/192.168.56.1:9300]], local, master
+routing_table:
+routing_nodes:
+-----node_id[K0Zakq2YSvuESyHmZUplOw][V]
+---- unassigned
+
+[2013-01-03 21:12:29,835][INFO ][cluster.service          ] [Harrier] new_master [Harrier][K0Zakq2YSvuESyHmZUplOw][inet[/192.168.56.1:9300]], reason: zen-disco-join (elected_as_master)
+[2013-01-03 21:12:29,851][TRACE][transport.netty          ] [Harrier] channel opened: [id: 0x47982fcb, /192.168.56.1:59287 => /192.168.56.1:9300]
+[2013-01-03 21:12:29,851][TRACE][transport.netty          ] [Harrier] channel opened: [id: 0xd5c6775d, /192.168.56.1:59288 => /192.168.56.1:9300]
+[2013-01-03 21:12:29,851][TRACE][transport.netty          ] [Harrier] channel opened: [id: 0xc6afbad4, /192.168.56.1:59289 => /192.168.56.1:9300]
+[2013-01-03 21:12:29,851][TRACE][transport.netty          ] [Harrier] channel opened: [id: 0x4140f41d, /192.168.56.1:59290 => /192.168.56.1:9300]
+[2013-01-03 21:12:29,851][TRACE][transport.netty          ] [Harrier] channel opened: [id: 0x75871c95, /192.168.56.1:59291 => /192.168.56.1:9300]
+[2013-01-03 21:12:29,851][TRACE][transport.netty          ] [Harrier] channel opened: [id: 0x401e1aed, /192.168.56.1:59292 => /192.168.56.1:9300]
+[2013-01-03 21:12:29,851][TRACE][transport.netty          ] [Harrier] channel opened: [id: 0x3c65d800, /192.168.56.1:59293 => /192.168.56.1:9300]
+[2013-01-03 21:12:29,851][TRACE][transport.netty          ] [Harrier] channel opened: [id: 0xaf5295b9, /192.168.56.1:59294 => /192.168.56.1:9300]
+[2013-01-03 21:12:29,851][TRACE][transport.netty          ] [Harrier] channel opened: [id: 0x84a195a7, /192.168.56.1:59295 => /192.168.56.1:9300]
+[2013-01-03 21:12:29,851][DEBUG][transport.netty          ] [Harrier] connected to node [[Harrier][K0Zakq2YSvuESyHmZUplOw][inet[/192.168.56.1:9300]]]
+[2013-01-03 21:12:29,851][DEBUG][river.cluster            ] [Harrier] processing [reroute_rivers_node_changed]: execute
+[2013-01-03 21:12:29,851][DEBUG][cluster.service          ] [Harrier] processing [zen-disco-join (elected_as_master)]: done applying updated cluster_state
+[2013-01-03 21:12:29,851][TRACE][discovery                ] [Harrier] initial state set from discovery
+[2013-01-03 21:12:29,851][DEBUG][river.cluster            ] [Harrier] processing [reroute_rivers_node_changed]: no change in cluster_state
+[2013-01-03 21:12:29,866][INFO ][discovery                ] [Harrier] whalewired_cluster/K0Zakq2YSvuESyHmZUplOw
+[2013-01-03 21:12:29,866][TRACE][gateway                  ] [Harrier] performing state recovery...
+[2013-01-03 21:12:29,866][TRACE][gateway.local            ] [Harrier] performing state recovery from [K0Zakq2YSvuESyHmZUplOw]
+[2013-01-03 21:12:29,866][TRACE][gateway                  ] [Harrier] successful state recovery, importing cluster state...
+[2013-01-03 21:12:29,866][DEBUG][cluster.service          ] [Harrier] processing [local-gateway-elected-state]: execute
+[2013-01-03 21:12:29,882][DEBUG][gateway.local            ] [Harrier] [cla.nine.dk][4]: allocating [[cla.nine.dk][4], node[null], [P], s[UNASSIGNED]] to [[Harrier][K0Zakq2YSvuESyHmZUplOw][inet[/192.168.56.1:9300]]] on primary allocation
+[2013-01-03 21:12:29,882][DEBUG][gateway.local            ] [Harrier] [cla.nine.dk][2]: allocating [[cla.nine.dk][2], node[null], [P], s[UNASSIGNED]] to [[Harrier][K0Zakq2YSvuESyHmZUplOw][inet[/192.168.56.1:9300]]] on primary allocation
+[2013-01-03 21:12:29,882][DEBUG][gateway.local            ] [Harrier] [cla.nine.dk][3]: allocating [[cla.nine.dk][3], node[null], [P], s[UNASSIGNED]] to [[Harrier][K0Zakq2YSvuESyHmZUplOw][inet[/192.168.56.1:9300]]] on primary allocation
+[2013-01-03 21:12:29,882][DEBUG][gateway.local            ] [Harrier] [cla.nine.dk][0]: allocating [[cla.nine.dk][0], node[null], [P], s[UNASSIGNED]] to [[Harrier][K0Zakq2YSvuESyHmZUplOw][inet[/192.168.56.1:9300]]] on primary allocation
+[2013-01-03 21:12:29,882][DEBUG][gateway.local            ] [Harrier] [cla.nine.dk][1]: throttling allocation [[cla.nine.dk][1], node[null], [P], s[UNASSIGNED]] to [[[Harrier][K0Zakq2YSvuESyHmZUplOw][inet[/192.168.56.1:9300]]]] on primary allocation
+[2013-01-03 21:12:29,882][TRACE][cluster.service          ] [Harrier] cluster state updated:
+version [2], source [local-gateway-elected-state]
+nodes: 
+   [Harrier][K0Zakq2YSvuESyHmZUplOw][inet[/192.168.56.1:9300]], local, master
+routing_table:
+-- index [cla.nine.dk]
+----shard_id [cla.nine.dk][0]
+--------[cla.nine.dk][0], node[K0Zakq2YSvuESyHmZUplOw], [P], s[INITIALIZING]
+--------[cla.nine.dk][0], node[null], [R], s[UNASSIGNED]
+----shard_id [cla.nine.dk][1]
+--------[cla.nine.dk][1], node[null], [R], s[UNASSIGNED]
+--------[cla.nine.dk][1], node[null], [P], s[UNASSIGNED]
+----shard_id [cla.nine.dk][2]
+--------[cla.nine.dk][2], node[K0Zakq2YSvuESyHmZUplOw], [P], s[INITIALIZING]
+--------[cla.nine.dk][2], node[null], [R], s[UNASSIGNED]
+----shard_id [cla.nine.dk][3]
+--------[cla.nine.dk][3], node[K0Zakq2YSvuESyHmZUplOw], [P], s[INITIALIZING]
+--------[cla.nine.dk][3], node[null], [R], s[UNASSIGNED]
+----shard_id [cla.nine.dk][4]
+--------[cla.nine.dk][4], node[K0Zakq2YSvuESyHmZUplOw], [P], s[INITIALIZING]
+--------[cla.nine.dk][4], node[null], [R], s[UNASSIGNED]
+
+routing_nodes:
+-----node_id[K0Zakq2YSvuESyHmZUplOw][V]
+--------[cla.nine.dk][0], node[K0Zakq2YSvuESyHmZUplOw], [P], s[INITIALIZING]
+--------[cla.nine.dk][2], node[K0Zakq2YSvuESyHmZUplOw], [P], s[INITIALIZING]
+--------[cla.nine.dk][3], node[K0Zakq2YSvuESyHmZUplOw], [P], s[INITIALIZING]
+--------[cla.nine.dk][4], node[K0Zakq2YSvuESyHmZUplOw], [P], s[INITIALIZING]
+---- unassigned
+--------[cla.nine.dk][0], node[null], [R], s[UNASSIGNED]
+--------[cla.nine.dk][1], node[null], [R], s[UNASSIGNED]
+--------[cla.nine.dk][1], node[null], [P], s[UNASSIGNED]
+--------[cla.nine.dk][2], node[null], [R], s[UNASSIGNED]
+--------[cla.nine.dk][3], node[null], [R], s[UNASSIGNED]
+--------[cla.nine.dk][4], node[null], [R], s[UNASSIGNED]
+
+[2013-01-03 21:12:29,882][DEBUG][river.cluster            ] [Harrier] processing [reroute_rivers_node_changed]: execute
+[2013-01-03 21:12:29,882][DEBUG][river.cluster            ] [Harrier] processing [reroute_rivers_node_changed]: no change in cluster_state
+[2013-01-03 21:12:29,882][DEBUG][indices.cluster          ] [Harrier] [cla.nine.dk] creating index
+[2013-01-03 21:12:29,882][DEBUG][indices                  ] [Harrier] creating Index [cla.nine.dk], shards [5]/[1]
+[2013-01-03 21:12:30,069][DEBUG][index.mapper             ] [Harrier] [cla.nine.dk] using dynamic[true], default mapping: default_mapping_location[null], loaded_from[jar:file:/C:/dev/git/whalewired/whalewired.tools/elasticsearch-0.20.2/lib/elasticsearch-0.20.2.jar!/org/elasticsearch/index/mapper/default-mapping.json] and source[{
+    "_default_":{
+    }
+}]
+[2013-01-03 21:12:30,069][DEBUG][index.cache.field.data.resident] [Harrier] [cla.nine.dk] using [resident] field cache with max_size [-1], expire [null]
+[2013-01-03 21:12:30,069][DEBUG][index.cache.query.parser.resident] [Harrier] [cla.nine.dk] using [resident] query cache with max_size [100], expire [null]
+[2013-01-03 21:12:30,069][DEBUG][index.cache              ] [Harrier] [cla.nine.dk] Using stats.refresh_interval [1s]
+[2013-01-03 21:12:30,085][DEBUG][index.store.fs           ] [Harrier] [cla.nine.dk] using index.store.throttle.type [node], with index.store.throttle.max_bytes_per_sec [0b]
+[2013-01-03 21:12:30,085][DEBUG][indices.cluster          ] [Harrier] [cla.nine.dk] adding mapping [logevent], source [{"logevent":{"properties":{"accountName":{"type":"string"},"applicationName":{"type":"string"},"clientVersion":{"type":"string"},"hostName":{"type":"string"},"logFileName":{"type":"string"},"logLevel":{"type":"string","index":"not_analyzed","omit_norms":true,"index_options":"docs"},"logLineNumber":{"type":"string"},"logLocation":{"type":"string"},"logLocationShort":{"type":"string"},"logMessage":{"type":"multi_field","fields":{"logMessage":{"type":"string"},"untouched":{"type":"string","index":"not_analyzed","omit_norms":true,"index_options":"docs","include_in_all":false}}},"logMethodName":{"type":"string"},"logQualifiedClassName":{"type":"string"},"logThread":{"type":"string"},"logThrowableLocation":{"type":"string"},"logThrowableTrace":{"type":"string"},"logThrowableType":{"type":"string"},"logTime":{"type":"date","format":"dateOptionalTime"},"loggerName":{"type":"string"}}}}]
+[2013-01-03 21:12:30,132][INFO ][http                     ] [Harrier] bound_address {inet[/0:0:0:0:0:0:0:0:9200]}, publish_address {inet[/192.168.56.1:9200]}
+[2013-01-03 21:12:30,132][INFO ][node                     ] [Harrier] {0.20.2}[3752]: started
+[2013-01-03 21:12:30,147][DEBUG][indices.cluster          ] [Harrier] [cla.nine.dk][0] creating shard
+[2013-01-03 21:12:30,147][DEBUG][index.service            ] [Harrier] [cla.nine.dk] creating shard_id [0]
+[2013-01-03 21:12:30,256][DEBUG][index.store              ] [Harrier] [cla.nine.dk][0] using compress.stored [false], compress.tv [false]
+[2013-01-03 21:12:30,256][DEBUG][index.deletionpolicy     ] [Harrier] [cla.nine.dk][0] Using [keep_only_last] deletion policy
+[2013-01-03 21:12:30,256][DEBUG][index.merge.policy       ] [Harrier] [cla.nine.dk][0] using [tiered] merge policy with expunge_deletes_allowed[10.0], floor_segment[2mb], max_merge_at_once[10], max_merge_at_once_explicit[30], max_merged_segment[5gb], segments_per_tier[10.0], reclaim_deletes_weight[2.0], async_merge[true]
+[2013-01-03 21:12:30,256][DEBUG][index.merge.scheduler    ] [Harrier] [cla.nine.dk][0] using [concurrent] merge scheduler with max_thread_count[3]
+[2013-01-03 21:12:30,256][DEBUG][index.shard.service      ] [Harrier] [cla.nine.dk][0] state: [CREATED]
+[2013-01-03 21:12:30,256][DEBUG][index.translog           ] [Harrier] [cla.nine.dk][0] interval [5s], flush_threshold_ops [5000], flush_threshold_size [200mb], flush_threshold_period [30m]
+[2013-01-03 21:12:30,256][DEBUG][index.shard.service      ] [Harrier] [cla.nine.dk][0] state: [CREATED]->[RECOVERING], reason [from gateway]
+[2013-01-03 21:12:30,256][DEBUG][indices.cluster          ] [Harrier] [cla.nine.dk][2] creating shard
+[2013-01-03 21:12:30,256][DEBUG][index.service            ] [Harrier] [cla.nine.dk] creating shard_id [2]
+[2013-01-03 21:12:30,256][DEBUG][index.gateway            ] [Harrier] [cla.nine.dk][0] starting recovery from local ...
+[2013-01-03 21:12:30,272][TRACE][index.gateway.local      ] [Harrier] [cla.nine.dk][0] using existing shard data, translog id [1357154525636]
+[2013-01-03 21:12:30,272][DEBUG][index.engine.robin       ] [Harrier] [cla.nine.dk][0] starting engine
+[2013-01-03 21:12:30,303][DEBUG][index.store              ] [Harrier] [cla.nine.dk][2] using compress.stored [false], compress.tv [false]
+[2013-01-03 21:12:30,303][DEBUG][index.deletionpolicy     ] [Harrier] [cla.nine.dk][2] Using [keep_only_last] deletion policy
+[2013-01-03 21:12:30,303][DEBUG][index.merge.policy       ] [Harrier] [cla.nine.dk][2] using [tiered] merge policy with expunge_deletes_allowed[10.0], floor_segment[2mb], max_merge_at_once[10], max_merge_at_once_explicit[30], max_merged_segment[5gb], segments_per_tier[10.0], reclaim_deletes_weight[2.0], async_merge[true]
+[2013-01-03 21:12:30,303][DEBUG][index.merge.scheduler    ] [Harrier] [cla.nine.dk][2] using [concurrent] merge scheduler with max_thread_count[3]
+[2013-01-03 21:12:30,319][DEBUG][index.shard.service      ] [Harrier] [cla.nine.dk][2] state: [CREATED]
+[2013-01-03 21:12:30,319][DEBUG][index.translog           ] [Harrier] [cla.nine.dk][2] interval [5s], flush_threshold_ops [5000], flush_threshold_size [200mb], flush_threshold_period [30m]
+[2013-01-03 21:12:30,319][DEBUG][indices.memory           ] [Harrier] recalculating shard indexing buffer (reason=created_shard[cla.nine.dk][2]), total is [98.9mb] with [1] active shards, each shard set to [98.9mb]
+[2013-01-03 21:12:30,366][DEBUG][index.engine.robin       ] [Harrier] [cla.nine.dk][0] using bloom filter enhanced delete handling
+[2013-01-03 21:12:30,381][TRACE][indices.warmer           ] [Harrier] [cla.nine.dk][0] warming [ReadOnlyDirectoryReader(segments_1:nrt)], new [ReadOnlyDirectoryReader(segments_1:nrt)]
+[2013-01-03 21:12:30,381][TRACE][index.warmer             ] [Harrier] [cla.nine.dk][0] warming took [750.9micros]
+[2013-01-03 21:12:30,381][DEBUG][index.engine.robin       ] [Harrier] [cla.nine.dk][0] updating index_buffer_size from [64mb] to [98.9mb]
+[2013-01-03 21:12:30,381][DEBUG][index.shard.service      ] [Harrier] [cla.nine.dk][2] state: [CREATED]->[RECOVERING], reason [from gateway]
+[2013-01-03 21:12:30,381][DEBUG][indices.cluster          ] [Harrier] [cla.nine.dk][3] creating shard
+[2013-01-03 21:12:30,381][DEBUG][index.gateway            ] [Harrier] [cla.nine.dk][2] starting recovery from local ...
+[2013-01-03 21:12:30,381][DEBUG][index.service            ] [Harrier] [cla.nine.dk] creating shard_id [3]
+[2013-01-03 21:12:30,381][TRACE][index.gateway.local      ] [Harrier] [cla.nine.dk][2] using existing shard data, translog id [1357154525823]
+[2013-01-03 21:12:30,397][DEBUG][index.engine.robin       ] [Harrier] [cla.nine.dk][2] starting engine
+[2013-01-03 21:12:30,428][DEBUG][index.engine.robin       ] [Harrier] [cla.nine.dk][2] using bloom filter enhanced delete handling
+[2013-01-03 21:12:30,444][TRACE][indices.warmer           ] [Harrier] [cla.nine.dk][2] warming [ReadOnlyDirectoryReader(segments_1:nrt)], new [ReadOnlyDirectoryReader(segments_1:nrt)]
+[2013-01-03 21:12:30,444][TRACE][index.warmer             ] [Harrier] [cla.nine.dk][2] warming took [52.2micros]
+[2013-01-03 21:12:30,444][DEBUG][index.store              ] [Harrier] [cla.nine.dk][3] using compress.stored [false], compress.tv [false]
+[2013-01-03 21:12:30,444][DEBUG][index.deletionpolicy     ] [Harrier] [cla.nine.dk][3] Using [keep_only_last] deletion policy
+[2013-01-03 21:12:30,444][DEBUG][index.merge.policy       ] [Harrier] [cla.nine.dk][3] using [tiered] merge policy with expunge_deletes_allowed[10.0], floor_segment[2mb], max_merge_at_once[10], max_merge_at_once_explicit[30], max_merged_segment[5gb], segments_per_tier[10.0], reclaim_deletes_weight[2.0], async_merge[true]
+[2013-01-03 21:12:30,444][DEBUG][index.merge.scheduler    ] [Harrier] [cla.nine.dk][3] using [concurrent] merge scheduler with max_thread_count[3]
+[2013-01-03 21:12:30,444][DEBUG][index.shard.service      ] [Harrier] [cla.nine.dk][3] state: [CREATED]
+[2013-01-03 21:12:30,444][DEBUG][index.translog           ] [Harrier] [cla.nine.dk][3] interval [5s], flush_threshold_ops [5000], flush_threshold_size [200mb], flush_threshold_period [30m]
+[2013-01-03 21:12:30,444][DEBUG][indices.memory           ] [Harrier] recalculating shard indexing buffer (reason=created_shard[cla.nine.dk][3]), total is [98.9mb] with [2] active shards, each shard set to [49.4mb]
+[2013-01-03 21:12:30,444][DEBUG][index.engine.robin       ] [Harrier] [cla.nine.dk][0] updating index_buffer_size from [98.9mb] to [49.4mb]
+[2013-01-03 21:12:30,444][DEBUG][index.engine.robin       ] [Harrier] [cla.nine.dk][2] updating index_buffer_size from [64mb] to [49.4mb]
+[2013-01-03 21:12:30,444][DEBUG][index.shard.service      ] [Harrier] [cla.nine.dk][3] state: [CREATED]->[RECOVERING], reason [from gateway]
+[2013-01-03 21:12:30,444][DEBUG][indices.cluster          ] [Harrier] [cla.nine.dk][4] creating shard
+[2013-01-03 21:12:30,444][DEBUG][index.gateway            ] [Harrier] [cla.nine.dk][3] starting recovery from local ...
+[2013-01-03 21:12:30,444][DEBUG][index.service            ] [Harrier] [cla.nine.dk] creating shard_id [4]
+[2013-01-03 21:12:30,459][TRACE][index.gateway.local      ] [Harrier] [cla.nine.dk][3] using existing shard data, translog id [1357154525714]
+[2013-01-03 21:12:30,459][DEBUG][index.engine.robin       ] [Harrier] [cla.nine.dk][3] starting engine
+[2013-01-03 21:12:30,506][DEBUG][index.engine.robin       ] [Harrier] [cla.nine.dk][3] using bloom filter enhanced delete handling
+[2013-01-03 21:12:30,506][TRACE][indices.warmer           ] [Harrier] [cla.nine.dk][3] warming [ReadOnlyDirectoryReader(segments_1:nrt)], new [ReadOnlyDirectoryReader(segments_1:nrt)]
+[2013-01-03 21:12:30,506][TRACE][index.warmer             ] [Harrier] [cla.nine.dk][3] warming took [51.3micros]
+[2013-01-03 21:12:30,506][DEBUG][index.store              ] [Harrier] [cla.nine.dk][4] using compress.stored [false], compress.tv [false]
+[2013-01-03 21:12:30,506][DEBUG][index.deletionpolicy     ] [Harrier] [cla.nine.dk][4] Using [keep_only_last] deletion policy
+[2013-01-03 21:12:30,506][DEBUG][index.merge.policy       ] [Harrier] [cla.nine.dk][4] using [tiered] merge policy with expunge_deletes_allowed[10.0], floor_segment[2mb], max_merge_at_once[10], max_merge_at_once_explicit[30], max_merged_segment[5gb], segments_per_tier[10.0], reclaim_deletes_weight[2.0], async_merge[true]
+[2013-01-03 21:12:30,506][DEBUG][index.merge.scheduler    ] [Harrier] [cla.nine.dk][4] using [concurrent] merge scheduler with max_thread_count[3]
+[2013-01-03 21:12:30,506][DEBUG][index.shard.service      ] [Harrier] [cla.nine.dk][4] state: [CREATED]
+[2013-01-03 21:12:30,506][DEBUG][index.translog           ] [Harrier] [cla.nine.dk][4] interval [5s], flush_threshold_ops [5000], flush_threshold_size [200mb], flush_threshold_period [30m]
+[2013-01-03 21:12:30,506][DEBUG][indices.memory           ] [Harrier] recalculating shard indexing buffer (reason=created_shard[cla.nine.dk][4]), total is [98.9mb] with [3] active shards, each shard set to [32.9mb]
+[2013-01-03 21:12:30,506][DEBUG][index.engine.robin       ] [Harrier] [cla.nine.dk][0] updating index_buffer_size from [49.4mb] to [32.9mb]
+[2013-01-03 21:12:30,506][DEBUG][index.engine.robin       ] [Harrier] [cla.nine.dk][2] updating index_buffer_size from [49.4mb] to [32.9mb]
+[2013-01-03 21:12:30,506][DEBUG][index.engine.robin       ] [Harrier] [cla.nine.dk][3] updating index_buffer_size from [64mb] to [32.9mb]
+[2013-01-03 21:12:30,522][DEBUG][index.shard.service      ] [Harrier] [cla.nine.dk][4] state: [CREATED]->[RECOVERING], reason [from gateway]
+[2013-01-03 21:12:30,522][DEBUG][index.gateway            ] [Harrier] [cla.nine.dk][4] starting recovery from local ...
+[2013-01-03 21:12:30,522][TRACE][gateway.local.state.meta ] [Harrier] [_global] writing state, reason [changed]
+[2013-01-03 21:12:30,522][TRACE][index.gateway.local      ] [Harrier] [cla.nine.dk][4] using existing shard data, translog id [1357154525761]
+[2013-01-03 21:12:30,522][DEBUG][index.engine.robin       ] [Harrier] [cla.nine.dk][4] starting engine
+[2013-01-03 21:12:30,537][INFO ][gateway                  ] [Harrier] recovered [1] indices into cluster_state
+[2013-01-03 21:12:30,537][DEBUG][cluster.service          ] [Harrier] processing [local-gateway-elected-state]: done applying updated cluster_state
+[2013-01-03 21:12:30,584][DEBUG][index.engine.robin       ] [Harrier] [cla.nine.dk][4] using bloom filter enhanced delete handling
+[2013-01-03 21:12:30,600][TRACE][indices.warmer           ] [Harrier] [cla.nine.dk][4] warming [ReadOnlyDirectoryReader(segments_1:nrt)], new [ReadOnlyDirectoryReader(segments_1:nrt)]
+[2013-01-03 21:12:30,600][TRACE][index.warmer             ] [Harrier] [cla.nine.dk][4] warming took [42.8micros]
+[2013-01-03 21:12:31,036][TRACE][indices.warmer           ] [Harrier] [cla.nine.dk][3] warming [ReadOnlyDirectoryReader(segments_2:nrt _0(3.6.2):C165)], new [MultiReader(_0(3.6.2):C165)]
+[2013-01-03 21:12:31,036][TRACE][index.warmer             ] [Harrier] [cla.nine.dk][3] warming took [45.9micros]
+[2013-01-03 21:12:31,036][DEBUG][index.shard.service      ] [Harrier] [cla.nine.dk][3] state: [RECOVERING]->[STARTED], reason [post recovery]
+[2013-01-03 21:12:31,036][DEBUG][index.shard.service      ] [Harrier] [cla.nine.dk][3] scheduling refresher every 1s
+[2013-01-03 21:12:31,036][DEBUG][index.shard.service      ] [Harrier] [cla.nine.dk][3] scheduling optimizer / merger every 1s
+[2013-01-03 21:12:31,036][TRACE][index.shard.service      ] [Harrier] [cla.nine.dk][3] refresh with waitForOperations[false]
+[2013-01-03 21:12:31,036][DEBUG][index.gateway            ] [Harrier] [cla.nine.dk][3] recovery completed from local, took [592ms]
+    index    : files           [84] with total_size [464.9kb], took[15ms]
+             : recovered_files [0] with total_size [0b]
+             : reusing_files   [84] with total_size [464.9kb]
+    start    : took [47ms], check_index [0s]
+    translog : number_of_operations [165], took [530ms]
+[2013-01-03 21:12:31,036][DEBUG][cluster.action.shard     ] [Harrier] sending shard started for [cla.nine.dk][3], node[K0Zakq2YSvuESyHmZUplOw], [P], s[INITIALIZING], reason [after recovery from gateway]
+[2013-01-03 21:12:31,036][DEBUG][cluster.action.shard     ] [Harrier] received shard started for [cla.nine.dk][3], node[K0Zakq2YSvuESyHmZUplOw], [P], s[INITIALIZING], reason [after recovery from gateway]
+[2013-01-03 21:12:31,036][DEBUG][cluster.service          ] [Harrier] processing [shard-started ([cla.nine.dk][3], node[K0Zakq2YSvuESyHmZUplOw], [P], s[INITIALIZING]), reason [after recovery from gateway]]: execute
+[2013-01-03 21:12:31,036][DEBUG][cluster.action.shard     ] [Harrier] applying started shards [[cla.nine.dk][3], node[K0Zakq2YSvuESyHmZUplOw], [P], s[INITIALIZING]], reason [after recovery from gateway]
+[2013-01-03 21:12:31,036][DEBUG][gateway.local            ] [Harrier] [cla.nine.dk][1]: allocating [[cla.nine.dk][1], node[null], [P], s[UNASSIGNED]] to [[Harrier][K0Zakq2YSvuESyHmZUplOw][inet[/192.168.56.1:9300]]] on primary allocation
+[2013-01-03 21:12:31,052][TRACE][cluster.service          ] [Harrier] cluster state updated:
+version [3], source [shard-started ([cla.nine.dk][3], node[K0Zakq2YSvuESyHmZUplOw], [P], s[INITIALIZING]), reason [after recovery from gateway]]
+nodes: 
+   [Harrier][K0Zakq2YSvuESyHmZUplOw][inet[/192.168.56.1:9300]], local, master
+routing_table:
+-- index [cla.nine.dk]
+----shard_id [cla.nine.dk][0]
+--------[cla.nine.dk][0], node[K0Zakq2YSvuESyHmZUplOw], [P], s[INITIALIZING]
+--------[cla.nine.dk][0], node[null], [R], s[UNASSIGNED]
+----shard_id [cla.nine.dk][1]
+--------[cla.nine.dk][1], node[K0Zakq2YSvuESyHmZUplOw], [P], s[INITIALIZING]
+--------[cla.nine.dk][1], node[null], [R], s[UNASSIGNED]
+----shard_id [cla.nine.dk][2]
+--------[cla.nine.dk][2], node[K0Zakq2YSvuESyHmZUplOw], [P], s[INITIALIZING]
+--------[cla.nine.dk][2], node[null], [R], s[UNASSIGNED]
+----shard_id [cla.nine.dk][3]
+--------[cla.nine.dk][3], node[K0Zakq2YSvuESyHmZUplOw], [P], s[STARTED]
+--------[cla.nine.dk][3], node[null], [R], s[UNASSIGNED]
+----shard_id [cla.nine.dk][4]
+--------[cla.nine.dk][4], node[K0Zakq2YSvuESyHmZUplOw], [P], s[INITIALIZING]
+--------[cla.nine.dk][4], node[null], [R], s[UNASSIGNED]
+
+routing_nodes:
+-----node_id[K0Zakq2YSvuESyHmZUplOw][V]
+--------[cla.nine.dk][0], node[K0Zakq2YSvuESyHmZUplOw], [P], s[INITIALIZING]
+--------[cla.nine.dk][1], node[K0Zakq2YSvuESyHmZUplOw], [P], s[INITIALIZING]
+--------[cla.nine.dk][2], node[K0Zakq2YSvuESyHmZUplOw], [P], s[INITIALIZING]
+--------[cla.nine.dk][3], node[K0Zakq2YSvuESyHmZUplOw], [P], s[STARTED]
+--------[cla.nine.dk][4], node[K0Zakq2YSvuESyHmZUplOw], [P], s[INITIALIZING]
+---- unassigned
+--------[cla.nine.dk][0], node[null], [R], s[UNASSIGNED]
+--------[cla.nine.dk][1], node[null], [R], s[UNASSIGNED]
+--------[cla.nine.dk][2], node[null], [R], s[UNASSIGNED]
+--------[cla.nine.dk][3], node[null], [R], s[UNASSIGNED]
+--------[cla.nine.dk][4], node[null], [R], s[UNASSIGNED]
+
+[2013-01-03 21:12:31,052][DEBUG][indices.cluster          ] [Harrier] [cla.nine.dk][1] creating shard
+[2013-01-03 21:12:31,052][DEBUG][river.cluster            ] [Harrier] processing [reroute_rivers_node_changed]: execute
+[2013-01-03 21:12:31,052][DEBUG][index.service            ] [Harrier] [cla.nine.dk] creating shard_id [1]
+[2013-01-03 21:12:31,052][DEBUG][river.cluster            ] [Harrier] processing [reroute_rivers_node_changed]: no change in cluster_state
+[2013-01-03 21:12:31,052][TRACE][indices.warmer           ] [Harrier] [cla.nine.dk][4] warming [ReadOnlyDirectoryReader(segments_2:nrt _0(3.6.2):C156)], new [MultiReader(_0(3.6.2):C156)]
+[2013-01-03 21:12:31,052][TRACE][index.warmer             ] [Harrier] [cla.nine.dk][4] warming took [42.8micros]
+[2013-01-03 21:12:31,068][DEBUG][index.shard.service      ] [Harrier] [cla.nine.dk][4] state: [RECOVERING]->[STARTED], reason [post recovery]
+[2013-01-03 21:12:31,068][DEBUG][index.shard.service      ] [Harrier] [cla.nine.dk][4] scheduling refresher every 1s
+[2013-01-03 21:12:31,068][DEBUG][index.shard.service      ] [Harrier] [cla.nine.dk][4] scheduling optimizer / merger every 1s
+[2013-01-03 21:12:31,068][TRACE][index.shard.service      ] [Harrier] [cla.nine.dk][4] refresh with waitForOperations[false]
+[2013-01-03 21:12:31,068][DEBUG][index.gateway            ] [Harrier] [cla.nine.dk][4] recovery completed from local, took [546ms]
+    index    : files           [84] with total_size [433.3kb], took[0s]
+             : recovered_files [0] with total_size [0b]
+             : reusing_files   [84] with total_size [433.3kb]
+    start    : took [78ms], check_index [0s]
+    translog : number_of_operations [156], took [468ms]
+[2013-01-03 21:12:31,068][DEBUG][cluster.action.shard     ] [Harrier] sending shard started for [cla.nine.dk][4], node[K0Zakq2YSvuESyHmZUplOw], [P], s[INITIALIZING], reason [after recovery from gateway]
+[2013-01-03 21:12:31,068][DEBUG][cluster.action.shard     ] [Harrier] received shard started for [cla.nine.dk][4], node[K0Zakq2YSvuESyHmZUplOw], [P], s[INITIALIZING], reason [after recovery from gateway]
+[2013-01-03 21:12:31,068][TRACE][indices.warmer           ] [Harrier] [cla.nine.dk][0] warming [ReadOnlyDirectoryReader(segments_2:nrt _0(3.6.2):C167)], new [MultiReader(_0(3.6.2):C167)]
+[2013-01-03 21:12:31,068][TRACE][index.warmer             ] [Harrier] [cla.nine.dk][0] warming took [46.8micros]
+[2013-01-03 21:12:31,083][DEBUG][index.shard.service      ] [Harrier] [cla.nine.dk][0] state: [RECOVERING]->[STARTED], reason [post recovery]
+[2013-01-03 21:12:31,083][DEBUG][index.shard.service      ] [Harrier] [cla.nine.dk][0] scheduling refresher every 1s
+[2013-01-03 21:12:31,083][DEBUG][index.shard.service      ] [Harrier] [cla.nine.dk][0] scheduling optimizer / merger every 1s
+[2013-01-03 21:12:31,083][TRACE][index.shard.service      ] [Harrier] [cla.nine.dk][0] refresh with waitForOperations[false]
+[2013-01-03 21:12:31,083][DEBUG][index.gateway            ] [Harrier] [cla.nine.dk][0] recovery completed from local, took [827ms]
+    index    : files           [84] with total_size [478.3kb], took[16ms]
+             : recovered_files [0] with total_size [0b]
+             : reusing_files   [84] with total_size [478.3kb]
+    start    : took [109ms], check_index [0s]
+    translog : number_of_operations [167], took [702ms]
+[2013-01-03 21:12:31,083][DEBUG][cluster.action.shard     ] [Harrier] sending shard started for [cla.nine.dk][0], node[K0Zakq2YSvuESyHmZUplOw], [P], s[INITIALIZING], reason [after recovery from gateway]
+[2013-01-03 21:12:31,083][DEBUG][cluster.action.shard     ] [Harrier] received shard started for [cla.nine.dk][0], node[K0Zakq2YSvuESyHmZUplOw], [P], s[INITIALIZING], reason [after recovery from gateway]
+[2013-01-03 21:12:31,099][TRACE][indices.warmer           ] [Harrier] [cla.nine.dk][2] warming [ReadOnlyDirectoryReader(segments_2:nrt _0(3.6.2):C187)], new [MultiReader(_0(3.6.2):C187)]
+[2013-01-03 21:12:31,099][TRACE][index.warmer             ] [Harrier] [cla.nine.dk][2] warming took [46.4micros]
+[2013-01-03 21:12:31,099][DEBUG][index.shard.service      ] [Harrier] [cla.nine.dk][2] state: [RECOVERING]->[STARTED], reason [post recovery]
+[2013-01-03 21:12:31,099][DEBUG][index.shard.service      ] [Harrier] [cla.nine.dk][2] scheduling refresher every 1s
+[2013-01-03 21:12:31,099][DEBUG][index.shard.service      ] [Harrier] [cla.nine.dk][2] scheduling optimizer / merger every 1s
+[2013-01-03 21:12:31,099][TRACE][index.shard.service      ] [Harrier] [cla.nine.dk][2] refresh with waitForOperations[false]
+[2013-01-03 21:12:31,099][DEBUG][index.gateway            ] [Harrier] [cla.nine.dk][2] recovery completed from local, took [718ms]
+    index    : files           [84] with total_size [503.9kb], took[0s]
+             : recovered_files [0] with total_size [0b]
+             : reusing_files   [84] with total_size [503.9kb]
+    start    : took [63ms], check_index [0s]
+    translog : number_of_operations [187], took [655ms]
+[2013-01-03 21:12:31,099][DEBUG][cluster.action.shard     ] [Harrier] sending shard started for [cla.nine.dk][2], node[K0Zakq2YSvuESyHmZUplOw], [P], s[INITIALIZING], reason [after recovery from gateway]
+[2013-01-03 21:12:31,099][DEBUG][cluster.action.shard     ] [Harrier] received shard started for [cla.nine.dk][2], node[K0Zakq2YSvuESyHmZUplOw], [P], s[INITIALIZING], reason [after recovery from gateway]
+[2013-01-03 21:12:31,114][DEBUG][index.store              ] [Harrier] [cla.nine.dk][1] using compress.stored [false], compress.tv [false]
+[2013-01-03 21:12:31,114][DEBUG][index.deletionpolicy     ] [Harrier] [cla.nine.dk][1] Using [keep_only_last] deletion policy
+[2013-01-03 21:12:31,114][DEBUG][index.merge.policy       ] [Harrier] [cla.nine.dk][1] using [tiered] merge policy with expunge_deletes_allowed[10.0], floor_segment[2mb], max_merge_at_once[10], max_merge_at_once_explicit[30], max_merged_segment[5gb], segments_per_tier[10.0], reclaim_deletes_weight[2.0], async_merge[true]
+[2013-01-03 21:12:31,114][DEBUG][index.merge.scheduler    ] [Harrier] [cla.nine.dk][1] using [concurrent] merge scheduler with max_thread_count[3]
+[2013-01-03 21:12:31,114][DEBUG][index.shard.service      ] [Harrier] [cla.nine.dk][1] state: [CREATED]
+[2013-01-03 21:12:31,114][DEBUG][index.translog           ] [Harrier] [cla.nine.dk][1] interval [5s], flush_threshold_ops [5000], flush_threshold_size [200mb], flush_threshold_period [30m]
+[2013-01-03 21:12:31,114][DEBUG][indices.memory           ] [Harrier] recalculating shard indexing buffer (reason=created_shard[cla.nine.dk][1]), total is [98.9mb] with [4] active shards, each shard set to [24.7mb]
+[2013-01-03 21:12:31,114][DEBUG][index.engine.robin       ] [Harrier] [cla.nine.dk][0] updating index_buffer_size from [32.9mb] to [24.7mb]
+[2013-01-03 21:12:31,130][DEBUG][index.engine.robin       ] [Harrier] [cla.nine.dk][2] updating index_buffer_size from [32.9mb] to [24.7mb]
+[2013-01-03 21:12:31,130][DEBUG][index.engine.robin       ] [Harrier] [cla.nine.dk][3] updating index_buffer_size from [32.9mb] to [24.7mb]
+[2013-01-03 21:12:31,130][DEBUG][index.engine.robin       ] [Harrier] [cla.nine.dk][4] updating index_buffer_size from [64mb] to [24.7mb]
+[2013-01-03 21:12:31,130][DEBUG][index.shard.service      ] [Harrier] [cla.nine.dk][1] state: [CREATED]->[RECOVERING], reason [from gateway]
+[2013-01-03 21:12:31,130][DEBUG][index.gateway            ] [Harrier] [cla.nine.dk][1] starting recovery from local ...
+[2013-01-03 21:12:31,130][TRACE][indices.cluster          ] [Harrier] [{}][{}] master [{}] marked shard as initializing, but shard already created, mark shard as started
+[2013-01-03 21:12:31,130][DEBUG][cluster.action.shard     ] [Harrier] sending shard started for [cla.nine.dk][2], node[K0Zakq2YSvuESyHmZUplOw], [P], s[INITIALIZING], reason [master [Harrier][K0Zakq2YSvuESyHmZUplOw][inet[/192.168.56.1:9300]] marked shard as initializing, but shard already started, mark shard as started]
+[2013-01-03 21:12:31,130][TRACE][index.gateway.local      ] [Harrier] [cla.nine.dk][1] using existing shard data, translog id [1357154525683]
+[2013-01-03 21:12:31,130][DEBUG][cluster.action.shard     ] [Harrier] received shard started for [cla.nine.dk][2], node[K0Zakq2YSvuESyHmZUplOw], [P], s[INITIALIZING], reason [master [Harrier][K0Zakq2YSvuESyHmZUplOw][inet[/192.168.56.1:9300]] marked shard as initializing, but shard already started, mark shard as started]
+[2013-01-03 21:12:31,130][TRACE][indices.cluster          ] [Harrier] [{}][{}] master [{}] marked shard as initializing, but shard already created, mark shard as started
+[2013-01-03 21:12:31,130][DEBUG][index.engine.robin       ] [Harrier] [cla.nine.dk][1] starting engine
+[2013-01-03 21:12:31,130][DEBUG][cluster.action.shard     ] [Harrier] sending shard started for [cla.nine.dk][4], node[K0Zakq2YSvuESyHmZUplOw], [P], s[INITIALIZING], reason [master [Harrier][K0Zakq2YSvuESyHmZUplOw][inet[/192.168.56.1:9300]] marked shard as initializing, but shard already started, mark shard as started]
+[2013-01-03 21:12:31,130][DEBUG][cluster.action.shard     ] [Harrier] received shard started for [cla.nine.dk][4], node[K0Zakq2YSvuESyHmZUplOw], [P], s[INITIALIZING], reason [master [Harrier][K0Zakq2YSvuESyHmZUplOw][inet[/192.168.56.1:9300]] marked shard as initializing, but shard already started, mark shard as started]
+[2013-01-03 21:12:31,130][TRACE][gateway.local.state.shards] [Harrier] [cla.nine.dk][3] writing shard state, reason [version changed from [2] to [4]]
+[2013-01-03 21:12:31,161][DEBUG][cluster.service          ] [Harrier] processing [shard-started ([cla.nine.dk][3], node[K0Zakq2YSvuESyHmZUplOw], [P], s[INITIALIZING]), reason [after recovery from gateway]]: done applying updated cluster_state
+[2013-01-03 21:12:31,161][DEBUG][cluster.service          ] [Harrier] processing [shard-started ([cla.nine.dk][4], node[K0Zakq2YSvuESyHmZUplOw], [P], s[INITIALIZING]), reason [after recovery from gateway]]: execute
+[2013-01-03 21:12:31,161][DEBUG][cluster.action.shard     ] [Harrier] applying started shards [[cla.nine.dk][4], node[K0Zakq2YSvuESyHmZUplOw], [P], s[INITIALIZING], [cla.nine.dk][0], node[K0Zakq2YSvuESyHmZUplOw], [P], s[INITIALIZING], [cla.nine.dk][2], node[K0Zakq2YSvuESyHmZUplOw], [P], s[INITIALIZING], [cla.nine.dk][2], node[K0Zakq2YSvuESyHmZUplOw], [P], s[INITIALIZING], [cla.nine.dk][4], node[K0Zakq2YSvuESyHmZUplOw], [P], s[INITIALIZING]], reason [after recovery from gateway]
+[2013-01-03 21:12:31,161][TRACE][cluster.service          ] [Harrier] cluster state updated:
+version [4], source [shard-started ([cla.nine.dk][4], node[K0Zakq2YSvuESyHmZUplOw], [P], s[INITIALIZING]), reason [after recovery from gateway]]
+nodes: 
+   [Harrier][K0Zakq2YSvuESyHmZUplOw][inet[/192.168.56.1:9300]], local, master
+routing_table:
+-- index [cla.nine.dk]
+----shard_id [cla.nine.dk][0]
+--------[cla.nine.dk][0], node[K0Zakq2YSvuESyHmZUplOw], [P], s[STARTED]
+--------[cla.nine.dk][0], node[null], [R], s[UNASSIGNED]
+----shard_id [cla.nine.dk][1]
+--------[cla.nine.dk][1], node[K0Zakq2YSvuESyHmZUplOw], [P], s[INITIALIZING]
+--------[cla.nine.dk][1], node[null], [R], s[UNASSIGNED]
+----shard_id [cla.nine.dk][2]
+--------[cla.nine.dk][2], node[K0Zakq2YSvuESyHmZUplOw], [P], s[STARTED]
+--------[cla.nine.dk][2], node[null], [R], s[UNASSIGNED]
+----shard_id [cla.nine.dk][3]
+--------[cla.nine.dk][3], node[K0Zakq2YSvuESyHmZUplOw], [P], s[STARTED]
+--------[cla.nine.dk][3], node[null], [R], s[UNASSIGNED]
+----shard_id [cla.nine.dk][4]
+--------[cla.nine.dk][4], node[K0Zakq2YSvuESyHmZUplOw], [P], s[STARTED]
+--------[cla.nine.dk][4], node[null], [R], s[UNASSIGNED]
+
+routing_nodes:
+-----node_id[K0Zakq2YSvuESyHmZUplOw][V]
+--------[cla.nine.dk][0], node[K0Zakq2YSvuESyHmZUplOw], [P], s[STARTED]
+--------[cla.nine.dk][1], node[K0Zakq2YSvuESyHmZUplOw], [P], s[INITIALIZING]
+--------[cla.nine.dk][2], node[K0Zakq2YSvuESyHmZUplOw], [P], s[STARTED]
+--------[cla.nine.dk][3], node[K0Zakq2YSvuESyHmZUplOw], [P], s[STARTED]
+--------[cla.nine.dk][4], node[K0Zakq2YSvuESyHmZUplOw], [P], s[STARTED]
+---- unassigned
+--------[cla.nine.dk][0], node[null], [R], s[UNASSIGNED]
+--------[cla.nine.dk][1], node[null], [R], s[UNASSIGNED]
+--------[cla.nine.dk][2], node[null], [R], s[UNASSIGNED]
+--------[cla.nine.dk][3], node[null], [R], s[UNASSIGNED]
+--------[cla.nine.dk][4], node[null], [R], s[UNASSIGNED]
+
+[2013-01-03 21:12:31,161][DEBUG][river.cluster            ] [Harrier] processing [reroute_rivers_node_changed]: execute
+[2013-01-03 21:12:31,161][DEBUG][river.cluster            ] [Harrier] processing [reroute_rivers_node_changed]: no change in cluster_state
+[2013-01-03 21:12:31,161][TRACE][gateway.local.state.shards] [Harrier] [cla.nine.dk][0] writing shard state, reason [version changed from [2] to [4]]
+[2013-01-03 21:12:31,177][TRACE][gateway.local.state.shards] [Harrier] [cla.nine.dk][2] writing shard state, reason [version changed from [2] to [4]]
+[2013-01-03 21:12:31,177][TRACE][gateway.local.state.shards] [Harrier] [cla.nine.dk][4] writing shard state, reason [version changed from [2] to [4]]
+[2013-01-03 21:12:31,177][DEBUG][cluster.service          ] [Harrier] processing [shard-started ([cla.nine.dk][4], node[K0Zakq2YSvuESyHmZUplOw], [P], s[INITIALIZING]), reason [after recovery from gateway]]: done applying updated cluster_state
+[2013-01-03 21:12:31,177][DEBUG][cluster.service          ] [Harrier] processing [shard-started ([cla.nine.dk][0], node[K0Zakq2YSvuESyHmZUplOw], [P], s[INITIALIZING]), reason [after recovery from gateway]]: execute
+[2013-01-03 21:12:31,177][DEBUG][cluster.service          ] [Harrier] processing [shard-started ([cla.nine.dk][0], node[K0Zakq2YSvuESyHmZUplOw], [P], s[INITIALIZING]), reason [after recovery from gateway]]: no change in cluster_state
+[2013-01-03 21:12:31,177][DEBUG][cluster.service          ] [Harrier] processing [shard-started ([cla.nine.dk][2], node[K0Zakq2YSvuESyHmZUplOw], [P], s[INITIALIZING]), reason [after recovery from gateway]]: execute
+[2013-01-03 21:12:31,177][DEBUG][cluster.service          ] [Harrier] processing [shard-started ([cla.nine.dk][2], node[K0Zakq2YSvuESyHmZUplOw], [P], s[INITIALIZING]), reason [after recovery from gateway]]: no change in cluster_state
+[2013-01-03 21:12:31,177][DEBUG][cluster.service          ] [Harrier] processing [shard-started ([cla.nine.dk][2], node[K0Zakq2YSvuESyHmZUplOw], [P], s[INITIALIZING]), reason [master [Harrier][K0Zakq2YSvuESyHmZUplOw][inet[/192.168.56.1:9300]] marked shard as initializing, but shard already started, mark shard as started]]: execute
+[2013-01-03 21:12:31,177][DEBUG][cluster.service          ] [Harrier] processing [shard-started ([cla.nine.dk][2], node[K0Zakq2YSvuESyHmZUplOw], [P], s[INITIALIZING]), reason [master [Harrier][K0Zakq2YSvuESyHmZUplOw][inet[/192.168.56.1:9300]] marked shard as initializing, but shard already started, mark shard as started]]: no change in cluster_state
+[2013-01-03 21:12:31,177][DEBUG][cluster.service          ] [Harrier] processing [shard-started ([cla.nine.dk][4], node[K0Zakq2YSvuESyHmZUplOw], [P], s[INITIALIZING]), reason [master [Harrier][K0Zakq2YSvuESyHmZUplOw][inet[/192.168.56.1:9300]] marked shard as initializing, but shard already started, mark shard as started]]: execute
+[2013-01-03 21:12:31,177][DEBUG][cluster.service          ] [Harrier] processing [shard-started ([cla.nine.dk][4], node[K0Zakq2YSvuESyHmZUplOw], [P], s[INITIALIZING]), reason [master [Harrier][K0Zakq2YSvuESyHmZUplOw][inet[/192.168.56.1:9300]] marked shard as initializing, but shard already started, mark shard as started]]: no change in cluster_state
+[2013-01-03 21:12:31,192][DEBUG][index.engine.robin       ] [Harrier] [cla.nine.dk][1] using bloom filter enhanced delete handling
+[2013-01-03 21:12:31,192][TRACE][indices.warmer           ] [Harrier] [cla.nine.dk][1] warming [ReadOnlyDirectoryReader(segments_1:nrt)], new [ReadOnlyDirectoryReader(segments_1:nrt)]
+[2013-01-03 21:12:31,192][TRACE][index.warmer             ] [Harrier] [cla.nine.dk][1] warming took [65.5micros]
+[2013-01-03 21:12:31,302][TRACE][indices.warmer           ] [Harrier] [cla.nine.dk][1] warming [ReadOnlyDirectoryReader(segments_2:nrt _0(3.6.2):C158)], new [MultiReader(_0(3.6.2):C158)]
+[2013-01-03 21:12:31,302][TRACE][index.warmer             ] [Harrier] [cla.nine.dk][1] warming took [62.9micros]
+[2013-01-03 21:12:31,317][DEBUG][index.shard.service      ] [Harrier] [cla.nine.dk][1] state: [RECOVERING]->[STARTED], reason [post recovery]
+[2013-01-03 21:12:31,317][DEBUG][index.shard.service      ] [Harrier] [cla.nine.dk][1] scheduling refresher every 1s
+[2013-01-03 21:12:31,317][DEBUG][index.shard.service      ] [Harrier] [cla.nine.dk][1] scheduling optimizer / merger every 1s
+[2013-01-03 21:12:31,317][TRACE][index.shard.service      ] [Harrier] [cla.nine.dk][1] refresh with waitForOperations[false]
+[2013-01-03 21:12:31,317][DEBUG][index.gateway            ] [Harrier] [cla.nine.dk][1] recovery completed from local, took [187ms]
+    index    : files           [84] with total_size [445.3kb], took[0s]
+             : recovered_files [0] with total_size [0b]
+             : reusing_files   [84] with total_size [445.3kb]
+    start    : took [62ms], check_index [0s]
+    translog : number_of_operations [158], took [125ms]
+[2013-01-03 21:12:31,317][DEBUG][cluster.action.shard     ] [Harrier] sending shard started for [cla.nine.dk][1], node[K0Zakq2YSvuESyHmZUplOw], [P], s[INITIALIZING], reason [after recovery from gateway]
+[2013-01-03 21:12:31,317][DEBUG][cluster.action.shard     ] [Harrier] received shard started for [cla.nine.dk][1], node[K0Zakq2YSvuESyHmZUplOw], [P], s[INITIALIZING], reason [after recovery from gateway]
+[2013-01-03 21:12:31,317][DEBUG][cluster.service          ] [Harrier] processing [shard-started ([cla.nine.dk][1], node[K0Zakq2YSvuESyHmZUplOw], [P], s[INITIALIZING]), reason [after recovery from gateway]]: execute
+[2013-01-03 21:12:31,317][DEBUG][cluster.action.shard     ] [Harrier] applying started shards [[cla.nine.dk][1], node[K0Zakq2YSvuESyHmZUplOw], [P], s[INITIALIZING]], reason [after recovery from gateway]
+[2013-01-03 21:12:31,317][TRACE][cluster.service          ] [Harrier] cluster state updated:
+version [5], source [shard-started ([cla.nine.dk][1], node[K0Zakq2YSvuESyHmZUplOw], [P], s[INITIALIZING]), reason [after recovery from gateway]]
+nodes: 
+   [Harrier][K0Zakq2YSvuESyHmZUplOw][inet[/192.168.56.1:9300]], local, master
+routing_table:
+-- index [cla.nine.dk]
+----shard_id [cla.nine.dk][0]
+--------[cla.nine.dk][0], node[K0Zakq2YSvuESyHmZUplOw], [P], s[STARTED]
+--------[cla.nine.dk][0], node[null], [R], s[UNASSIGNED]
+----shard_id [cla.nine.dk][1]
+--------[cla.nine.dk][1], node[K0Zakq2YSvuESyHmZUplOw], [P], s[STARTED]
+--------[cla.nine.dk][1], node[null], [R], s[UNASSIGNED]
+----shard_id [cla.nine.dk][2]
+--------[cla.nine.dk][2], node[K0Zakq2YSvuESyHmZUplOw], [P], s[STARTED]
+--------[cla.nine.dk][2], node[null], [R], s[UNASSIGNED]
+----shard_id [cla.nine.dk][3]
+--------[cla.nine.dk][3], node[K0Zakq2YSvuESyHmZUplOw], [P], s[STARTED]
+--------[cla.nine.dk][3], node[null], [R], s[UNASSIGNED]
+----shard_id [cla.nine.dk][4]
+--------[cla.nine.dk][4], node[K0Zakq2YSvuESyHmZUplOw], [P], s[STARTED]
+--------[cla.nine.dk][4], node[null], [R], s[UNASSIGNED]
+
+routing_nodes:
+-----node_id[K0Zakq2YSvuESyHmZUplOw][V]
+--------[cla.nine.dk][0], node[K0Zakq2YSvuESyHmZUplOw], [P], s[STARTED]
+--------[cla.nine.dk][1], node[K0Zakq2YSvuESyHmZUplOw], [P], s[STARTED]
+--------[cla.nine.dk][2], node[K0Zakq2YSvuESyHmZUplOw], [P], s[STARTED]
+--------[cla.nine.dk][3], node[K0Zakq2YSvuESyHmZUplOw], [P], s[STARTED]
+--------[cla.nine.dk][4], node[K0Zakq2YSvuESyHmZUplOw], [P], s[STARTED]
+---- unassigned
+--------[cla.nine.dk][0], node[null], [R], s[UNASSIGNED]
+--------[cla.nine.dk][1], node[null], [R], s[UNASSIGNED]
+--------[cla.nine.dk][2], node[null], [R], s[UNASSIGNED]
+--------[cla.nine.dk][3], node[null], [R], s[UNASSIGNED]
+--------[cla.nine.dk][4], node[null], [R], s[UNASSIGNED]
+
+[2013-01-03 21:12:31,317][DEBUG][river.cluster            ] [Harrier] processing [reroute_rivers_node_changed]: execute
+[2013-01-03 21:12:31,317][DEBUG][river.cluster            ] [Harrier] processing [reroute_rivers_node_changed]: no change in cluster_state
+[2013-01-03 21:12:31,317][TRACE][gateway.local.state.shards] [Harrier] [cla.nine.dk][1] writing shard state, reason [version changed from [2] to [4]]
+[2013-01-03 21:12:31,333][DEBUG][cluster.service          ] [Harrier] processing [shard-started ([cla.nine.dk][1], node[K0Zakq2YSvuESyHmZUplOw], [P], s[INITIALIZING]), reason [after recovery from gateway]]: done applying updated cluster_state
+[2013-01-03 21:12:39,866][DEBUG][cluster.service          ] [Harrier] processing [routing-table-updater]: execute
+[2013-01-03 21:12:39,866][DEBUG][cluster.service          ] [Harrier] processing [routing-table-updater]: no change in cluster_state
+[2013-01-03 21:13:25,141][TRACE][discovery.zen.ping.multicast] [Harrier] [1] received ping_request from [[Bandit][E4DAvGCGR36W8OEtN22ylA][inet[/192.168.56.1:9301]]{client=true, data=false}], sending ping_response{target [[Harrier][K0Zakq2YSvuESyHmZUplOw][inet[/192.168.56.1:9300]]], master [[Harrier][K0Zakq2YSvuESyHmZUplOw][inet[/192.168.56.1:9300]]], cluster_name[whalewired_cluster]}
+[2013-01-03 21:13:25,147][DEBUG][transport.netty          ] [Harrier] connected to node [[Bandit][E4DAvGCGR36W8OEtN22ylA][inet[/192.168.56.1:9301]]{client=true, data=false}]
+[2013-01-03 21:13:26,648][TRACE][discovery.zen.ping.multicast] [Harrier] [1] received ping_request from [[Bandit][E4DAvGCGR36W8OEtN22ylA][inet[/192.168.56.1:9301]]{client=true, data=false}], sending ping_response{target [[Harrier][K0Zakq2YSvuESyHmZUplOw][inet[/192.168.56.1:9300]]], master [[Harrier][K0Zakq2YSvuESyHmZUplOw][inet[/192.168.56.1:9300]]], cluster_name[whalewired_cluster]}
+[2013-01-03 21:13:28,177][TRACE][transport.netty          ] [Harrier] channel opened: [id: 0x2716afd6, /192.168.56.1:59461 => /192.168.56.1:9300]
+[2013-01-03 21:13:28,181][TRACE][transport.netty          ] [Harrier] channel opened: [id: 0xff8020e7, /192.168.56.1:59462 => /192.168.56.1:9300]
+[2013-01-03 21:13:28,182][TRACE][transport.netty          ] [Harrier] channel opened: [id: 0x903e1af7, /192.168.56.1:59463 => /192.168.56.1:9300]
+[2013-01-03 21:13:28,184][TRACE][transport.netty          ] [Harrier] channel opened: [id: 0xf858c00e, /192.168.56.1:59464 => /192.168.56.1:9300]
+[2013-01-03 21:13:28,185][TRACE][transport.netty          ] [Harrier] channel opened: [id: 0x634cf16d, /192.168.56.1:59465 => /192.168.56.1:9300]
+[2013-01-03 21:13:28,187][TRACE][transport.netty          ] [Harrier] channel opened: [id: 0x86f1a0be, /192.168.56.1:59466 => /192.168.56.1:9300]
+[2013-01-03 21:13:28,188][TRACE][transport.netty          ] [Harrier] channel opened: [id: 0x680c22ee, /192.168.56.1:59467 => /192.168.56.1:9300]
+[2013-01-03 21:13:28,190][TRACE][transport.netty          ] [Harrier] channel opened: [id: 0x4c2be37a, /192.168.56.1:59468 => /192.168.56.1:9300]
+[2013-01-03 21:13:28,191][TRACE][transport.netty          ] [Harrier] channel opened: [id: 0x054e411b, /192.168.56.1:59469 => /192.168.56.1:9300]
+[2013-01-03 21:13:28,238][DEBUG][cluster.service          ] [Harrier] processing [zen-disco-receive(join from node[[Bandit][E4DAvGCGR36W8OEtN22ylA][inet[/192.168.56.1:9301]]{client=true, data=false}])]: execute
+[2013-01-03 21:13:28,238][TRACE][cluster.service          ] [Harrier] cluster state updated:
+version [6], source [zen-disco-receive(join from node[[Bandit][E4DAvGCGR36W8OEtN22ylA][inet[/192.168.56.1:9301]]{client=true, data=false}])]
+nodes: 
+   [Bandit][E4DAvGCGR36W8OEtN22ylA][inet[/192.168.56.1:9301]]{client=true, data=false}
+   [Harrier][K0Zakq2YSvuESyHmZUplOw][inet[/192.168.56.1:9300]], local, master
+routing_table:
+-- index [cla.nine.dk]
+----shard_id [cla.nine.dk][0]
+--------[cla.nine.dk][0], node[K0Zakq2YSvuESyHmZUplOw], [P], s[STARTED]
+--------[cla.nine.dk][0], node[null], [R], s[UNASSIGNED]
+----shard_id [cla.nine.dk][1]
+--------[cla.nine.dk][1], node[K0Zakq2YSvuESyHmZUplOw], [P], s[STARTED]
+--------[cla.nine.dk][1], node[null], [R], s[UNASSIGNED]
+----shard_id [cla.nine.dk][2]
+--------[cla.nine.dk][2], node[K0Zakq2YSvuESyHmZUplOw], [P], s[STARTED]
+--------[cla.nine.dk][2], node[null], [R], s[UNASSIGNED]
+----shard_id [cla.nine.dk][3]
+--------[cla.nine.dk][3], node[K0Zakq2YSvuESyHmZUplOw], [P], s[STARTED]
+--------[cla.nine.dk][3], node[null], [R], s[UNASSIGNED]
+----shard_id [cla.nine.dk][4]
+--------[cla.nine.dk][4], node[K0Zakq2YSvuESyHmZUplOw], [P], s[STARTED]
+--------[cla.nine.dk][4], node[null], [R], s[UNASSIGNED]
+
+routing_nodes:
+-----node_id[K0Zakq2YSvuESyHmZUplOw][V]
+--------[cla.nine.dk][0], node[K0Zakq2YSvuESyHmZUplOw], [P], s[STARTED]
+--------[cla.nine.dk][1], node[K0Zakq2YSvuESyHmZUplOw], [P], s[STARTED]
+--------[cla.nine.dk][2], node[K0Zakq2YSvuESyHmZUplOw], [P], s[STARTED]
+--------[cla.nine.dk][3], node[K0Zakq2YSvuESyHmZUplOw], [P], s[STARTED]
+--------[cla.nine.dk][4], node[K0Zakq2YSvuESyHmZUplOw], [P], s[STARTED]
+---- unassigned
+--------[cla.nine.dk][0], node[null], [R], s[UNASSIGNED]
+--------[cla.nine.dk][1], node[null], [R], s[UNASSIGNED]
+--------[cla.nine.dk][2], node[null], [R], s[UNASSIGNED]
+--------[cla.nine.dk][3], node[null], [R], s[UNASSIGNED]
+--------[cla.nine.dk][4], node[null], [R], s[UNASSIGNED]
+
+[2013-01-03 21:13:28,240][INFO ][cluster.service          ] [Harrier] added {[Bandit][E4DAvGCGR36W8OEtN22ylA][inet[/192.168.56.1:9301]]{client=true, data=false},}, reason: zen-disco-receive(join from node[[Bandit][E4DAvGCGR36W8OEtN22ylA][inet[/192.168.56.1:9301]]{client=true, data=false}])
+[2013-01-03 21:13:28,243][DEBUG][river.cluster            ] [Harrier] processing [reroute_rivers_node_changed]: execute
+[2013-01-03 21:13:28,244][DEBUG][river.cluster            ] [Harrier] processing [reroute_rivers_node_changed]: no change in cluster_state
+[2013-01-03 21:13:28,244][DEBUG][cluster.service          ] [Harrier] processing [zen-disco-receive(join from node[[Bandit][E4DAvGCGR36W8OEtN22ylA][inet[/192.168.56.1:9301]]{client=true, data=false}])]: done applying updated cluster_state
+[2013-01-03 21:18:40,803][TRACE][index.cache.field.data.resident] [Harrier] [cla.nine.dk] loaded field [logTime] for reader [_0(3.6.2):C167], took [30.1ms], took_millis [30]
+[2013-01-03 21:18:40,803][TRACE][index.cache.field.data.resident] [Harrier] [cla.nine.dk] loaded field [logTime] for reader [_0(3.6.2):C165], took [30.3ms], took_millis [30]
+[2013-01-03 21:18:40,803][TRACE][index.cache.field.data.resident] [Harrier] [cla.nine.dk] loaded field [logTime] for reader [_0(3.6.2):C158], took [30.3ms], took_millis [30]
+[2013-01-03 21:18:40,803][TRACE][index.cache.field.data.resident] [Harrier] [cla.nine.dk] loaded field [logTime] for reader [_0(3.6.2):C156], took [30.2ms], took_millis [30]
+[2013-01-03 21:18:40,803][TRACE][index.cache.field.data.resident] [Harrier] [cla.nine.dk] loaded field [logTime] for reader [_0(3.6.2):C187], took [30.2ms], took_millis [30]
