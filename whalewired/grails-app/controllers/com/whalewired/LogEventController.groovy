@@ -69,6 +69,8 @@ class LogEventController {
 
 		def resultSet = elasticSearchService.executeQuery(currentApplication, currentLogLevel, currentLogSearch, 
 			pageSize, skip, params.sortField, params.sortOrder);
+		
+		//println resultSet as JSON
 				
 		render resultSet as JSON
 	}

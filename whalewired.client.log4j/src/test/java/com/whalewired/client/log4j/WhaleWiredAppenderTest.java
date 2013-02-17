@@ -93,7 +93,7 @@ public class WhaleWiredAppenderTest {
 			try {
 				throw new RuntimeException(generateRandomText(), e);
 			} catch (Exception e2) {
-				logger.error(generateRandomText() + "æøå", e2);
+				logger.error(generateRandomText() + "Ã¦Ã¸Ã¥", e2);
 			}
 		}
 

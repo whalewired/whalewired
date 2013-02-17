@@ -136,7 +136,7 @@ public class WhaleWiredAppender extends AppenderSkeleton {
 				URL url;
 				HttpURLConnection connection = null;
 				try {
-					// INDEX skal være account eller lignenede
+					// INDEX skal vÃ¦re account eller lignenede
 					url = new URL("http", whalewired_es, Integer.parseInt(whalewired_es_port), "/"+log_application+"/logevent/");
 					connection = (HttpURLConnection) url.openConnection();
 					connection.setConnectTimeout(5000);
