@@ -161,8 +161,6 @@ public class WhaleWiredAppender extends AppenderSkeleton {
 							wr = null;
 						}
 					}
-					System.out.println(eventAsJsonData);
-					
 					
 					// Get Response
 					InputStream is = null;
