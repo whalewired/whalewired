@@ -31,10 +31,10 @@ grails.project.dependency.resolution = {
 		
     }
     dependencies {
-		compile 'org.elasticsearch:elasticsearch-lang-groovy:1.2.0'
-		test 'org.elasticsearch:elasticsearch-lang-groovy:1.2.0'
-		build 'org.elasticsearch:elasticsearch-lang-groovy:1.2.0'
-		runtime 'org.elasticsearch:elasticsearch-lang-groovy:1.2.0'
+		compile 'org.elasticsearch:elasticsearch-lang-groovy:1.3.0'
+		test 'org.elasticsearch:elasticsearch-lang-groovy:1.3.0'
+		build 'org.elasticsearch:elasticsearch-lang-groovy:1.3.0'
+		runtime 'org.elasticsearch:elasticsearch-lang-groovy:1.3.0'
 		compile 'com.spatial4j:spatial4j:0.3'
 		test 'com.spatial4j:spatial4j:0.3'
 		build 'com.spatial4j:spatial4j:0.3'
