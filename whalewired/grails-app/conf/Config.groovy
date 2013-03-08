@@ -1,4 +1,5 @@
-//grails.config.locations = ["file:" + System.getProperty("wwConfigPath")];
+println "LOOKING FOR CONFIG: "+ System.getenv("WW_CONFIG")
+grails.config.locations = ["file:" + System.getenv("WW_CONFIG")];
 
 grails.project.groupId = whalewired // change this to alter the default package name and Maven publishing destination
 grails.mime.file.extensions = true // enables the parsing of file extensions from URLs into the request format
@@ -52,11 +53,11 @@ grails.exceptionresolver.params.exclude = ['password']
 // set per-environment serverURL stem for creating absolute links
 environments {
     development {
-        grails.serverURL = "http://localhost:8090/${appName}"
+//        grails.serverURL = "http://localhost:8090/${appName}"
 		esCluster = "whalewired_cluster"
     }
     test {
-        grails.serverURL = "http://localhost:8090/${appName}"
+//        grails.serverURL = "http://localhost:8090/${appName}"
 		esCluster = "whalewired_cluster"
     }
 }

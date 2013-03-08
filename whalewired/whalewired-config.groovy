@@ -1,7 +1,9 @@
+println "USING CONFIG"
+
 // set per-environment serverURL stem for creating absolute links
 environments {
     production {
-        grails.serverURL = "http://172.17.33.54/whalewired"
+//        grails.serverURL = "http://20.60.113.101/whalewired"
 		esCluster = "whalewired_cluster"
     }
 }

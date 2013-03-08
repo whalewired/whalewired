@@ -6,8 +6,8 @@ dataSource {
 }
 
 hibernate {
-	cache.use_second_level_cache = "true"
-	cache.use_query_cache = "true"
+	cache.use_second_level_cache = "false"
+	cache.use_query_cache = "false"
 	cache.provider_class = 'org.hibernate.cache.EhCacheProvider'
 }
 
@@ -31,7 +31,7 @@ environments {
 	production {
 		dataSource {
 			dbCreate = "update"
-			url = "jdbc:h2:data/h2/wwdb"
+			url = "jdbc:h2:/apps/whalewired/h2/wwdb"
 		}
 	}
 }
