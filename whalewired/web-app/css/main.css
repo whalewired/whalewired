@@ -279,11 +279,11 @@ tr {
 }
 
 tr>td:first-child, tr>th:first-child {
-	padding-left: 1.25em;
+	padding-left: 0.5em;
 }
 
 tr>td:last-child, tr>th:last-child {
-	padding-right: 1.25em;
+	padding-right: 0.5em;
 }
 
 td, th {

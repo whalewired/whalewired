@@ -1,5 +1,7 @@
 package com.whalewired
 
+import org.codehaus.groovy.grails.web.json.JSONElement;
+
 import com.whalewired.services.ElasticSearchAdminService;
 import com.whalewired.services.ElasticSearchService;
 import com.whalewired.services.ListResultSet;
@@ -31,39 +33,52 @@ class LogApplicationController {
 		def indices = elasticSearchAdminService.getIndices();
 		def result = new ListResultSet();
 		for (index in indices) {
-			result.result.add(name: index.key, ttl: index.value.getSettings().get("index.ttl"));
+			result.result.add(id: index.key, name: index.key, ttl: index.value.getSettings().get("index.ttl"));
 		}
 		result.total = result.result.size();
 		
-		//println("LogApplicationController.listJSON: "+(result as JSON));
+		println("LogApplicationController.listJSON: "+(result as JSON));
 		render result as JSON;
 	}
 
 
     @Secured(['ROLE_ADMIN'])
 	def create = {
-		println "create:" + params
+		
+		println "create:" + params 
+		def model = JSON.parse(params.model)[0]
 		try {
-			elasticSearchAdminService.createIndex(params.name, params.ttl);
+			elasticSearchAdminService.createIndex(model.name, model.ttl);
+			model.id = model.name
 		} catch (Exception e) {
 			println(e);
-			render(status: 422, text: 'BALAHHA')
+			render(status: 422, text: 'error')
 		}
-		render(view:"list", params: params);
+		
+		render model2result(model) as JSON;
     }
 
     
 	@Secured(['ROLE_ADMIN'])
 	def update = {
 		println "update:" + params
-		elasticSearchAdminService.updateIndex(params.name, params.ttl.toInteger());
-		render(view:"list", params: params);
+		def model = JSON.parse(params.model)[0]
+		elasticSearchAdminService.updateIndex(model.name, model.ttl.toInteger());
+		render model2result(model) as JSON;
     }
 
     @Secured(['ROLE_ADMIN'])
 	def delete = {
 		println "DELETE:" + params
-		elasticSearchAdminService.deleteIndex(params.name);
-		render(view:"list", params: params);
+		def model = JSON.parse(params.model)[0]
+		elasticSearchAdminService.deleteIndex(model.name);
+		render model2result(model) as JSON;
     }
+	
+	private ListResultSet model2result(JSONElement model) {
+	
+		def result = new ListResultSet();
+		result.result.add(id: model.id, name: model.name, ttl: model.ttl);
+		return result;
+	} 
 }

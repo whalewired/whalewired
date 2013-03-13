@@ -14,25 +14,30 @@
                        transport: {
                        		read: "listJSON",
 				           	update: {
-				           		url: "update",
+				           		url: function (app) {
+					           		return "update"
+					           	},
 				            	dataType: "json",
 				            	type: "POST"
 				            },
 				            destroy: {
-				            	url: "delete",
+				            	url: function (app) {
+					           		return "delete"
+					           	},
 				                dataType: "json",
 				                type: "POST"
 				            },
 				            create: {
-				            	url: "create",
+				            	url: function (app) {
+					           		return "create"
+					           	},
 				                dataType: "json",
 					            type: "POST"
-				                 
 				            },
 				            parameterMap: function(options, operation) {
-				            	if (operation !== "read") {
-				                	return {name: options.name, ttl: options.ttl};
-				                }
+				            	if (operation !== "read" && options.models) {
+                                    return {model: kendo.stringify(options.models)};
+                                } 
 				            }                               
                        },
                        schema: {
@@ -43,56 +48,49 @@
                                return data.total;
                            },
                            model: {
-                               id: "name",
+                               id: "id",
                                fields: {
+                                   id: {
+                                	   editable: false,
+                                   },
                                    name: {  
-                                       editable: {
-                                       		create: true,
-                                       		update: true
-                                   		}, 
-                                   		nullable: false 
+                                	   validation: { required: true },
+                                       editable: true, 
+                                   	   nullable: false 
                                    },
                                    ttl: { 
-                                	   editable: {
-                                      		create: true,
-                                      		update: true
-                                       }
+                                	   validation: { required: true },
+                                	   editable: true,
+                                       nullable: false 
                                	   } 
                                }
                            }
                        },
-                       batch: false,   
-                       autoSync: false,                    
+                       batch: true,   
                        pageSize: 20,
-                       serverPaging: false,
-                       serverSorting: false,
                        sort: { field: "name", dir: "asc" },
-                       serverFiltering: false,
                        error: function(e) {
+                           alert(e)
                            // handle event
                        }
                    },
-                   editable: {
-                       destroy: true, 
-                   	   confirmation: "Are you sure you want to remove the application? \n\nRemember to press Save, when finished."
+                   height: 400,
+                   editable: "popup",
+                   edit:function(e) {
+                       if(!e.model.isNew()) {
+                    	   $('input[name=name]').attr('readonly','readonly');
+                       }
                    },
-                   sortable: {
-                       mode: "multiple", 
-                       allowUnsort: true
-               	   },
-                   groupable: false,
+                   sortable: true,
                    pageable: true,
-                   navigatable: true,
-                   selectable: "multiple, row",                   
-                   toolbar: [{name: "create", text: "Create application" }, {name: "save", text: "Save changes" }, "cancel"],
+                   toolbar: [{name: "create", text: "Create application" }],
                    columns: [{field:"name",title:"Name"},
                              {field:"ttl",title:"TTL"},
-                   			 {command: "destroy", title: " ", width: "110px"}]
+                   			 {command: ["edit", "destroy"], title: " ", width: "165px"}]
                });
 
 				grid = $("#applicationTable").data("kendoGrid");
-				$("#applicationTable").height("auto"); // IE9 fix
-              
+				
               });
 		</script>
 	</head>
