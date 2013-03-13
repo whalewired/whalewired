@@ -26,7 +26,7 @@ Clone the repo, `git clone git://github.com/whalewired/whalewired.git`, or [down
 Versioning
 ----------
 
-For transparency and insight into our release cycle, and for striving to maintain backward compatibility, Bootstrap will be maintained under the Semantic Versioning guidelines as much as possible.
+For transparency and insight into our release cycle, and for striving to maintain backward compatibility, Whalewired will be maintained under the Semantic Versioning guidelines as much as possible.
 
 Releases will be numbered with the following format:
 
@@ -38,17 +38,13 @@ And constructed with the following guidelines:
 * New additions without breaking backward compatibility bumps the minor (and resets the patch)
 * Bug fixes and misc changes bumps the patch
 
-For more information on SemVer, please visit http://semver.org/.
-
-
 
 Bug tracker
 -----------
 
-Have a bug? Please create an issue here on GitHub that conforms with [necolas's guidelines](https://github.com/necolas/issue-guidelines).
+Have a bug? Please create an issue here:
 
 https://github.com/whalewired/whalewired/issues
-
 
 
 Twitter account

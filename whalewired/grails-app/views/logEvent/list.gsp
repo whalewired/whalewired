@@ -82,7 +82,7 @@
                                return data.total;
                            }
                        },                       
-                       pageSize: 20,
+                       pageSize: 50,
                        serverPaging: true,
                        serverSorting: true,
                        sort: { field: "logTime", dir: "desc" },
@@ -113,14 +113,21 @@
             		      }) 
             		   }); 	 			               
                    },
+                   height: 700,
                    scrollable: {
-                       virtual: false
+                       virtual: true
                    },
                    sortable: true,
                    groupable: true,
-                   pageable: true,
-                   columns: [{field:"logTime",title:"Time",width:"47px",template:'<a href="show/#=escape(data._id)#">#=(kendo.toString(new Date(logTime),"dd-MM-yyyy HH:mm:ss"))#</a>'},
-                             {field:"hostName",title:"Host", width:"30px"},
+                   pageable: {
+                	    info: true,
+                	    refresh: false,
+                	    pageSizes: false,
+                	    previousNext: false,
+                	    numeric: false
+                   },
+                   columns: [{field:"logTime",title:"Time",width:"41px",template:'<a href="show/#=escape(data._id)#">#=(kendo.toString(new Date(logTime),"dd-MM-yy HH:mm:ss"))#</a>'},
+                             {field:"hostName",title:"Host", width:"36px"},
                              {field:"logLevel",title:"Level", width:"30px"},
                              {field:"logMessage",title:"Message", width:"250px", template:'<span tooltip="#=data.logThrowableTrace ? logThrowableTrace.substring(0, 500) + \"...\" : \" No trace \"#" style="#=data.logThrowableTrace ? \"cursor: pointer;\": \"\"#">#=logMessage#</span>'},
                              {title:"Issue", width:"15px", template:'<img src="#=data.issueId ? \"${resource(dir: 'images', file: 'jira.png')}\" : \"${resource(dir: 'images', file: 'Blank.png')}\" #" alt="Jira">'},
