@@ -93,8 +93,7 @@
 	<div class="container-fluid">
 		<g:layoutBody />
 		<div class="footer" role="contentinfo">
-			${grailsApplication.metadata.'app.version'}
-			- Continuously deployed on every check in
+			${grailsApplication.metadata.'app.version'} 
 		</div>
 		<div id="spinner" class="spinner" style="display: none;">
 			<g:message code="spinner.alt" default="Loading&hellip;" />
