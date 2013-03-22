@@ -196,7 +196,7 @@ public class WhaleWiredAppender extends AppenderSkeleton {
 		}
 	}
 	
-	private static void reportError(Exception e) {
+	public static void reportError(Exception e) {
 		
 		if (exceptionReportTime + 3600000 < System.currentTimeMillis()) { // 10 minutes
 			System.err.println(e + "\nWhaleWiredAppender will not report errors again for 10 minutes  ");
