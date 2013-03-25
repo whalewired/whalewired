@@ -19,7 +19,7 @@ class JiraService {
 		
 		def rest = RestUtil.getRestClient()
 		
-		String auth = 'whalewired:Ballerup2012'.bytes.encodeBase64().toString()
+		String auth = 'bruger:pass'.bytes.encodeBase64().toString()
 		
 		def response;
 		if (ExternalIssue.Type.BUG.equals(issue.type)) {
