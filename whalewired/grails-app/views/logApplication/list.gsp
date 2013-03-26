@@ -62,6 +62,26 @@
                                 	   validation: { required: true },
                                 	   editable: true,
                                        nullable: false 
+                               	   },
+                                   jiraUserName: { 
+                                	   validation: { required: false },
+                                	   editable: true,
+                                       nullable: true 
+                               	   },
+                                   jiraPassword: { 
+                                	   validation: { required: false },
+                                	   editable: true,
+                                       nullable: true 
+                               	   },
+                                   jiraUrl: { 
+                                	   validation: { required: false },
+                                	   editable: true,
+                                       nullable: true 
+                               	   }, 
+                                   jiraProject: { 
+                                	   validation: { required: false },
+                                	   editable: true,
+                                       nullable: true 
                                	   } 
                                }
                            }
@@ -86,6 +106,10 @@
                    toolbar: [{name: "create", text: "Create application" }],
                    columns: [{field:"name",title:"Name"},
                              {field:"ttl",title:"TTL"},
+                             {field:"jiraUserName",title:"Jira user"},
+                             {field:"jiraPassword",title:"Jira pass"},
+                             {field:"jiraUrl",title:"Jira url"},
+                             {field:"jiraProject",title:"Jira project"},
                    			 {command: ["edit", "destroy"], title: " ", width: "165px"}]
                });
 

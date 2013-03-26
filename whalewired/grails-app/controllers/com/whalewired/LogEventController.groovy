@@ -88,7 +88,7 @@ class LogEventController {
 			if (logEventInstance.issueId) {
 				Issue issue = Issue.get(logEventInstance.issueId)
 				if (issue?.externalIssueId) {
-					externalIssue = jiraService.getIssue(issue.externalIssueId)
+					externalIssue = jiraService.getIssue(currentApplication, issue.externalIssueId)
 					println 'Issue found with key ' + externalIssue.issueKey
 				} else {
 					println 'Issue id ' + issue?.externalIssueId + ' found on logevent, but not found in jira ' 

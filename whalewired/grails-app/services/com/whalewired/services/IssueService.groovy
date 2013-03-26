@@ -25,7 +25,7 @@ class IssueService {
 
 	String createIssueAndUpdateLogs(indexName, newExternalIssue, throwableLocation, logLocation, logThrowableType) {
 		
-		def issueKey = jiraService.createIssue(newExternalIssue)
+		def issueKey = jiraService.createIssue(indexName, newExternalIssue)
 		
 		/*
 		 * create issue

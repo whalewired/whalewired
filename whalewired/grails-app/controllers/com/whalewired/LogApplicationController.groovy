@@ -33,7 +33,9 @@ class LogApplicationController {
 		def indices = elasticSearchAdminService.getIndices();
 		def result = new ListResultSet();
 		for (index in indices) {
-			result.result.add(id: index.key, name: index.key, ttl: index.value.getSettings().get("index.ttl"));
+			LogApp logApp = LogApp.findByAppName(index.key)
+			result.result.add(id: index.key, name: index.key, ttl: index.value.getSettings().get("index.ttl"),
+				jiraUserName: logApp?.jiraUserName, jiraPassword: logApp?.jiraPassword, jiraUrl: logApp?.jiraUrl, jiraProject: logApp?.jiraProject);
 		}
 		result.total = result.result.size();
 		
@@ -50,6 +52,11 @@ class LogApplicationController {
 		try {
 			elasticSearchAdminService.createIndex(model.name, model.ttl);
 			model.id = model.name
+			
+			LogApp logApp = new LogApp(appName: model.name, jiraUserName: model.jiraUserName, 
+				jiraPassword: model.jiraPassword, jiraUrl: model.jiraUrl, jiraProject: model.jiraProject)
+			logApp.save()
+			
 		} catch (Exception e) {
 			println(e);
 			render(status: 422, text: 'error')
@@ -64,6 +71,14 @@ class LogApplicationController {
 		println "update:" + params
 		def model = JSON.parse(params.model)[0]
 		elasticSearchAdminService.updateIndex(model.name, model.ttl.toInteger());
+		
+		LogApp logApp = LogApp.findOrCreateWhere([appName: model.name])
+		logApp.jiraUserName = model.jiraUserName
+		logApp.jiraPassword = model.jiraPassword
+		logApp.jiraUrl = model.jiraUrl
+		logApp.jiraProject = model.jiraProject
+		logApp.merge()
+
 		render model2result(model) as JSON;
     }
 
@@ -72,13 +87,19 @@ class LogApplicationController {
 		println "DELETE:" + params
 		def model = JSON.parse(params.model)[0]
 		elasticSearchAdminService.deleteIndex(model.name);
+		
+		LogApp logApp = LogApp.findByAppName(model.name)
+		logApp?.delete()
+		
 		render model2result(model) as JSON;
     }
 	
 	private ListResultSet model2result(JSONElement model) {
 	
 		def result = new ListResultSet();
-		result.result.add(id: model.id, name: model.name, ttl: model.ttl);
+		result.result.add(id: model.id, name: model.name, ttl: model.ttl, 
+			jiraUserName: model.jiraUserName, jiraPassword: model.jiraPassword, 
+			jiraUrl: model.jiraUrl, jiraProject: model.jiraProject);
 		return result;
 	} 
 }

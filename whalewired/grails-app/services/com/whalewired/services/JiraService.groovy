@@ -4,6 +4,7 @@ import java.security.KeyStore
 import org.apache.http.conn.scheme.Scheme
 import org.apache.http.conn.ssl.SSLSocketFactory
 
+import com.whalewired.LogApp;
 import com.whalewired.gui.ExternalIssue
 import com.whalewired.utils.RestUtil
 
@@ -13,25 +14,29 @@ import groovyx.net.http.RESTClient
 
 class JiraService {
 
-    String createIssue(ExternalIssue issue) {
+    String createIssue(String appName, ExternalIssue issue) {
 		
 		log.debug 'Creating issue in JIRA: ' + (issue as JSON)
 		
 		def rest = RestUtil.getRestClient()
 		
-		String auth = 'bruger:pass'.bytes.encodeBase64().toString()
+		LogApp logApp = LogApp.findByAppName(appName)
+		
+		println "logApp: " + logApp
+		
+		String auth = "${logApp.jiraUserName}:${logApp.jiraPassword}".toString().bytes.encodeBase64().toString()
 		
 		def response;
 		if (ExternalIssue.Type.BUG.equals(issue.type)) {
 			response = rest.post(
-				uri: 'https://traenportal.jira.com/rest/api/2/issue',
+				uri: "${logApp.jiraUrl}",
 				headers: ['Authorization': 'Basic ' + auth],
 				contentType: ContentType.JSON,
 				requestContentType: ContentType.JSON,
 				body: [
 					fields: [
 				        project: [
-				            key: 'OPTAG'
+				            key: "${logApp.jiraProject}"
 				       	],
 						issuetype: [
 							name: issue.type.name
@@ -47,14 +52,14 @@ class JiraService {
 			)
 		} else {
 			response = rest.post(
-				uri: 'https://traenportal.jira.com/rest/api/2/issue',
+				uri: "${logApp.jiraUrl}",
 				headers: ['Authorization': 'Basic ' + auth],
 				contentType: ContentType.JSON,
 				requestContentType: ContentType.JSON,
 				body: [
 					fields: [
 						project: [
-							key: 'OPTAG'
+							key: "${logApp.jiraProject}"
 						   ],
 						issuetype: [
 							name: issue.type.name
@@ -75,16 +80,18 @@ class JiraService {
 		return response.data.key
     }
 	
-	ExternalIssue getIssue(String issueKey) {
+	ExternalIssue getIssue(String appName, String issueKey) {
 		
 		log.debug 'Retrieving issue with key ' + issueKey 
 		
+		LogApp logApp = LogApp.findByAppName(appName)
+		
 		def rest = RestUtil.getRestClient()
 		
-		String auth = 'whalewired:Ballerup2012'.bytes.encodeBase64().toString()
+		String auth = "${logApp.jiraUserName}:${logApp.jiraPassword}".toString().bytes.encodeBase64().toString()
 		
 		def response = rest.get(
-			uri: 'https://traenportal.jira.com/rest/api/2/issue/' + issueKey,
+			uri: "${logApp.jiraUrl}/" + issueKey,
 			headers: ['Authorization': 'Basic ' + auth],
 			contentType: ContentType.JSON
 		)
