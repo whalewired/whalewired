@@ -34,30 +34,17 @@ class LogEventController {
 		redirect(action: "list", params: params)
 	}
 
-	def list = {			
+	def list = {
 		
-//		if (currentApplication == null) {
-//			def cookie = g.cookie(name: "ww_preferred_app");
-//			currentApplication = cookie;
-//		} else {
-//			def cookie = new Cookie("ww_preferred_app", currentApplication);
-//			cookie.setMaxAge(Integer.MAX_VALUE);
-//			response.addCookie(cookie);
-//		}		
-//		if (currentLogLevel == null) {
-//			def cookie = g.cookie(name: "ww_preferred_level");
-//			currentLogLevel = cookie;
-//		} else {
-//			def cookie = new Cookie("ww_preferred_level", currentLogLevel);
-//			cookie.setMaxAge(Integer.MAX_VALUE);
-//			response.addCookie(cookie);
-//		}
-
+		if (params.logApplication) {
+			currentApplication = params.logApplication
+		}	
 	}
 
-
 	def listJSON = {
+		
 		currentApplication = params.logApplication ? params.logApplication : currentApplication;
+		
 		if (!currentApplication) {
 			currentApplication = elasticSearchAdminService.getDefaultIndex();
 		}
