@@ -14,7 +14,6 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
-import java.util.logging.LogManager;
 
 import org.jboss.logmanager.ExtHandler;
 import org.jboss.logmanager.ExtLogRecord;
@@ -25,7 +24,7 @@ import com.whalewired.org.json.JSONObject;
 public class WhaleWiredHandler extends ExtHandler  {
 	
 	private String whalewired_es;
-	private int whalewired_es_port;
+	private String whalewired_es_port;
 	private String log_account;
 	private String log_application;
 	private String log_host;
@@ -35,24 +34,14 @@ public class WhaleWiredHandler extends ExtHandler  {
 	
 	public WhaleWiredHandler() {
 		super();
-		
-		this.whalewired_es = getProperty("whalewired_es");
-		this.whalewired_es_port = Integer.parseInt(getProperty("whalewired_es_port"));
-		this.log_account = getProperty("log_account");
-		this.log_application = getProperty("log_application");
-		this.log_host = getProperty("log_host");
 	}
 	
-	private String getProperty(String name) {
-		return LogManager.getLogManager().getProperty(this.getClass().getName() + "." + name); 
-	}
-
 	@Override
 	protected synchronized void doPublish(ExtLogRecord record) {
 		
 		try {
 			WhaleWiredHttpTransmitter transmitter = new WhaleWiredHttpTransmitter(getRecordAsJson(record),  
-					whalewired_es, whalewired_es_port, log_application);
+					whalewired_es, Integer.parseInt(whalewired_es_port), log_application);
 			transmitter.transmit();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -120,10 +109,6 @@ public class WhaleWiredHandler extends ExtHandler  {
 
 		public void transmit() {
 
-			System.out.println(whalewired_es);
-			System.out.println(whalewired_es_port);
-			System.out.println(log_application);
-			
 			try {
 				URL url;
 				HttpURLConnection connection = null;
@@ -227,5 +212,45 @@ public class WhaleWiredHandler extends ExtHandler  {
         String[] tempRep = new String[lines.size()];
         lines.toArray(tempRep);
         return tempRep;
-    }	
+    }
+
+	public String getWhalewired_es() {
+		return whalewired_es;
+	}
+
+	public void setWhalewired_es(String whalewired_es) {
+		this.whalewired_es = whalewired_es;
+	}
+
+	public String getWhalewired_es_port() {
+		return whalewired_es_port;
+	}
+
+	public void setWhalewired_es_port(String whalewired_es_port) {
+		this.whalewired_es_port = whalewired_es_port;
+	}
+
+	public String getLog_account() {
+		return log_account;
+	}
+
+	public void setLog_account(String log_account) {
+		this.log_account = log_account;
+	}
+
+	public String getLog_application() {
+		return log_application;
+	}
+
+	public void setLog_application(String log_application) {
+		this.log_application = log_application;
+	}
+
+	public String getLog_host() {
+		return log_host;
+	}
+
+	public void setLog_host(String log_host) {
+		this.log_host = log_host;
+	}	
 }
