@@ -129,7 +129,7 @@
                    columns: [{field:"logTime",title:"Time",width:"41px",template:'<a href="show/#=escape(data._id)#">#=(kendo.toString(new Date(logTime),"dd-MM-yy HH:mm:ss"))#</a>'},
                              {field:"hostName",title:"Host", width:"36px"},
                              {field:"logLevel",title:"Level", width:"30px"},
-                             {field:"logMessage",title:"Message", width:"250px", template:'<span tooltip="#=data.logThrowableTrace ? logThrowableTrace.substring(0, 500) + \"...\" : \" No trace \"#" style="#=data.logThrowableTrace ? \"cursor: pointer;\": \"\"#">#=logMessage#</span>'},
+                             {field:"logMessage",title:"Message", width:"250px", template:'<span tooltip="#=data.logThrowableTrace ? escapeHtml(data.logThrowableTrace.substring(0, 500)) + \"...\" : \" No trace \"#" style="#=data.logThrowableTrace ? \"cursor: pointer;\": \"\"#">#=logMessage ? escapeHtml(logMessage.substring(0, 150)) + \"...\" : ""#</span>'},
                              {title:"Issue", width:"15px", template:'<img src="#=data.issueId ? \"${resource(dir: 'images', file: 'jira.png')}\" : \"${resource(dir: 'images', file: 'Blank.png')}\" #" alt="Jira">'},
                              {title:"Mark", width:"15px", template:'<img align="center" valign="center" src="#=data.bookmarkId ? \"${resource(dir: 'images', file: 'bookmark.jpg')}\" : \"${resource(dir: 'images', file: 'Blank.png')}\" #" alt="Bookmark">'}]
                });				

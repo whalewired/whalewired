@@ -39,7 +39,7 @@ class LogApplicationController {
 		}
 		result.total = result.result.size();
 		
-		println("LogApplicationController.listJSON: "+(result as JSON));
+//		println("LogApplicationController.listJSON: "+(result as JSON));
 		render result as JSON;
 	}
 

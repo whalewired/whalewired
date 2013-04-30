@@ -237,7 +237,7 @@
 						class="property-label"><g:message
 								code="logEvent.logMessage.label" default="Message" /></span> <span
 						class="property-value" aria-labelledby="logMessage-label">
-							${logEventInstance?.logMessage}
+							${org.apache.commons.lang.StringEscapeUtils.escapeHtml(logEventInstance?.logMessage)}
 					</span></li>
 				</g:if>
 
@@ -264,7 +264,7 @@
 						class="property-label"><g:message
 								code="logEvent.logThrowableTrace.label" default="Trace" /></span> <span
 						class="property-value" aria-labelledby="logThrowableTrace-label">
-							${logEventInstance?.logThrowableTrace}
+							${org.apache.commons.lang.StringEscapeUtils.escapeHtml(logEventInstance?.logThrowableTrace)}
 					</span></li>
 				</g:if>
 
