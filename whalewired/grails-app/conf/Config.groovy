@@ -39,11 +39,11 @@ grails.logging.jul.usebridge = true
 // packages to include in Spring bean scanning
 grails.spring.bean.packages = []
 
-grails.views.javascript.library="jquery"
-jquery {
-	sources = '' // Holds the value where to store jQuery-js files /web-app/js/
-	version = '1.8.3' // The jQuery version in use
-}
+//grails.views.javascript.library="jquery"
+//jquery {
+//	sources = '' // Holds the value where to store jQuery-js files /web-app/js/
+//	version = '1.8.3' // The jQuery version in use
+//}
 
 grails.resources.debug=true
 
@@ -69,4 +69,4 @@ grails.plugins.springsecurity.authority.className = 'com.whalewired.Role'
 
 //Added for Twitter Bootstrap Plugin
 grails.plugins.twitterbootstrap.fixtaglib = true
-grails.plugins.twitterbootstrap.defaultBundle = 'bundle_bootstrap'
+//grails.plugins.twitterbootstrap.defaultBundle = 'bundle_bootstrap'

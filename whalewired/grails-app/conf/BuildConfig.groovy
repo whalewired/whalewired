@@ -31,10 +31,10 @@ grails.project.dependency.resolution = {
 		
     }
     dependencies {
-		compile 'org.elasticsearch:elasticsearch-lang-groovy:1.3.0'
-		test 'org.elasticsearch:elasticsearch-lang-groovy:1.3.0'
-		build 'org.elasticsearch:elasticsearch-lang-groovy:1.3.0'
-		runtime 'org.elasticsearch:elasticsearch-lang-groovy:1.3.0'
+		compile 'org.elasticsearch:elasticsearch-lang-groovy:1.5.0'
+		test 'org.elasticsearch:elasticsearch-lang-groovy:1.5.0'
+		build 'org.elasticsearch:elasticsearch-lang-groovy:1.5.0'
+		runtime 'org.elasticsearch:elasticsearch-lang-groovy:1.5.0'
 		compile 'com.spatial4j:spatial4j:0.3'
 		test 'com.spatial4j:spatial4j:0.3'
 		build 'com.spatial4j:spatial4j:0.3'
@@ -43,11 +43,12 @@ grails.project.dependency.resolution = {
 
     plugins {
         compile ":hibernate:$grailsVersion"
-        compile ":resources:1.0"
-		
-		//For installing Bootstrap Twitter Plugin
-		/*runtime ':twitter-bootstrap:2.0.0.16'
-		runtime ':fields:1.0.1'*/
+		runtime ":jquery:1.8.3"
+		runtime ":jquery-ui:1.8.24"
+		runtime ":resources:1.2.RC2"
+		runtime ":twitter-bootstrap:2.3.0"
+		runtime ":spring-security-core:1.2.7.3"
+		runtime ":rest:0.7"
 		
         build ":tomcat:$grailsVersion"
     }

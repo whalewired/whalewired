@@ -25,7 +25,8 @@ class LogEventController {
 	ElasticSearchAdminService elasticSearchAdminService
 	IssueService issueService
 	JiraService jiraService
-	
+
+	List<String> applications	
 	String currentApplication
 	String currentLogLevel
 	String currentLogSearch
@@ -40,6 +41,23 @@ class LogEventController {
 			currentApplication = params.logApplication
 		}	
 	}
+	
+	def list2 = {
+
+		if (!applications) {
+			applications = []
+			elasticSearchAdminService.getIndices().each {
+				applications << it.key
+			}
+		}
+				
+		if (params.logApplication) {
+			currentApplication = params.logApplication
+		}
+		
+		[applicationsJson: applications as JSON]
+	}
+
 
 	def listJSON = {
 		
@@ -59,6 +77,59 @@ class LogEventController {
 		
 		render resultSet as JSON
 	}
+	
+	def listJSON2 = {
+/*		
+		iSortCol_0: 0
+		bRegex: false
+		sSearch_0:
+		sSearch:
+		iSortingCols: 1
+		mDataProp_0: 0
+		bSearchable_0: true
+		sSortDir_0: asc
+		bSortable_0: true
+		iDisplayStart: 0
+		sColumns:
+		iColumns: 1
+		_: 1369944586996
+		iDisplayLength: 10
+		sEcho: 1
+		bRegex_0: false
+		
+		page: options.page,
+		pageSize: options.pageSize,
+		take: options.take,
+		skip: options.skip,
+		sortField: options.sort && options.sort[0] ? options.sort[0].field : "",
+		 sortOrder: options.sort && options.sort[0] ? options.sort[0].dir : "",
+		logApplication: applicationValue,
+		 logLevel: levelValue,
+		 logSearch: $("#searchFilter").val()
+*/
+		
+		currentApplication = params.logApplication ? params.logApplication : currentApplication;
+		
+		if (!currentApplication) {
+			currentApplication = elasticSearchAdminService.getDefaultIndex();
+		}
+		currentLogLevel = params.logLevel;
+		currentLogSearch = params.logSearch;
+		
+		def pageSize = params.pageSize?.toInteger();
+		def skip = params.skip?.toInteger();
+
+//		def resultSet = elasticSearchService.executeQuery(currentApplication, currentLogLevel, currentLogSearch,
+//			pageSize, skip, params.sortField, params.sortOrder);
+		def resultSet = elasticSearchService.executeQuery2("cla.nine.dk", currentLogLevel, currentLogSearch,
+			params.iDisplayLength.toInteger(), params.iDisplayStart.toInteger(), params.sortField, params.sSortDir_0);
+		
+		
+		
+		
+		render resultSet as JSON
+	}
+
 
 	def show = {
 		def logEventInstance = chainModel?.logEventInstance // Might be chained from createIssue, check for that before harrassing elasticSearch.
