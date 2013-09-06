@@ -4,12 +4,11 @@
 <log4j:configuration>
 
   <appender name="WhaleWiredAppender" class="com.whalewired.client.log4j.WhaleWiredAppender">
-  	<param name="whalewired_es" value="localhost"/>
-  	<param name="whalewired_es_port" value="9200"/>
-  	<param name="log_account" value="DEV_WL"/>
-  	<param name="log_application" value="cla.nine.dk"/>
-  	<param name="log_host" value="DEV_WL"/>
-  	<param name="max_threads" value="1"/>
+  	<param name="elasticSearchHost" value="localhost"/>
+  	<param name="elasticSearchPort" value="9200"/>
+  	<param name="logSystem" value="dev.cpr.dk"/>
+  	<param name="logContext" value="batch"/>
+  	<param name="logHost" value="DEV_CLF"/>
   </appender>
 
   <appender name="ConsoleAppender" class="org.apache.log4j.ConsoleAppender">

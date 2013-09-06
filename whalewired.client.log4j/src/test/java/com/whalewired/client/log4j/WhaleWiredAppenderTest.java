@@ -1,8 +1,10 @@
 package com.whalewired.client.log4j;
 
 import java.util.Random;
+import java.util.UUID;
 
 import org.apache.log4j.Logger;
+import org.apache.log4j.MDC;
 import org.junit.Test;
 
 public class WhaleWiredAppenderTest {
@@ -12,6 +14,10 @@ public class WhaleWiredAppenderTest {
 
 	@Test
 	public void test() {
+		
+		MDC.put("uniqueId", "" + UUID.randomUUID().hashCode());
+		
+		
 		Integer amount = 1000;
 		System.out.println("Generating " + amount + " log events");
 
@@ -37,7 +43,7 @@ public class WhaleWiredAppenderTest {
 	        long newmem = (runtime.totalMemory() - runtime.freeMemory()) / mb;
 	        if (newmem != maxmem) {
 	        	maxmem = newmem;
-	        	System.out.println("Used Memory:" + maxmem);
+	        	//System.out.println("Used Memory:" + maxmem);
 	        }
 			
 			
@@ -123,7 +129,7 @@ public class WhaleWiredAppenderTest {
 				char tmp = (char) ('a' + r.nextInt('z' - 'a'));
 				text.append(tmp);
 			}
-			text.append(" ");
+			text.append("  <strong>HANS</Strong> ");
 		}
 		return text.toString();
 	}

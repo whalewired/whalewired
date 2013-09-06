@@ -5,44 +5,44 @@
 	<groupId>com.whalewired</groupId>
 	<artifactId>whalewired.client.log4j</artifactId>
 	<packaging>jar</packaging>
-	<version>1.2.1</version>
+	<version>1.4.2</version>
 	<name>whalewired.client.log4j</name>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 	<repositories>
-		<repository>
-			<id>spring-maven-release</id>
-			<name>Spring Maven Release Repository</name>
-			<url>http://maven.springframework.org/release</url>
-		</repository>
-		<repository>
-			<id>spring-maven-milestone</id>
-			<name>Spring Maven Milestone Repository</name>
-			<url>http://maven.springframework.org/milestone</url>
-		</repository>
-		<repository>
-			<id>spring-roo-repository</id>
-			<name>Spring Roo Repository</name>
-			<url>http://spring-roo-repository.springsource.org/release</url>
-		</repository>
+<!-- 		<repository> -->
+<!-- 			<id>spring-maven-release</id> -->
+<!-- 			<name>Spring Maven Release Repository</name> -->
+<!-- 			<url>http://maven.springframework.org/release</url> -->
+<!-- 		</repository> -->
+<!-- 		<repository> -->
+<!-- 			<id>spring-maven-milestone</id> -->
+<!-- 			<name>Spring Maven Milestone Repository</name> -->
+<!-- 			<url>http://maven.springframework.org/milestone</url> -->
+<!-- 		</repository> -->
+<!-- 		<repository> -->
+<!-- 			<id>spring-roo-repository</id> -->
+<!-- 			<name>Spring Roo Repository</name> -->
+<!-- 			<url>http://spring-roo-repository.springsource.org/release</url> -->
+<!-- 		</repository> -->
 	</repositories>
 	<pluginRepositories>
-		<pluginRepository>
-			<id>spring-maven-release</id>
-			<name>Spring Maven Release Repository</name>
-			<url>http://maven.springframework.org/release</url>
-		</pluginRepository>
-		<pluginRepository>
-			<id>spring-maven-milestone</id>
-			<name>Spring Maven Milestone Repository</name>
-			<url>http://maven.springframework.org/milestone</url>
-		</pluginRepository>
-		<pluginRepository>
-			<id>spring-roo-repository</id>
-			<name>Spring Roo Repository</name>
-			<url>http://spring-roo-repository.springsource.org/release</url>
-		</pluginRepository>
+<!-- 		<pluginRepository> -->
+<!-- 			<id>spring-maven-release</id> -->
+<!-- 			<name>Spring Maven Release Repository</name> -->
+<!-- 			<url>http://maven.springframework.org/release</url> -->
+<!-- 		</pluginRepository> -->
+<!-- 		<pluginRepository> -->
+<!-- 			<id>spring-maven-milestone</id> -->
+<!-- 			<name>Spring Maven Milestone Repository</name> -->
+<!-- 			<url>http://maven.springframework.org/milestone</url> -->
+<!-- 		</pluginRepository> -->
+<!-- 		<pluginRepository> -->
+<!-- 			<id>spring-roo-repository</id> -->
+<!-- 			<name>Spring Roo Repository</name> -->
+<!-- 			<url>http://spring-roo-repository.springsource.org/release</url> -->
+<!-- 		</pluginRepository> -->
 	</pluginRepositories>
 	<dependencies>
 		<!-- General dependencies for standard applications -->
@@ -56,12 +56,6 @@
 			<groupId>log4j</groupId>
 			<artifactId>log4j</artifactId>
 			<version>1.2.16</version>
-		</dependency>
-		<dependency>
-			<groupId>org.codehaus.groovy</groupId>
-			<artifactId>groovy-all</artifactId>
-			<version>2.0.7</version>
-			<scope>provided</scope>
 		</dependency>
 	</dependencies>
 	<build>
@@ -88,40 +82,40 @@
 <!-- 					<encoding>ISO-8859-1</encoding> -->
 <!-- 				</configuration> -->
 <!-- 			</plugin> -->
-			<plugin>
-				<!-- See: http://groovy.codehaus.org/Groovy-Eclipse+compiler+plugin+for+Maven -->
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>2.3.2</version>
-				<configuration>
-					<compilerId>groovy-eclipse-compiler</compilerId>
-					<source>1.7</source>
-					<target>1.7</target>
-					<!-- set verbose to be true if you want lots of uninteresting messages -->
-					<!-- <verbose>true</verbose> -->
-					<compilerArgument>-g</compilerArgument>
-				</configuration>
-				<dependencies>
-					<dependency>
-						<groupId>org.codehaus.groovy</groupId>
-						<artifactId>groovy-eclipse-compiler</artifactId>
-						<version>2.7.0-01</version>
-					</dependency>
-				</dependencies>
-			</plugin>
-			<plugin>
-				<!-- See: http://groovy.codehaus.org/Groovy-Eclipse+compiler+plugin+for+Maven -->
-				<groupId>org.codehaus.groovy</groupId>
-				<artifactId>groovy-eclipse-compiler</artifactId>
-				<version>2.7.0-01</version>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-resources-plugin</artifactId>
-				<version>2.5</version>
-				<configuration>
-					<encoding>UTF-8</encoding>
-				</configuration>
-			</plugin>
+<!-- 			<plugin> -->
+<!-- 				See: http://groovy.codehaus.org/Groovy-Eclipse+compiler+plugin+for+Maven -->
+<!-- 				<artifactId>maven-compiler-plugin</artifactId> -->
+<!-- 				<version>2.3.2</version> -->
+<!-- 				<configuration> -->
+<!-- 					<compilerId>groovy-eclipse-compiler</compilerId> -->
+<!-- 					<source>1.7</source> -->
+<!-- 					<target>1.7</target> -->
+<!-- 					set verbose to be true if you want lots of uninteresting messages -->
+<!-- 					<verbose>true</verbose> -->
+<!-- 					<compilerArgument>-g</compilerArgument> -->
+<!-- 				</configuration> -->
+<!-- 				<dependencies> -->
+<!-- 					<dependency> -->
+<!-- 						<groupId>org.codehaus.groovy</groupId> -->
+<!-- 						<artifactId>groovy-eclipse-compiler</artifactId> -->
+<!-- 						<version>2.7.0-01</version> -->
+<!-- 					</dependency> -->
+<!-- 				</dependencies> -->
+<!-- 			</plugin> -->
+<!-- 			<plugin> -->
+<!-- 				See: http://groovy.codehaus.org/Groovy-Eclipse+compiler+plugin+for+Maven -->
+<!-- 				<groupId>org.codehaus.groovy</groupId> -->
+<!-- 				<artifactId>groovy-eclipse-compiler</artifactId> -->
+<!-- 				<version>2.7.0-01</version> -->
+<!-- 			</plugin> -->
+<!-- 			<plugin> -->
+<!-- 				<groupId>org.apache.maven.plugins</groupId> -->
+<!-- 				<artifactId>maven-resources-plugin</artifactId> -->
+<!-- 				<version>2.5</version> -->
+<!-- 				<configuration> -->
+<!-- 					<encoding>UTF-8</encoding> -->
+<!-- 				</configuration> -->
+<!-- 			</plugin> -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
@@ -129,9 +123,6 @@
 				<configuration>
 					<printSummary>false</printSummary>
 					<redirectTestOutputToFile>true</redirectTestOutputToFile>
-					<excludes>
-						<exclude>**/*_Roo_*</exclude>
-					</excludes>
 				</configuration>
 			</plugin>
 			<plugin>
@@ -149,57 +140,56 @@
 				<artifactId>maven-deploy-plugin</artifactId>
 				<version>2.6</version>
 			</plugin>
-			<!-- IDE -->
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-eclipse-plugin</artifactId>
-				<version>2.7</version>  <!-- Note 2.8 does not work with AspectJ aspect path -->
-				<configuration>
-					<downloadSources>true</downloadSources>
-					<downloadJavadocs>false</downloadJavadocs>
-					<wtpversion>2.0</wtpversion>
-					<additionalBuildcommands>
-						<buildCommand>
-							<name>org.eclipse.ajdt.core.ajbuilder</name>
-							<arguments>
-								<aspectPath>org.springframework.aspects</aspectPath>
-							</arguments>
-						</buildCommand>
-						<buildCommand>
-							<name>org.springframework.ide.eclipse.core.springbuilder</name>
-						</buildCommand>
-					</additionalBuildcommands>
-					<additionalProjectnatures>
-						<projectnature>org.eclipse.ajdt.ui.ajnature</projectnature>
-						<projectnature>com.springsource.sts.roo.core.nature</projectnature>
-						<projectnature>org.springframework.ide.eclipse.core.springnature</projectnature>
-					</additionalProjectnatures>
-				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-idea-plugin</artifactId>
-				<version>2.2</version>
-				<configuration>
-					<downloadSources>true</downloadSources>
-					<dependenciesAsLibraries>true</dependenciesAsLibraries>
-				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>tomcat-maven-plugin</artifactId>
-				<version>1.1</version>
-			</plugin>
-			<plugin>
-				<groupId>org.mortbay.jetty</groupId>
-				<artifactId>jetty-maven-plugin</artifactId>
-				<version>7.4.2.v20110526</version>
-				<configuration>
-					<webAppConfig>
-						<contextPath>/${project.name}</contextPath>
-					</webAppConfig>
-				</configuration>
-			</plugin>
+<!-- 			<plugin> -->
+<!-- 				<groupId>org.apache.maven.plugins</groupId> -->
+<!-- 				<artifactId>maven-eclipse-plugin</artifactId> -->
+<!-- 				<version>2.7</version>  Note 2.8 does not work with AspectJ aspect path -->
+<!-- 				<configuration> -->
+<!-- 					<downloadSources>true</downloadSources> -->
+<!-- 					<downloadJavadocs>false</downloadJavadocs> -->
+<!-- 					<wtpversion>2.0</wtpversion> -->
+<!-- 					<additionalBuildcommands> -->
+<!-- 						<buildCommand> -->
+<!-- 							<name>org.eclipse.ajdt.core.ajbuilder</name> -->
+<!-- 							<arguments> -->
+<!-- 								<aspectPath>org.springframework.aspects</aspectPath> -->
+<!-- 							</arguments> -->
+<!-- 						</buildCommand> -->
+<!-- 						<buildCommand> -->
+<!-- 							<name>org.springframework.ide.eclipse.core.springbuilder</name> -->
+<!-- 						</buildCommand> -->
+<!-- 					</additionalBuildcommands> -->
+<!-- 					<additionalProjectnatures> -->
+<!-- 						<projectnature>org.eclipse.ajdt.ui.ajnature</projectnature> -->
+<!-- 						<projectnature>com.springsource.sts.roo.core.nature</projectnature> -->
+<!-- 						<projectnature>org.springframework.ide.eclipse.core.springnature</projectnature> -->
+<!-- 					</additionalProjectnatures> -->
+<!-- 				</configuration> -->
+<!-- 			</plugin> -->
+<!-- 			<plugin> -->
+<!-- 				<groupId>org.apache.maven.plugins</groupId> -->
+<!-- 				<artifactId>maven-idea-plugin</artifactId> -->
+<!-- 				<version>2.2</version> -->
+<!-- 				<configuration> -->
+<!-- 					<downloadSources>true</downloadSources> -->
+<!-- 					<dependenciesAsLibraries>true</dependenciesAsLibraries> -->
+<!-- 				</configuration> -->
+<!-- 			</plugin> -->
+<!-- 			<plugin> -->
+<!-- 				<groupId>org.codehaus.mojo</groupId> -->
+<!-- 				<artifactId>tomcat-maven-plugin</artifactId> -->
+<!-- 				<version>1.1</version> -->
+<!-- 			</plugin> -->
+<!-- 			<plugin> -->
+<!-- 				<groupId>org.mortbay.jetty</groupId> -->
+<!-- 				<artifactId>jetty-maven-plugin</artifactId> -->
+<!-- 				<version>7.4.2.v20110526</version> -->
+<!-- 				<configuration> -->
+<!-- 					<webAppConfig> -->
+<!-- 						<contextPath>/${project.name}</contextPath> -->
+<!-- 					</webAppConfig> -->
+<!-- 				</configuration> -->
+<!-- 			</plugin> -->
 		</plugins>
 	</build>
 </project>
