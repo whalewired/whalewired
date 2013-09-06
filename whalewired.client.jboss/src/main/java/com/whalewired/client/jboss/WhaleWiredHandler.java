@@ -10,10 +10,15 @@ import java.io.LineNumberReader;
 import java.io.PrintWriter;
 import java.io.StringReader;
 import java.io.StringWriter;
+import java.lang.reflect.Method;
 import java.net.HttpURLConnection;
+import java.net.InetAddress;
 import java.net.URL;
+import java.net.UnknownHostException;
 import java.util.ArrayList;
+import java.util.Map.Entry;
 import java.util.ResourceBundle;
+import java.util.Set;
 
 import org.jboss.logmanager.ExtHandler;
 import org.jboss.logmanager.ExtLogRecord;
@@ -23,11 +28,11 @@ import com.whalewired.org.json.JSONObject;
 
 public class WhaleWiredHandler extends ExtHandler  {
 	
-	private String whalewired_es;
-	private String whalewired_es_port;
-	private String log_account;
-	private String log_application;
-	private String log_host;
+	private String elasticSearchHost;
+	private String elasticSearchPort;
+	private String logSystem;
+	private String logHost;
+	private String logContext;
 
 	private static String clientVersion = ResourceBundle.getBundle("client").getString("client.version");
 	private static long exceptionReportTime = 0;
@@ -39,9 +44,10 @@ public class WhaleWiredHandler extends ExtHandler  {
 	@Override
 	protected synchronized void doPublish(ExtLogRecord record) {
 		
+		cleanRecordIfGroovyEnvironment(record);
+		
 		try {
-			WhaleWiredHttpTransmitter transmitter = new WhaleWiredHttpTransmitter(getRecordAsJson(record),  
-					whalewired_es, Integer.parseInt(whalewired_es_port), log_application);
+			WhaleWiredHttpTransmitter transmitter = new WhaleWiredHttpTransmitter(getRecordAsJson(record),  getElasticSearchHost(), getElasticSearchPort(), getLogSystem());
 			transmitter.transmit();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -49,28 +55,76 @@ public class WhaleWiredHandler extends ExtHandler  {
 		}
 	}
 	
+	@SuppressWarnings({"unchecked", "rawtypes" })
+	private void cleanRecordIfGroovyEnvironment(ExtLogRecord rec) {
+		
+		try {
+			Class stackTraceUtils = Class.forName("org.codehaus.groovy.runtime.StackTraceUtils");
+			Method sanitizeMethod = stackTraceUtils.getDeclaredMethod("deepSanitize", Throwable.class);
+			// Removes groovy specific addensums from the trace in order to calculate correct location
+			Throwable t = (Throwable)sanitizeMethod.invoke(null, new Throwable());
+			
+			if (!clientVersion.endsWith("g")) {
+				clientVersion = clientVersion + "g";
+			}
+	
+	        final StackTraceElement[] stack = t.getStackTrace();
+	        boolean found = false;
+	        for (StackTraceElement element : stack) {
+	            final String className = element.getClassName();
+	            if (found) {
+	                if (! rec.getLoggerClassName().equals(className)) {
+	                    rec.setSourceClassName(className);
+	                    rec.setSourceMethodName(element.getMethodName());
+	                    rec.setSourceLineNumber(element.getLineNumber());
+	                    rec.setSourceFileName(element.getFileName());
+	                    return;
+	                }
+	            } else {
+	                found = rec.getLoggerClassName().equals(className);
+	            }
+	        }
+			
+	        rec.setSourceClassName("<unknown>");
+	        rec.setSourceMethodName("<unknown>");
+	        rec.setSourceLineNumber(-1);
+	        rec.setSourceFileName("<unknown>");
+	        
+		} catch (Exception e) {
+			reportError(e);
+		}
+	}
+	
+	
+	
 	private String getRecordAsJson(ExtLogRecord event) throws JSONException {
+		
+		if (this.logHost == null || "".equals(this.logHost.trim())) {
+			try {
+				this.logHost = InetAddress.getLocalHost().getHostName();
+			} catch (UnknownHostException e) {
+				this.logHost = "Unknown";
+			}
+		}
 
 		JSONObject jsonBuilder = new JSONObject();
-		jsonBuilder.put("accountName", log_account);
-		jsonBuilder.put("applicationName", log_application);
-		jsonBuilder.put("hostName", log_host);
+		jsonBuilder.put("systemName", logSystem);
+		jsonBuilder.put("hostName", logHost);
 		jsonBuilder.put("logTime", event.getMillis());
 		jsonBuilder.put("loggerName", event.getLoggerName());
+		jsonBuilder.put("contextName", logContext);
+		
+		for (Entry<String, String> entry : (Set<Entry<String, String>>)event.getMdcCopy().entrySet()) {
+			if (entry.getValue() != null) {
+				jsonBuilder.put(entry.getKey(), entry.getValue());
+			}
+		}
+		
 		jsonBuilder.put("logFileName", event.getSourceFileName());
 		jsonBuilder.put("logLineNumber", event.getSourceLineNumber());
 		jsonBuilder.put("logMethodName", event.getSourceMethodName());
 		jsonBuilder.put("logQualifiedClassName", event.getSourceClassName());
-		StringBuilder locationBuilder = new StringBuilder();
-		locationBuilder.append(event.getSourceClassName()+".");
-		locationBuilder.append(event.getSourceMethodName()+"(");
-		locationBuilder.append(event.getSourceFileName()+":");
-		locationBuilder.append(event.getSourceLineNumber()+")");
-		jsonBuilder.put("logLocation", locationBuilder.toString());
-		StringBuilder locationShortBuilder = new StringBuilder();
-		locationShortBuilder.append(event.getSourceFileName()+":");
-		locationShortBuilder.append( event.getSourceLineNumber());
-		jsonBuilder.put("logLocationShort", locationShortBuilder.toString());
+
 		jsonBuilder.put("logMessage", event.getMessage());
 		jsonBuilder.put("logLevel", LogLevel.fromLogLevel(event.getLevel()).name());
 		jsonBuilder.put("logThread", event.getThreadName());
@@ -78,7 +132,14 @@ public class WhaleWiredHandler extends ExtHandler  {
 			jsonBuilder.put("logThrowableType", event.getThrown().getClass().getName());
 			String[] trace = render(event.getThrown());
 			if (trace != null && trace.length > 1) {
-				jsonBuilder.put("logThrowableLocation", trace[1].substring(3)); // removes 'at '
+				String logThrowableLocation = trace[1];
+				if (logThrowableLocation != null && logThrowableLocation.contains("Possible solutions")) {
+					logThrowableLocation = "";
+					if (trace.length > 2) {
+						logThrowableLocation = trace[2];
+					}
+				}
+				jsonBuilder.put("logThrowableLocation", logThrowableLocation);				
 				StringBuilder traceBuilder = new StringBuilder();
 				for (String s : trace) {
 					traceBuilder.append(s + "\n");
@@ -87,24 +148,26 @@ public class WhaleWiredHandler extends ExtHandler  {
 			}
 		}
 		jsonBuilder.put("clientVersion", clientVersion);
+		
 		return jsonBuilder.toString();
+		
 	}
 
 	private static class WhaleWiredHttpTransmitter {
 
 		private final String eventAsJsonData;
-		private final String whalewired_es;
-		private final int whalewired_es_port;
-		private final String log_application;
+		private final String elasticSearchIp;
+		private final String elasticSearchPort;
+		private final String logSystem;
 
 		public WhaleWiredHttpTransmitter(String eventAsJsonData,
-				String whalewired_es, int whalewired_es_port,
-				String log_application) {
+				String elasticSearchIp, String elasticSearchPort,
+				String logSystem) {
 			super();
 			this.eventAsJsonData = eventAsJsonData;
-			this.whalewired_es = whalewired_es;
-			this.whalewired_es_port = whalewired_es_port;
-			this.log_application = log_application;
+			this.elasticSearchIp = elasticSearchIp;
+			this.elasticSearchPort = elasticSearchPort;
+			this.logSystem = logSystem;
 		}
 
 		public void transmit() {
@@ -113,8 +176,7 @@ public class WhaleWiredHandler extends ExtHandler  {
 				URL url;
 				HttpURLConnection connection = null;
 				try {
-					// INDEX skal være account eller lignenede
-					url = new URL("http", whalewired_es, whalewired_es_port, "/"+log_application+"/logevent/");
+					url = new URL("http", elasticSearchIp, Integer.parseInt(elasticSearchPort), "/"+logSystem+"/logevent/");
 					connection = (HttpURLConnection) url.openConnection();
 					connection.setConnectTimeout(5000);
 					connection.setReadTimeout(5000);
@@ -176,7 +238,7 @@ public class WhaleWiredHandler extends ExtHandler  {
 	public static void reportError(Exception e) {
 		
 		if (exceptionReportTime + 3600000 < System.currentTimeMillis()) { // 10 minutes
-			System.err.println(e + "\nWhaleWiredAppender will not report errors again for 10 minutes  ");
+			System.err.println(e + "\nWhaleWiredHandler will not report errors again for 10 minutes  ");
 			exceptionReportTime = System.currentTimeMillis();
 		}
 	}
@@ -214,43 +276,45 @@ public class WhaleWiredHandler extends ExtHandler  {
         return tempRep;
     }
 
-	public String getWhalewired_es() {
-		return whalewired_es;
+	public String getElasticSearchHost() {
+		return elasticSearchHost;
 	}
 
-	public void setWhalewired_es(String whalewired_es) {
-		this.whalewired_es = whalewired_es;
+	public void setElasticSearchHost(String elasticSearchHost) {
+		this.elasticSearchHost = elasticSearchHost;
 	}
 
-	public String getWhalewired_es_port() {
-		return whalewired_es_port;
+	public String getElasticSearchPort() {
+		return elasticSearchPort;
 	}
 
-	public void setWhalewired_es_port(String whalewired_es_port) {
-		this.whalewired_es_port = whalewired_es_port;
+	public void setElasticSearchPort(String elasticSearchPort) {
+		this.elasticSearchPort = elasticSearchPort;
 	}
 
-	public String getLog_account() {
-		return log_account;
+	public String getLogSystem() {
+		return logSystem;
 	}
 
-	public void setLog_account(String log_account) {
-		this.log_account = log_account;
+	public void setLogSystem(String logSystem) {
+		this.logSystem = logSystem;
 	}
 
-	public String getLog_application() {
-		return log_application;
+	public String getLogHost() {
+		return logHost;
 	}
 
-	public void setLog_application(String log_application) {
-		this.log_application = log_application;
+	public void setLogHost(String logHost) {
+		this.logHost = logHost;
 	}
 
-	public String getLog_host() {
-		return log_host;
+	public String getLogContext() {
+		return logContext;
 	}
 
-	public void setLog_host(String log_host) {
-		this.log_host = log_host;
-	}	
+	public void setLogContext(String logContext) {
+		this.logContext = logContext;
+	}
+    
+
 }
