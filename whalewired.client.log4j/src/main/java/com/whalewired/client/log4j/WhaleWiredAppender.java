@@ -119,7 +119,9 @@ public class WhaleWiredAppender extends AppenderSkeleton {
 					event.getNDC(), newInfo, event.getProperties());
 			
 			return cleanedEvent;
-			
+		} catch (ClassNotFoundException e) {
+			// Report nothing
+			return event;
 		} catch (Exception e) {
 			reportError(e);
 			return event;

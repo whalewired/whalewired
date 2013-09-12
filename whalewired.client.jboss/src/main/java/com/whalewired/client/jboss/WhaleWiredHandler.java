@@ -50,7 +50,6 @@ public class WhaleWiredHandler extends ExtHandler  {
 			WhaleWiredHttpTransmitter transmitter = new WhaleWiredHttpTransmitter(getRecordAsJson(record),  getElasticSearchHost(), getElasticSearchPort(), getLogSystem());
 			transmitter.transmit();
 		} catch (Exception e) {
-			e.printStackTrace();
 			reportError(e);
 		}
 	}
@@ -89,7 +88,8 @@ public class WhaleWiredHandler extends ExtHandler  {
 	        rec.setSourceMethodName("<unknown>");
 	        rec.setSourceLineNumber(-1);
 	        rec.setSourceFileName("<unknown>");
-	        
+		} catch (ClassNotFoundException e) {
+			// Don't report 
 		} catch (Exception e) {
 			reportError(e);
 		}
